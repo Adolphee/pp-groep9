@@ -13,6 +13,17 @@ router.get('/alleTenten', (req, res) => {
   });
 });
 
+router.get('/alleSlaapGerief', (req, res) => {
+  const alleSlaapGerief = "select * from producten where productnaam like '%slaap% or like '%matras%';";
+  db.query(alleSlaapGerief, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
 router.get('/search/:term', (req, res) => {
   const term = req.params.term;
   const zoekQuery = `select * from producten where productnaam like '%${term}%';`;
