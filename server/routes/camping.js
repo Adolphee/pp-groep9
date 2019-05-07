@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 
-router.get('/alleTenten', (req, res) => {
-  const alleTenten = "select * from producten where productnaam like '%tent%';";
-  db.query(alleTenten, (err, results, fields) => {
+router.get('/tenten', (req, res) => {
+  const tenten = "select * from producten where productnaam like '%tent%';";
+  db.query(tenten, (err, results, fields) => {
     if (err) {
       console.log(err);
       return;
@@ -13,9 +13,9 @@ router.get('/alleTenten', (req, res) => {
   });
 });
 
-router.get('/alleSlaapGerief', (req, res) => {
-  const alleSlaapGerief = "select * from producten where productnaam like '%slaap% or like '%matras%';";
-  db.query(alleSlaapGerief, (err, results) => {
+router.get('/slaapGerief', (req, res) => {
+  const slaapGerief = "select * from producten where productnaam like '%slaap%' or productnaam like '%matras%';";
+  db.query(slaapGerief, (err, results) => {
     if (err) {
       console.log(err);
       return;
