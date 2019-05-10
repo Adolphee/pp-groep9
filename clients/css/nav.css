@@ -21,3 +21,34 @@ width:100%;
 
 }
 
+/*
+Profile
+*/
+
+.sidenav {
+    width: 15%;
+    height: 80%;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    bottom: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #212121;
+    display: inline-block;
+}
+
+.sidenav a:hover {
+    color: #649b23;
+}
+.sidenav i {
+    padding-left: 16px;
+}
