@@ -11,13 +11,34 @@
     border: 1px #ddd solid;
     border-radius: 10px;
     padding: 0.5em;
+    margin-left: 2em;
+    margin-right: 1em;
+
 }
 nav{
 width:100%;
 }
 .right {
     display: inline;
-    float: right;
+
+    text-align: right;
 
 }
 
+form{
+    padding: 1em;
+}
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+.icon{
+    margin: 0.5em;
+    color: #212121;
+}
+#home{
+    margin-right: 0.5em;
+}
+a{
+    color: #212121;
+}
