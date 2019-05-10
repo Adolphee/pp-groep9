@@ -2,39 +2,46 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="css/contact.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
+
     <title>Contact</title>
-    <link rel="stylesheet" href="css/CSS Contact.css">
 </head>
 
 <body>
 
 <h1 class="titel">Contact</h1>
 
-<form id="contact">
-    <p>Naam:
-        <label title="Naam">
-            <input type="text" name="Naam" size="30" maxlength="30" required="required"/>
-        </label>
-    </p>
+<div class="form">
 
-    <p>E-mailadres:
-        <label title="E-mailadres">
-            <input type="text" name="e-mailadres" size="30" maxlength="50" required="required"/>
-        </label>
-    </p>
+    <form id="contact">
+        <h4>Naam:
+            <label title="Naam">
+                <input type="text" name="Naam" size="30" maxlength="30" required="required" class="input"/>
+            </label>
+        </h4>
 
-    <p><b>Vraag/Klacht?</b>
-        <label title="Vraag/klacht">
-            <textarea name="vraag" cols="30" rows="5" required="required"></textarea>
-        </label>
-    </p>
-</form>
-<button type="submit" form="contact" class="btn btn-success" id="button" title="Send">Send</button>
+        <h4>E-mailadres:
+            <label title="E-mailadres">
+                <input type="text" name="e-mailadres" size="30" maxlength="50" required="required" class="input"/>
+            </label>
+        </h4>
+
+        <h4><b>Vraag/Klacht?</b>
+            <label title="Vraag/klacht">
+                <textarea name="vraag" cols="30" rows="5" required="required" class="input"></textarea>
+            </label>
+        </h4>
+    </form>
+    <button type="submit" form="contact" class="btn btn-success" id="button" title="Send">Send</button>
+
+</div>
 
 </body>
+
 </html>
