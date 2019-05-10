@@ -1,0 +1,18 @@
+@import 'nav.css';
+@import 'contact.css';
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.container{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.right {
+  display: inline;
+
+  text-align: right;
+
+}
