@@ -1,6 +1,11 @@
 @import 'nav.css';
 @import 'contact.css';
+<<<<<<< HEAD
+@import 'about.css';
 
+=======
+@import 'profile.css';
+>>>>>>> master
 body {
   font-family: 'Titillium Web', sans-serif;
   margin: 0;
