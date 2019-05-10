@@ -16,6 +16,7 @@
 
 }
 nav{
+    padding-top: 2em;
 width:100%;
 }
 form{
@@ -34,4 +35,7 @@ a{
 
 header {
     background-color: #fff;
+}
+form{
+    padding-left: 3.2em;
 }

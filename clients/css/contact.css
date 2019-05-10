@@ -1,12 +1,32 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+    color: #212121;
+}
 
 .titel {
     text-align: center;
 }
+h4{
+    margin-left: 40%;
+}
+
+label{
+    clear: left;
+    margin-left: 10%
+}
+.input{
+
+}
 
 #contact {
-    text-align: center;
+
 }
 
 #button {
     background-color: #7ed913;
+    margin-left: 40%;
+}
+
+.form {
+
 }
