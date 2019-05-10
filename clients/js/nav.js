@@ -1,18 +1,7 @@
-$(document).ready(function(){
-    console.log("linked");
-<<<<<<< HEAD
-$.ajax({
-    url: "./general parts/nav.html"
-}).done(function(res){
-    $("#nav").html(res)
-})
-});
-=======
+$(document).ready(function () {
     $.ajax({
         url: "./general parts/nav.html"
-    }).done(function(res){
-       $("#nav").html(res)
+    }).done(function (res) {
+        $("#nav").html(res)
     })
 });
-
->>>>>>> master
