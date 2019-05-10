@@ -18,3 +18,11 @@ body {
   text-align: right;
 
 }
+.select{
+  font-family: 'Titillium Web', sans-serif;
+  border: 1px #ddd solid;
+  border-radius: 2px;
+  padding: 0.5em;
+  margin-left: 2em;
+  margin-right: 1em;
+}
