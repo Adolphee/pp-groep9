@@ -4,43 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="css/contact.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
 
     <title>Contact</title>
+
 </head>
 
 <body>
+
+<div id="nav"></div>
 
 <h1 class="titel">Contact</h1>
 
 <div class="form">
 
     <form id="contact">
-        <h4>Naam:
+        <h4 class="ondertitel">Naam:
             <label title="Naam">
-                <input type="text" name="Naam" size="30" maxlength="30" required="required" class="input"/>
+                <input type="text" name="Naam" size="35" maxlength="50" required="required" class="input1"/>
             </label>
         </h4>
 
-        <h4>E-mailadres:
+        <h4 class="ondertitel">E-mailadres:
             <label title="E-mailadres">
-                <input type="text" name="e-mailadres" size="30" maxlength="50" required="required" class="input"/>
+                <input type="text" name="e-mailadres" size="35" maxlength="70" required="required" class="input2"/>
             </label>
         </h4>
 
-        <h4><b>Vraag/Klacht?</b>
+        <h4 class="ondertitel"><b>Vraag/Klacht?</b>
             <label title="Vraag/klacht">
-                <textarea name="vraag" cols="30" rows="5" required="required" class="input"></textarea>
+                <textarea name="vraag" cols="36" rows="5" required="required" class="input3"></textarea>
             </label>
         </h4>
     </form>
-    <button type="submit" form="contact" class="btn btn-success" id="button" title="Send">Send</button>
+    <button type="submit" form="contact" class="button" title="Send">Send</button>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="js/contact.js"></script>
 
 </body>
 
