@@ -1,0 +1,23 @@
+.verticalLine {
+    border-left: thin solid black;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+.nav{
+    text-decoration: none;
+}
+#search{
+    width: 70%;
+    border: 1px #ddd solid;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+nav{
+width:100%;
+}
+.right {
+    display: inline;
+    float: right;
+
+}
+
