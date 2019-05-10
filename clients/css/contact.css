@@ -1,29 +1,41 @@
-body {
-    font-family: 'Titillium Web', sans-serif;
-    color: #212121;
-}
-
 .titel {
     text-align: center;
 }
 
-label{
-    clear: left;
-    margin-left: 10%
-}
-.input{
-
+.ondertitel{
+    margin-left: 37%;
 }
 
-#contact {
-
+.input1{
+    margin-left: 15%;
 }
 
-#button {
+.input2{
+    margin-left: 10%;
+}
+
+.input3{
+    margin-left: 9%;
+}
+
+.button {
+    color: #003703;
     background-color: #7ed913;
-    margin-left: 40%;
-}
 
-.form {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 8px 15px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+    user-select: none;
 
+    margin-left: 37%;
 }
