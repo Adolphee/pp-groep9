@@ -16,8 +16,7 @@
 
 }
 nav{
-    padding-top: 2em;
-width:100%;
+    width:100%;
 }
 
 .icon{
@@ -32,10 +31,11 @@ a{
 }
 
 header {
+    padding-bottom: 2em;
+    padding-top: 2em;
     background-color: #fff;
 }
 
 form{
     padding-top: 1em;
-    padding-bottom: 2em;
 }
