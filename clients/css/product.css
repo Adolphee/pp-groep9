@@ -13,6 +13,7 @@
 }
 .gridP
 {
+    margin-top: 50px;
 
     justify-content: center;
     display: grid;
