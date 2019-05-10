@@ -1,0 +1,32 @@
+
+
+.productIMG
+{
+    width: 350px;
+    height: auto;
+    grid-area: productPic;
+
+}
+.productOmschrijving
+{
+    grid-area: productO;
+}
+.gridP
+{
+
+    justify-content: center;
+    display: grid;
+
+    grid-template-areas:
+    "productPic productO";
+}
+
+.productOmschrijving form{
+    justify-items: right;
+}
+.productOmschrijving button
+{
+    margin-left: 30px;
+
+
+}
