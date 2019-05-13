@@ -2,19 +2,20 @@
     text-align: center;
 }
 
-.ondertitel{
+.ondertitel {
     margin-left: 37%;
+    user-select: none;
 }
 
-.input1{
+#input1 {
     margin-left: 15%;
 }
 
-.input2{
+#input2 {
     margin-left: 10%;
 }
 
-.input3{
+#input3 {
     margin-left: 9%;
 }
 
@@ -38,4 +39,12 @@
     user-select: none;
 
     margin-left: 37%;
+}
+
+#name_validation {
+    margin-left: 50%;
+}
+
+#email_validation {
+    margin-left: 50%;
 }
