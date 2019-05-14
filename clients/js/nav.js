@@ -4,4 +4,9 @@ $(document).ready(function () {
     }).done(function (res) {
         $("#nav").html(res)
     });
+
+$('#dropnav').on("change",function () {
+    let
+    
+})
 });

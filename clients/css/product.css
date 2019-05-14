@@ -11,6 +11,16 @@
 {
     grid-area: productO;
 }
+
+.productOmschrijving button
+{
+    border: transparent;
+    border-radius: 3px;
+    height: 2em;
+    width: 6em;
+    background-color: #7ed913;
+    font-weight: bold;
+}
 .gridP
 {
     margin-top: 50px;
