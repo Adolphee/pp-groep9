@@ -36,4 +36,46 @@ router.get('/search/:term', (req, res) => {
   });
 });
 
+router.post('/insert/newAdres', (req, res) => {
+  let { voornaam, achternaam, geboortedatum, land, gemeente, postcode, straat, huisnummer, busnummer} = req.body;
+  let checkAdres = 'SELECT * FROM adressen WHERE land LIKE ? AND gemeente LIKE ? AND postcode LIKE ? AND straatnaam LIKE ? AND huisnummer LIKE ?;';
+  let adresBestaat = true;
+  let tempAdres;
+  let adresId;
+  db.query(checkAdres, [land, gemeente, postcode, straat, huisnummer, busnummer], (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+    if (result[0]) {
+      tempAdres = result[0];
+      adresBestaat = true;
+    }
+    if (!result[0]) {
+      adresBestaat = false;
+    }
+
+    if (adresBestaat) {
+      // console.log(tempAdres);
+      adresId = tempAdres.adres_id;
+      res.send({
+        "msg": "adres bestaat al"
+      })
+    } else {
+      let maakAdres = "INSERT INTO adressen(land,gemeente,postcode,straatnaam,huisnummer,busnummer) VALUES(?,?,?,?,?,?);";
+      db.query(maakAdres, [land, gemeente, postcode, straat, huisnummer, busnummer],(err, result, fields) => {
+        if (err) {
+          return console.log(err);
+        }
+        res.send({
+          "msg": "adres is aangemaakt"
+        });
+        adresId = result.insertId;
+      })
+    }
+
+    
+
+  });
+});
+
 module.exports = router;
