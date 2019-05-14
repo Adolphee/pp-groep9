@@ -14,11 +14,11 @@ body, button, input {
 }
 
 .container {
-    flex: 0 1 700px;
-    margin: auto;
-    padding: 10px;
-    position: absolute;
-    left: auto;
+    /*flex: 0 1 700px;*/
+    /*margin: auto;*/
+    /*padding: 10px;*/
+    /*position: absolute;*/
+    /*left: auto;*/
 }
 
 .scherm {
