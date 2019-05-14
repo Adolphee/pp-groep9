@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
     <ul>
       <li>api/tenten</li>
       <li>api/slaapGerief</li>
+      <li>api/kookGerei</li>
       <li>api/search/"searchTerm"</li>
     </ul>
     <h3>post routes</h3>
@@ -43,6 +44,24 @@ app.get('/', (req, res) => {
           "straat": "steenweg",
           "huisnummer": "45",
           "busnummer":""
+        }
+        <br>
+        en heraal de post nog is om te kijken of het al bestaat
+      </li>
+      <br>
+      <li>
+        api/insert/newKlant (bij nieuwe klant moet er altijd een adres meegegeven worden)
+        <br> gebruik deze data <br> 
+        {
+          "voornaam": "olivier",
+          "achternaam": "bogaert",
+          "geboortedatum": "02/05/1973",
+          "land": "be",
+          "gemeente": "lembeek",
+          "postcode": "1502",
+          "straat": "popstraat",
+          "huisnummer": "17",
+          "busnummer": ""
         }
         <br>
         en heraal de post nog is om te kijken of het al bestaat
