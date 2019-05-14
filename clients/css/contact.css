@@ -103,29 +103,55 @@ body, button, input {
     cursor: pointer;
     outline: none;
 }
-.app-form-knop:hover {
-    color: #5a9e0b;
+
+#name_validation {
+    margin-left: 60%;
+
+
+.rating{
+    margin-left: 37%;
 }
-/*bij verkleinen scherm posities items verplaatsen*/
-@media scherm and (max-width: 520px) {
-    .scherm-body {
-        flex-direction: column;
-    }
-    .box-titel {
-        flex-direction: row;
-    }
-    .box-titel span {
-        margin-right: 12px;
-    }
-    .box-titel:after {
-        display: none;
-    }
+
+.checked {
+    color: orange;
 }
-@media scherm and (max-width: 600px) {
-    .scherm-body {
-        padding: 40px;
-    }
-    .scherm-body-item {
-        padding: 0;
-    }
+
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
 }
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */

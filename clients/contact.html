@@ -6,41 +6,64 @@
     <title>Contact</title>
 </head>
 <body>
-<form>
-    <div class="background">
-        <div class="container">
-            <div class="scherm">
-                <div class="scherm-header">
-                </div>
-                <div class="scherm-body">
-                    <div class="scherm-body-item left">
-                        <div class="box-titel">
-                            <span>CONTACTEER ONS</span>
-                        </div>
-                    </div>
-                    <div class="scherm-body-item">
-                        <div class="app-form">
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="NAAM">
-                            </div>
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="EMAIL">
-                            </div>
-                            <div class="app-form-group bericht">
-                                <input class="app-form-control" placeholder="UW BERICHT">
-                            </div>
-                            <div class="app-form-group knoppen">
-                                <input type="reset" value="ANNULLEER" class="app-form-knop">
-                                <button class="app-form-knop">VERSTUREN</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
 
+<!-- Navigatie -->
+<div id="nav"></div>
+
+<!-- Titel van de pagina -->
+<h1 class="titel">Contact</h1>
+
+<!-- Contactformulier -->
+<div class="form">
+
+    <form method="post" id="contact">
+        <!-- Name -->
+        <h4 class="ondertitel">Naam:
+            <label title="Naam">
+                <input type="text" name="Naam" size="35" maxlength="70" minlength="3" required="required" id="input1"
+                oninput="name_validation()"/>
+            </label>
+        </h4>
+        <div id="name_validation"></div>
+
+        <!-- E-mailadres -->
+        <h4 class="ondertitel">E-mailadres:
+            <label title="E-mailadres">
+                <input type="email" name="e-mailadres" size="35" maxlength="70" required="required" id="input2"
+                       oninput="validate_email()"/>
+            </label>
+        </h4>
+        <div id="email_validation"></div>
+
+        <!-- Vraag/Klacht -->
+        <h4 class="ondertitel"><b>Vraag/Klacht?</b>
+            <label title="Vraag/klacht?">
+                <textarea name="vraag" cols="36" rows="5" required="required" id="input3"></textarea>
+            </label>
+        </h4>
+
+
+        <h4 class="ondertitel">Rating:
+
+
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="Zeer goed">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="Goed">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="Gemiddeld">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="Slecht">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="Zeer slecht">1 star</label>
+        </div>
+        </h4>
+    </form>
+
+    <!-- Button -->
+    <button type="submit" form="contact" class="button" title="Send">Send</button>
+</div>
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 <script src="js/contact.js"></script>
