@@ -1,3 +1,4 @@
+<!-- Navigatiebalk -->
 $(document).ready(() => {
     $.ajax({
         url: './general parts/nav.html'
@@ -29,16 +30,9 @@ function validate_email() {
         document.getElementById('email_validation').innerText = "Correct!";
         document.getElementById('email_validation').style.color = '#7ed913';
         return true;
-    }
-    else {
+    } else {
         document.getElementById('email_validation').innerText = "Fout! Het e-mailadress moet van de vorm: 'example@example.com' zijn";
         document.getElementById('email_validation').style.color = "#F20000";
-    return false;
-    }
-    }
-
-function button(){
-    if (validate_email===true){
-        document.getElementById('button').innerHTML('<button type="submit" form="contact" class="button" title="Send">Send</button>')
+        return false;
     }
 }
