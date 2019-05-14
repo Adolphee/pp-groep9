@@ -1,29 +1,157 @@
 body {
-    font-family: 'Titillium Web', sans-serif;
-    color: #212121;
+    background: rgb(243,243,243);
+    font-size: 12px;
+}
+body, button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
 }
 
-.titel {
-    text-align: center;
+.background {
+    display: flex;
+    min-height: 100vh;
 }
 
-label{
-    clear: left;
-    margin-left: 10%
-}
-.input{
-
-}
-
-#contact {
-
+.container {
+    /*flex: 0 1 700px;*/
+    /*margin: auto;*/
+    /*padding: 10px;*/
+    /*position: absolute;*/
+    /*left: auto;*/
 }
 
-#button {
-    background-color: #7ed913;
-    margin-left: 40%;
+.scherm {
+    position: relative;
+    background: linear-gradient(#d6d6d6, #f3f3f3);
+    border-radius: 15px;
 }
 
-.form {
-
+.scherm:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
 }
+.scherm-body {
+    display: flex;
+}
+.scherm-body-item {
+    flex: 1;
+    padding: 50px;
+}
+.scherm-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+.box-titel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #7ed913;
+    font-size: 26px;
+}
+.box-titel:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #7ed913;
+}
+.app-form-group {
+    margin-bottom: 15px;
+}
+.app-form-group.bericht {
+    margin-top: 40px;
+}
+.app-form-group.knoppen {
+    margin-bottom: 0;
+    text-align: right;
+}
+.app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+}
+.app-form-control::placeholder {
+    color: #666;
+}
+.app-form-control:focus {
+    border-bottom-color: #7ed913;
+}
+.app-form-knop {
+    background: none;
+    border: none;
+    color: #7ed913;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+#name_validation {
+    margin-left: 60%;
+
+
+.rating{
+    margin-left: 37%;
+}
+
+.checked {
+    color: orange;
+}
+
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
