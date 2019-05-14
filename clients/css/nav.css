@@ -11,12 +11,13 @@
     border: 1px #ddd solid;
     border-radius: 10px;
     padding: 0.5em;
-    margin-left: 2em;
+    margin-left: 3em;
     margin-right: 1em;
 
 }
 nav{
     width:100%;
+    position:relative;
 }
 
 .icon{
@@ -24,7 +25,13 @@ nav{
     color: #212121;
 }
 #home{
-    margin-right: 0.5em;
+    width: 2em;
+    length: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    margin-right: 1em;
+
 }
 a{
     color: #212121;
