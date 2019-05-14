@@ -6,6 +6,7 @@ $(document).ready(function () {
     });
 
 $(document).on("change",'#navdrop',function (e) {
+    $('#product').html('');
     console.log("change van select werkt");
     let value = e.target.value;
     let ajaxPath = "http://10.3.50.56:3009/api/"+value;
@@ -20,8 +21,12 @@ $(document).on("change",'#navdrop',function (e) {
         $('#catContainer').empty();
         for (let b of data)
         {
-
-            $('#catContainer').append(`<div><img src='/pp-groep9/images/${b.product_id}.png'><h3>${b.productnaam}</h3></div>`);
+            $('#catContainer').append(`
+            <div>
+                <img src='../images/${b.product_id}.png'>
+                <h3>${b.productnaam}</h3>
+                <button id="${b.product_id}" class="btn primary center-btn view-product">View product</button>
+            </div>`);
         }
 
     }).fail(function(er1, er2){

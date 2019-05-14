@@ -31,6 +31,8 @@ app.get('/', (req, res) => {
       <li>api/slaapGerief</li>
       <li>api/kookGerei</li>
       <li>api/search/"searchTerm"</li>
+      <li>api/getProduct/:id</li>
+      <li>api/getFreeItems/:id</li>
     </ul>
     <h3>post routes</h3>
     <ul>
