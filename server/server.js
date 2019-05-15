@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 const app = express();
 const api = require('./routes/api');
 const user = require('./routes/user');
@@ -16,6 +17,7 @@ app.use((req,res,next) => {
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(morgan('dev'));
 
 // The route to get all the different data and post data from and to database
 app.use('/api', api);
@@ -38,6 +40,7 @@ app.get('/', (req, res) => {
       <li>api/search/"searchTerm"</li>
       <li>api/getProduct/:id</li>
       <li>api/getFreeItems/:id</li>
+      <li>api/getAllProducts</li>
     </ul>
     <h3>post routes</h3>
     <ul>

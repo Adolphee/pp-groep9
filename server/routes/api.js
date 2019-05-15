@@ -142,30 +142,33 @@ router.post('/insert/newKlant', (req, res) => {
     // het adres id dat zonet is aangemaakt of is opgehaald in de database in een variabale steken
     let adresId = resp.data.adresId;
     let klantId;
-    // kijken of de user al dan niet bestaat
     let checkUser = 'SELECT * FROM klanten WHERE voornaam LIKE ? AND achternaam LIKE ? AND geboortedatum LIKE ?;';
-    let klantBestaat = true;
     let tempKlant;
     db.query(checkUser, [voornaam, achternaam, geboortedatum], (err, result) => {
       if (err) {
         return console.log(err);
       }
+      // Als de klant al bestaat
       if (result[0]) {
         tempKlant = result[0];
-        klantBestaat = true;
-      }
-      if (!result[0]) {
-        klantBestaat = false;
-      }
-
-      if (klantBestaat) {
         klantId = tempKlant.klant_id;
         console.log(klantId);
-        res.send({
-          msg: "klant bestaat al",
-          klantId: klantId
+        // de klant zijn adres-id wijzigen naar het adres dat hij zo net heeft meegegeven en dat we opvangen van /api/insert/newAdres
+        let changeAdres = "UPDATE klanten SET klant_adres_id = ? WHERE klant_id = ?;";
+        db.query(changeAdres, [adresId, klantId], (err, result) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          console.log('changed adres_id to = ' + adresId);
+          res.send({
+            msg: "klant bestaat al",
+            klantId: klantId
+          })
         })
-      } else {
+      }
+      // Wanneer de klant nog niet bestaat -> nieuwe klant aanmaken
+      if (!result[0]) {
         let maakKlant = "INSERT INTO klanten(voornaam, achternaam, geboortedatum, klant_adres_id) VALUES(?,?,?,?);";
         db.query(maakKlant, [voornaam, achternaam, geboortedatum, adresId], (err, result) => {
           if (err) {
