@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const axios = require('axios');
+const app = express();
+const bodyParser     =        require("body-parser");
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+//const axios = require('axios');
 const db = require('../config/db');
 
 router.get('/tenten', (req, res) => {
@@ -38,7 +43,57 @@ router.get('/kookGerei', (req, res) => {
 
 router.get('/search/:term', (req, res) => {
   const term = req.params.term;
-  const zoekQuery = `select * from producten where productnaam like '%${term}%';`;
+  const zoekQuery = `select * from producten where productnaam like '%${term}%' or beschrijving like '%${term}%';`;
+  db.query(zoekQuery, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+router.get('/search/prijs/gt/:term', (req, res) => {
+  const term = req.params.term;
+  const zoekQuery = `select * from producten where prijs > ${term};`;
+  db.query(zoekQuery, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+app.post('/api/bestellingen/bestelregels', (req, res) => {
+  let itemId = req.body.itemId, bestelId = req.body.bestelId;
+  res.send({itemId, bestelId});
+  console.log(itemId, bestelId);
+  const query = `insert into bestelregels (item_id,bestelling_id,Archief) values (${itemId},${bestelId},0);`;
+  db.query(query, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+router.get('/search/prijs/lt/:term', (req, res) => {
+  const term = req.params.term;
+  const zoekQuery = `select * from producten where prijs < ${term};`;
+  db.query(zoekQuery, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+router.get('/search/prijs/eq/:term', (req, res) => {
+  const term = req.params.term;
+  const zoekQuery = `select * from producten where prijs = ${term};`;
   db.query(zoekQuery, (err, results) => {
     if (err) {
       console.log(err);
