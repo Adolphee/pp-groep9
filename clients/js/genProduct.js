@@ -48,7 +48,7 @@
     
 // }
 
-function genProduct(id, naam, beschrijving, items) {
+function genProduct(id, naam, beschrijving) {
         return `
         <div class="gridP">
             <img src="../images/${id}.png" class="productIMG">
@@ -56,11 +56,8 @@ function genProduct(id, naam, beschrijving, items) {
                 <h2>${naam}</h2>
                 <p>${beschrijving}</p>
                 <form>
-                    <select class="select">
-                        <option value="1">Item 1</option>
-                        <option value="2">Item 2</option>
-                        <option value="1">Item 3</option>
-                        <option value="1">Item 4</option>
+                    <select id="selectItem" class="select">
+                        <option value="0">None</option>
                     </select>
                     <button type="submit">add</button>
                 </form>

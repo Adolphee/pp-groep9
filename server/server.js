@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const api = require('./routes/api');
 const user = require('./routes/user');
+const submitForm = require('./routes/submitForm');
 
 const PORT = process.env.PORT || 3009;
 
@@ -15,11 +16,14 @@ app.use((req,res,next) => {
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-// The route to get all the different products
+// The route to get all the different data and post data from and to database
 app.use('/api', api);
 
 // The route to handle login & registration
 app.use('/user', user);
+
+// The route to handle the contact form
+app.use('/contact', submitForm);
 
 app.get('/', (req, res) => {
   res.send(`
