@@ -3,6 +3,7 @@
 @import 'product.css';
 @import 'about.css';
 @import 'profile.css';
+@import 'cart.css';
 
 body {
   font-family: 'Titillium Web', sans-serif;
@@ -57,4 +58,21 @@ margin-top: 20px;
   border-radius: 2px;
   padding: 0.5em;
   margin-right: 1em;
+}
+.btn {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+}
+.btn:hover{
+  cursor: pointer;
+}
+.center-btn {
+  margin: 0 auto;
+  width: 70%;
+  margin-left: 15%;
+}
+.primary {
+  color: rgb(214, 214, 214);
+  background-color: #50ce26;
 }

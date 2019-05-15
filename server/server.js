@@ -3,7 +3,7 @@ const app = express();
 const api = require('./routes/api');
 const user = require('./routes/user');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3009;
 
 // Middleware
 app.use((req,res,next) => {
@@ -12,7 +12,8 @@ app.use((req,res,next) => {
   next();
 });
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // The route to get all the different products
 app.use('/api', api);
@@ -24,12 +25,49 @@ app.get('/', (req, res) => {
   res.send(`
     <h2>This is the webserver that interacts with the front-end.</h2>
     <p>We have the /api route where you can request all the data.</p>
-    <h3><b>/api</b> followed by one of these</h3>
-    <p>For example /api/tenten will get you all the tenten</p>
+    <h3>get routes</h3>
     <ul>
-      <li>/tenten</li>
-      <li>/slaapGerief</li>
-      <li>/search/"searchTerm"</li>
+      <li>api/tenten</li>
+      <li>api/slaapGerief</li>
+      <li>api/kookGerei</li>
+      <li>api/search/"searchTerm"</li>
+      <li>api/getProduct/:id</li>
+      <li>api/getFreeItems/:id</li>
+    </ul>
+    <h3>post routes</h3>
+    <ul>
+      <li>
+        api/insert/newAdres
+        <br> gebruik deze data <br> 
+        {
+          "land": "BE",
+          "gemeente": "opwijk",
+          "postcode": "1745",
+          "straat": "steenweg",
+          "huisnummer": "45",
+          "busnummer":""
+        }
+        <br>
+        en heraal de post nog is om te kijken of het al bestaat
+      </li>
+      <br>
+      <li>
+        api/insert/newKlant (bij nieuwe klant moet er altijd een adres meegegeven worden)
+        <br> gebruik deze data <br> 
+        {
+          "voornaam": "olivier",
+          "achternaam": "bogaert",
+          "geboortedatum": "02/05/1973",
+          "land": "be",
+          "gemeente": "lembeek",
+          "postcode": "1502",
+          "straat": "popstraat",
+          "huisnummer": "17",
+          "busnummer": ""
+        }
+        <br>
+        en heraal de post nog is om te kijken of het al bestaat
+      </li>
     </ul>
   `);
 });
