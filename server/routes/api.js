@@ -31,7 +31,7 @@ router.get('/slaapGerief', (req, res) => {
 });
 
 router.get('/kookGerei', (req, res) => {
-  const kookGerei = "select * from producten where productnaam like '%slaap%' or productnaam like '%matras%';";
+  const kookGerei = "select * from producten where productnaam like '%gas%' or productnaam like '%bar%' or productnaam like '%kook%' or productnaam like '%mess%' or productnaam like '%servies%';";
   db.query(kookGerei, (err, results) => {
     if (err) {
       console.log(err);
@@ -94,6 +94,41 @@ router.get('/search/prijs/lt/:term', (req, res) => {
 router.get('/search/prijs/eq/:term', (req, res) => {
   const term = req.params.term;
   const zoekQuery = `select * from producten where prijs = ${term};`;
+  db.query(zoekQuery, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+router.get('/getProduct/:id', (req, res) => {
+  const id = req.params.id;
+  const zoekQuery = `select * from producten where product_id like '${id}';`;
+  db.query(zoekQuery, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+router.get('/getFreeItems/:id', (req, res) => {
+  const id = req.params.id;
+  const zoekQuery = `select * from items where product_id like '${id}' AND status='Vrij';`;
+  db.query(zoekQuery, (err, results) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.send(results);
+  });
+});
+
+router.get('/getAllProducts', (req, res) => {
+  const zoekQuery = `select * from producten;`;
   db.query(zoekQuery, (err, results) => {
     if (err) {
       console.log(err);

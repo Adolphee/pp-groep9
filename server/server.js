@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const api = require('./routes/api');
 const user = require('./routes/user');
+const submitForm = require('./routes/submitForm');
 
 const PORT = process.env.PORT || 3009;
 
@@ -11,15 +13,18 @@ app.use((req,res,next) => {
   res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
+app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-// The route to get all the different products
+// The route to get all the different data and post data from and to database
 app.use('/api', api);
 
 // The route to handle login & registration
 app.use('/user', user);
+
+// The route to handle the contact form
+app.use('/contact', submitForm);
 
 app.get('/', (req, res) => {
   res.send(`
@@ -31,6 +36,8 @@ app.get('/', (req, res) => {
       <li>api/slaapGerief</li>
       <li>api/kookGerei</li>
       <li>api/search/"searchTerm"</li>
+      <li>api/getProduct/:id</li>
+      <li>api/getFreeItems/:id</li>
     </ul>
     <h3>post routes</h3>
     <ul>

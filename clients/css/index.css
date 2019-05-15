@@ -59,3 +59,20 @@ margin-top: 20px;
   padding: 0.5em;
   margin-right: 1em;
 }
+.btn {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+}
+.btn:hover{
+  cursor: pointer;
+}
+.center-btn {
+  margin: 0 auto;
+  width: 70%;
+  margin-left: 15%;
+}
+.primary {
+  color: rgb(214, 214, 214);
+  background-color: #50ce26;
+}
