@@ -22,9 +22,14 @@ $(document).ready(() => {
                 console.log(items);
                 done = true;
                 if (done) {
-                    let pp = genProduct(id, product.productnaam, product.beschrijving, items);
+                    let pp = genProduct(id, product.productnaam, product.beschrijving);
                     console.log(pp);
                     $('#product').html(pp);
+                    for (const item of items) {
+                        $('#selectItem').append(`
+                            <option value="${item.item_id}">Item ${item.item_id}</option>
+                        `);
+                    }
                 }
             }).fail((err) => {
                 console.log(err);
