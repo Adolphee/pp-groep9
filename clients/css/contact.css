@@ -43,25 +43,20 @@
 
 #name_validation {
     margin-left: 60%;
-<<<<<<< HEAD
+
 }
 
 #email_validation {
     margin-left: 50%;
 }
-=======
->>>>>>> a146e6c502c9b2f36909298e61a4ab829cf9dbca
 
-
-.rating{
-    margin-left: 37%;
+#rate{
+    margin-left: 100%;
 }
 
 .checked {
     color: orange;
 }
-
-
 
 .rate {
     float: left;
@@ -98,5 +93,3 @@
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
-
-/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
