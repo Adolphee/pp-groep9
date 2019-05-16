@@ -11,8 +11,17 @@
     margin-left: 15%;
 }
 
+<<<<<<< HEAD
 #input2 {
     margin-left: 10%;
+=======
+.container {
+    /*flex: 0 1 700px;*/
+    /*margin: auto;*/
+    /*padding: 10px;*/
+    /*position: absolute;*/
+    /*left: auto;*/
+>>>>>>> origin/master
 }
 
 #input3 {
@@ -45,6 +54,7 @@
     margin-left: 60%;
 
 }
+<<<<<<< HEAD
 
 #email_validation {
     margin-left: 50%;
@@ -52,6 +62,10 @@
 
 #rate{
     margin-left: 100%;
+=======
+.rating{
+    margin-left: 37%;
+>>>>>>> origin/master
 }
 
 .checked {
