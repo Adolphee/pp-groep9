@@ -1,122 +1,67 @@
-body {
-    background: rgb(243,243,243);
-    font-size: 12px;
-}
-body, button, input {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1.4px;
+.titel {
+    text-align: center;
 }
 
-.background {
-    display: flex;
-    min-height: 100vh;
+.ondertitel {
+    margin-left: 37%;
+    user-select: none;
 }
 
-.container {
-    /*flex: 0 1 700px;*/
-    /*margin: auto;*/
-    /*padding: 10px;*/
-    /*position: absolute;*/
-    /*left: auto;*/
+#input1 {
+    margin-left: 15%;
 }
 
-.scherm {
-    position: relative;
-    background: linear-gradient(#d6d6d6, #f3f3f3);
-    border-radius: 15px;
+#input2 {
+    margin-left: 10%;
+
 }
 
-.scherm:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 20px;
-    right: 20px;
-    bottom: 0;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
-    z-index: -1;
+#input3 {
+    margin-left: 9%;
 }
-.scherm-body {
-    display: flex;
-}
-.scherm-body-item {
-    flex: 1;
-    padding: 50px;
-}
-.scherm-body-item.left {
-    display: flex;
-    flex-direction: column;
-}
-.box-titel {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    color: #7ed913;
-    font-size: 26px;
-}
-.box-titel:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 25px;
-    height: 4px;
-    background: #7ed913;
-}
-.app-form-group {
-    margin-bottom: 15px;
-}
-.app-form-group.bericht {
-    margin-top: 40px;
-}
-.app-form-group.knoppen {
-    margin-bottom: 0;
-    text-align: right;
-}
-.app-form-control {
-    width: 100%;
-    padding: 10px 0;
-    background: none;
-    border: none;
-    border-bottom: 1px solid #666;
-    color: black;
-    font-size: 14px;
-    text-transform: uppercase;
-    outline: none;
-    transition: border-color .2s;
-}
-.app-form-control::placeholder {
-    color: #666;
-}
-.app-form-control:focus {
-    border-bottom-color: #7ed913;
-}
-.app-form-knop {
-    background: none;
-    border: none;
-    color: #7ed913;
-    font-size: 14px;
+
+.button {
+    color: #003703;
+    background-color: #7ed913;
+
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
     cursor: pointer;
-    outline: none;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 8px 15px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+    user-select: none;
+
+    margin-left: 37%;
 }
 
 #name_validation {
     margin-left: 60%;
 
 }
+
+#email_validation {
+    margin-left: 50%;
+}
+
+#rate{
+    margin-left: 100%;
+
 .rating{
     margin-left: 37%;
+
 }
 
 .checked {
     color: orange;
 }
-
-
 
 .rate {
     float: left;
@@ -153,5 +98,3 @@ body, button, input {
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
-
-/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
