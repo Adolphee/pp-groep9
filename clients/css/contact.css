@@ -13,6 +13,7 @@
 
 #input2 {
     margin-left: 10%;
+
 }
 
 #input3 {
@@ -52,6 +53,10 @@
 
 #rate{
     margin-left: 100%;
+
+.rating{
+    margin-left: 37%;
+
 }
 
 .checked {

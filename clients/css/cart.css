@@ -1,0 +1,24 @@
+#bestelling table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 1em 0;
+}
+
+#bestelling table thead {
+  font-weight: bold;
+}
+
+#bestelling table tr {
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+#bestelling .container {
+  width: 60%;
+}
+
+#bestelling #reserveer {
+  float: right;
+}
