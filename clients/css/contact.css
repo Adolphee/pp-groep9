@@ -19,6 +19,11 @@
     margin-left: 9%;
 }
 
+#verplicht{
+    font-size: small;
+    margin-left: 37%;
+}
+
 .button {
     color: #003703;
     background-color: #7ed913;
@@ -39,11 +44,6 @@
     user-select: none;
 
     margin-left: 37%;
-}
-
-#name_validation {
-    margin-left: 60%;
-
 }
 
 #email_validation {

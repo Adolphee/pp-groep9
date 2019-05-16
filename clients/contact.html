@@ -2,9 +2,10 @@
 <html lang="nl">
 
 <head>
+
     <!-- Meta's -->
     <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Campify, kampeerspullen en meer">
+    <meta name="description" content="Campify, kampeerspullen en meer, contact">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
 
@@ -12,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
 
     <!-- Titel -->
     <title>Contact</title>
+
 </head>
 
 <body>
@@ -31,36 +33,37 @@
 <div class="form">
 
     <form method="post" id="contact">
-        <!-- Name -->
-        <h4 class="ondertitel">Naam:
+
+        <!-- Naam -->
+        <h4 class="ondertitel">Naam: *
             <label title="Naam">
                 <input type="text" name="Naam" size="35" maxlength="70" minlength="3" required="required" id="input1"
                        oninput="name_validation()"/>
             </label>
         </h4>
-        <div id="name_validation"></div>
 
         <!-- E-mailadres -->
-        <h4 class="ondertitel">E-mailadres:
+        <h4 class="ondertitel">E-mailadres: *
             <label title="E-mailadres">
                 <input type="email" name="e-mailadres" size="35" maxlength="70" required="required" id="input2"
-                       oninput="validate_email()"/>
+                       onblur="validate_email()"/>
             </label>
         </h4>
         <div id="email_validation"></div>
 
         <!-- Vraag/Klacht -->
-        <h4 class="ondertitel"><b>Vraag/Klacht?</b>
+        <h4 class="ondertitel"><b>Vraag/Klacht?</b> *
             <label title="Vraag/klacht?">
                 <textarea name="vraag" cols="36" rows="5" required="required" id="input3"></textarea>
             </label>
         </h4>
-
-
+        <p id="verplicht">Velden met een * zijn verplicht in te vullen!</p>
+        <br>
     </form>
 
-    <!-- Button -->
-    <button type="submit" form="contact" class="button" title="Send">Send</button>
+    <!-- Verzendknop -->
+    <button type="submit" form="contact" class="button" title="Send"><b>Verzenden</b></button>
+
 </div>
 
 <!-- Scripts -->

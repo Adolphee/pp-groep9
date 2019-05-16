@@ -20,7 +20,7 @@ document.getElementById("ondertitel3").onclick = function () {
     document.getElementById("input3").select();
 };
 
-/*E-mail verification*/
+/*E-mail validatie*/
 function validate_email() {
     let input = document.createElement('input');
     input.type = 'email';
@@ -30,9 +30,5 @@ function validate_email() {
         document.getElementById('email_validation').innerText = "Correct!";
         document.getElementById('email_validation').style.color = '#7ed913';
         return true;
-    } else {
-        document.getElementById('email_validation').innerText = "Fout! Het e-mailadress moet van de vorm: 'example@example.com' zijn";
-        document.getElementById('email_validation').style.color = "#F20000";
-        return false;
     }
 }
