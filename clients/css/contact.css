@@ -12,6 +12,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #input2 {
     margin-left: 10%;
 =======
@@ -22,6 +23,11 @@
     /*position: absolute;*/
     /*left: auto;*/
 >>>>>>> origin/master
+=======
+#input2 {
+    margin-left: 10%;
+
+>>>>>>> 385be710a610b864a9a2e6f8c453e531ad702756
 }
 
 #input3 {
@@ -55,6 +61,9 @@
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 385be710a610b864a9a2e6f8c453e531ad702756
 
 #email_validation {
     margin-left: 50%;
@@ -62,10 +71,17 @@
 
 #rate{
     margin-left: 100%;
+<<<<<<< HEAD
 =======
 .rating{
     margin-left: 37%;
 >>>>>>> origin/master
+=======
+
+.rating{
+    margin-left: 37%;
+
+>>>>>>> 385be710a610b864a9a2e6f8c453e531ad702756
 }
 
 .checked {
