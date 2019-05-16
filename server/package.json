@@ -1,7 +1,7 @@
 {
   "name": "server",
-  "version": "1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Webserver to handle get and post requests",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,6 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "mysql2": "^1.6.5",
-    "nodemon": "^1.19.0"
+    "mysql2": "^1.6.5"
   }
 }
