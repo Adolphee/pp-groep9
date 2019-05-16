@@ -11,23 +11,8 @@
     margin-left: 15%;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #input2 {
     margin-left: 10%;
-=======
-.container {
-    /*flex: 0 1 700px;*/
-    /*margin: auto;*/
-    /*padding: 10px;*/
-    /*position: absolute;*/
-    /*left: auto;*/
->>>>>>> origin/master
-=======
-#input2 {
-    margin-left: 10%;
-
->>>>>>> 385be710a610b864a9a2e6f8c453e531ad702756
 }
 
 #input3 {
@@ -60,66 +45,7 @@
     margin-left: 60%;
 
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 385be710a610b864a9a2e6f8c453e531ad702756
 
 #email_validation {
     margin-left: 50%;
-}
-
-#rate{
-    margin-left: 100%;
-<<<<<<< HEAD
-=======
-.rating{
-    margin-left: 37%;
->>>>>>> origin/master
-=======
-
-.rating{
-    margin-left: 37%;
-
->>>>>>> 385be710a610b864a9a2e6f8c453e531ad702756
-}
-
-.checked {
-    color: orange;
-}
-
-.rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #ffc700;
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
 }
