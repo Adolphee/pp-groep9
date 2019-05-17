@@ -26,13 +26,16 @@ $(document).ready(() => {
                 done = true;
                 if (done) {
                     let pp = genProduct(id, product.productnaam, product.beschrijving);
+                    let count = 0;
                     console.log(pp);
                     $('#product').html(pp);
                     for (const item of items) {
                         $('#selectItem').append(`
                             <option value="${item.item_id}">Item ${item.item_id}</option>
                         `);
+                        count++;
                     }
+                    $('#count').html(count);
                 }
             }).fail((err) => {
                 console.log(err);

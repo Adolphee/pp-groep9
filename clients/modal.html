@@ -1,8 +1,4 @@
-<button>Open modal</button>
-<link rel="stylesheet" type="text/css" href="css/modal.css">
 <div class="modal-layer">
-
-
     <div class="modal">
         <div class="tekst">
 
@@ -11,13 +7,64 @@
                 <h2>Ter info</h2>
             </div>
             <hr>
-            <div class="body">
-                <p>Bent u al klant?</p>
+            <div id="modalb" class="body">
+                <p id="m1">Bent u al klant?</p>
+
+                <form id="m2">
+                    <label for="kid">Uw klant id: </label>
+                    <input id="kid" type="text" placeholder="bvb. 1">
+                </form>
+
+                <form id="m2b">
+                    <label for="naam">Naam: </label>
+                    <input id="naam" type="text"> <br>
+                    <label for="vnaam">Voornaam: </label>
+                    <input id="vnaam" type="text" ><br>
+                    <label for="date">Geboortedatum: </label>
+                    <input id="date" type="text" placeholder="dd/mm/yyyy"><br>
+                    <label for="land">Land: </label>
+                    <input id="land" type="text" placeholder="BE,NL,FR,..."><br>
+                    <label for="stad">Gemeente/stad: </label>
+                    <input id="stad" type="text" ><br>
+                    <label for="zip">Postcode: </label>
+                    <input id="zip" type="text" ><br>
+                    <label for="straat">Straat: </label>
+                    <input id="straat" type="text" ><br>
+                    <label for="huisnr">Huisnummer: </label>
+                    <input id="huisnr" type="text" ><br>
+                    <label for="busnr">Busnummer*: </label>
+                    <input id="busnr" type="text" ><br>
+                    <p>*Niet verplicht</p>
+                </form>
+
+                <form id="m3">
+                    <label for="start">Uitleendatum</label>
+                    <input id="start" type="text" placeholder="dd/mm/yyyy" > <br>
+                    <label for="eind">Einddatum*</label>
+                    <input id="eind" type="text" placeholder="dd/mm/yyyy">
+                </form>
+
+                <p id="m4">Bedankt voor uw bestelling. De spullen worden zo dadelijk voor u aan de kassa klaargelegd!</p>
             </div>
             <hr>
-            <div class="footer">
-                <button class="button" id="yes">Ja</button>
-                <button class="button" id="no">Nee</button>
+            <div id="modalf" class="footer">
+                <div class="pos" id="b1">
+                    <button class="btn" id="yes">Ja</button>
+                    <button class="btn" id="no">Nee</button>
+                </div>
+                <div class="pos" id="b2">
+                    <button class="btn" id="confirm">Bevestigen</button>
+                </div>
+                <div class="pos" id="2B">
+                    <button class="btn" id="register">Registreren</button>
+                </div>
+                <div class="pos" id="b3">
+                    <button class="btn" id="save">Vastleggen</button>
+                </div>
+                <div class="pos" id="b4">
+                    <button class="btn" id="thanks">Bedankt</button>
+                </div>
+
             </div>
 
         </div>
