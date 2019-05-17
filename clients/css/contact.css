@@ -1,4 +1,4 @@
-#formulier{
+#formulier {
     margin-left: 10%;
     float: left;
 }
@@ -14,7 +14,7 @@
     padding-left: 0.5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-margin-left: 7%;
+    margin-left: 7%;
     border-width: 1px;
     background-color: rgb(243, 243, 243);
 }
@@ -30,7 +30,8 @@ margin-left: 7%;
     padding-left: 0.5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-   margin-left: 2.9%;
+    margin-left: 2.9%;
+    margin-top: 1%;
     border-width: 1px;
     background-color: rgb(243, 243, 243);
 }
@@ -47,6 +48,7 @@ margin-left: 7%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     margin-left: 1.8%;
+    margin-top: 1%;
     border-width: 1px;
     background-color: rgb(243, 243, 243);
 }
@@ -81,12 +83,12 @@ margin-left: 7%;
     margin-left: 31%;
 }
 
-#map{
-    margin-top: -31%;
+#map {
+    margin-top: -28%;
     margin-right: 15%;
     float: right;
 }
 
-#titel2{
+#titel2 {
     margin-left: 10%;
 }
