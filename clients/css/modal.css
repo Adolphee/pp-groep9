@@ -1,11 +1,10 @@
 .modal-layer{
-background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4);
     height: 100%;
+    z-index: 1;
     width: 100%;
     position: fixed;
 }
-
-
 hr{
     border-top: 1px;
     color: #dddddd;
@@ -19,8 +18,9 @@ hr{
     border-radius: 5px;
     position: fixed;
     padding-left: 4em;
-
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 input{
     border-radius: 5px;
@@ -31,13 +31,11 @@ input{
 
 .header{
     height: 20%;
-
 }
 
 .body{
     height: 50%;
     overflow: auto;
-
 }
 
 
@@ -78,4 +76,8 @@ input{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#loadModal {
+    display: none;
 }
