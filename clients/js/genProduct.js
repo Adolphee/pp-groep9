@@ -48,13 +48,15 @@
     
 // }
 
-function genProduct(id, naam, beschrijving) {
+function genProduct(id, naam, beschrijving, prijs, waarborg) {
         return `
         <div class="gridP">
             <img src="../images/${id}.png" class="productIMG">
             <div class="productOmschrijving">
                 <h2>${naam}</h2>
                 <p>${beschrijving}</p>
+                <p>Prijs: ${prijs}</p>
+                <p>Waarborg: ${waarborg}</p>
                 <p><span id="count"></span> beschikbaar</p>
                 <form>
                     <select id="selectItem" class="select">
