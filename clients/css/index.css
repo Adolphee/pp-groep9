@@ -4,6 +4,7 @@
 @import 'about.css';
 @import 'profile.css';
 @import 'cart.css';
+@import 'modal.css';
 
 body {
   font-family: 'Titillium Web', sans-serif;
@@ -63,6 +64,7 @@ margin-top: 20px;
   padding: 0.5em 1em;
   border: none;
   border-radius: 5px;
+  text-decoration: none;
 }
 .btn:hover{
   cursor: pointer;

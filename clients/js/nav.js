@@ -33,6 +33,5 @@ $(document).on("change",'#navdrop',function (e) {
         console.log(er1);
         console.log(er2);
     });
-    
 });
 });
