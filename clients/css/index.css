@@ -4,6 +4,7 @@
 @import 'about.css';
 @import 'profile.css';
 @import 'cart.css';
+@import 'modal.css';
 @import 'footer.css';
 
 body{
@@ -64,6 +65,7 @@ margin-top: 20px;
   padding: 0.5em 1em;
   border: none;
   border-radius: 5px;
+  text-decoration: none;
 }
 .btn:hover{
   cursor: pointer;
