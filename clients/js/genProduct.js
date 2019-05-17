@@ -55,11 +55,12 @@ function genProduct(id, naam, beschrijving) {
             <div class="productOmschrijving">
                 <h2>${naam}</h2>
                 <p>${beschrijving}</p>
+                <p><span id="count"></span> beschikbaar</p>
                 <form>
                     <select id="selectItem" class="select">
                         <option value="0">None</option>
                     </select>
-                    <button type="submit">add</button>
+                    <button type="submit" class="addCart">add</button>
                 </form>
             </div>
         </div>
