@@ -1,27 +1,57 @@
 .titel {
-    text-align: center;
-}
-
-.ondertitel {
-    margin-left: 37%;
-    user-select: none;
+    margin-left: 12.5%;
 }
 
 #input1 {
-    margin-left: 15%;
+    border-color: #e2e2e2;
+    border-style: solid;
+    border-radius: 5px;
+    padding-left: 0.5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-left: 6%;
+    border-width: 1px;
+    background-color: rgb(243, 243, 243);
+}
+
+#input1:focus {
+    outline: none;
 }
 
 #input2 {
-    margin-left: 10%;
+    border-color: #e2e2e2;
+    border-style: solid;
+    border-radius: 5px;
+    padding-left: 0.5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-left: 2.5%;
+    border-width: 1px;
+    background-color: rgb(243, 243, 243);
+}
+
+#input2:focus {
+    outline: none;
 }
 
 #input3 {
-    margin-left: 9%;
+    border-color: #e2e2e2;
+    border-style: solid;
+    border-radius: 5px;
+    padding-left: 0.5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-left: 1.8%;
+    border-width: 1px;
+    background-color: rgb(243, 243, 243);
 }
 
-#verplicht{
+#input3:focus {
+    outline: none;
+}
+
+#verplicht {
     font-size: small;
-    margin-left: 37%;
 }
 
 .button {
@@ -43,9 +73,20 @@
     border-radius: 5px;
     user-select: none;
 
-    margin-left: 37%;
+    margin-left: 25.3%;
 }
 
 #email_validation {
-    margin-left: 50%;
+    margin-left: 5%;
+
+}
+
+#map{
+    margin-top: -31%;
+    margin-right: 8%;
+    float: right;
+}
+
+#titel2{
+    margin-left: 15%;
 }
