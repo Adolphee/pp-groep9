@@ -1,0 +1,75 @@
+.modal-layer{
+background-color: rgba(0,0,0,0.4);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+
+hr{
+    border-top: 1px;
+    color: #dddddd;
+}
+.modal{
+    overflow: auto;
+    z-index: 1;
+    height: 400px;
+    width: 600px;
+    background-color:white ;
+    border-radius: 5px;
+    position: fixed;
+    padding-left: 4em;
+
+
+}
+input{
+    border-radius: 5px;
+    border: 1px #ddd solid;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+.header{
+    height: 20%;
+
+}
+
+.body{
+    height: 50%;
+    overflow: auto;
+
+}
+
+
+.footer{
+    height: 20%;
+}
+
+.tekst{
+    height:80%;
+    width: 80%;
+    background-color : white;
+    padding: 20px;
+    margin-right: 5em;
+}
+
+.close{
+    color: #aaaaaa;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+}
+#yes {
+    background-color: #7ed913;
+    border-radius: 5px;
+    border: 1px #aaaaaa solid;
+
+
+}
+.pos{
+    float: right;
+}
+#no{
+    border-radius: 5px;
+    border: 1px #aaaaaa solid;
+}

@@ -11,13 +11,13 @@
     border: 1px #ddd solid;
     border-radius: 10px;
     padding: 0.5em;
-    margin-left: 2em;
+    margin-left: 3em;
     margin-right: 1em;
 
 }
 nav{
-    padding-top: 2em;
-width:100%;
+    width:100%;
+    position:relative;
 }
 
 .icon{
@@ -25,17 +25,25 @@ width:100%;
     color: #212121;
 }
 #home{
-    margin-right: 0.5em;
+    width: 2em;
+    length: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    margin-right: 1em;
+
 }
 a{
     color: #212121;
 }
 
 header {
+    padding-bottom: 2em;
+    padding-top: 2em;
     background-color: #fff;
 }
 
 form{
     padding-top: 1em;
-    padding-bottom: 2em;
 }
+
