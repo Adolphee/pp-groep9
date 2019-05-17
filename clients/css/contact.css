@@ -1,5 +1,10 @@
+#formulier{
+    margin-left: 10%;
+    float: left;
+}
+
 .titel {
-    margin-left: 12.5%;
+    margin-left: 14%;
 }
 
 #input1 {
@@ -9,7 +14,7 @@
     padding-left: 0.5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    margin-left: 6%;
+margin-left: 7%;
     border-width: 1px;
     background-color: rgb(243, 243, 243);
 }
@@ -25,7 +30,7 @@
     padding-left: 0.5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    margin-left: 2.5%;
+   margin-left: 2.9%;
     border-width: 1px;
     background-color: rgb(243, 243, 243);
 }
@@ -73,20 +78,15 @@
     border-radius: 5px;
     user-select: none;
 
-    margin-left: 25.3%;
-}
-
-#email_validation {
-    margin-left: 5%;
-
+    margin-left: 31%;
 }
 
 #map{
     margin-top: -31%;
-    margin-right: 8%;
+    margin-right: 15%;
     float: right;
 }
 
 #titel2{
-    margin-left: 15%;
+    margin-left: 10%;
 }
