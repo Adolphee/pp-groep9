@@ -22,3 +22,15 @@ td {
 #bestelling #reserveer {
   float: right;
 }
+
+tfoot {
+  font-weight: bold;
+}
+
+.cross-cart {
+  padding: 1em;
+  color: rgb(214, 47, 47);
+}
+.cross-cart:hover {
+  cursor: pointer;
+}

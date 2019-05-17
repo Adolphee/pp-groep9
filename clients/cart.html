@@ -96,26 +96,27 @@
             <td>Naam product</td>
             <td>Prijs</td>
             <td>Waarborg</td>
+            <td></td>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>tent</td>
-            <td>20</td>
-            <td>10</td>
-          </tr>
-          <tr>
-              <td>tent</td>
-              <td>20</td>
-              <td>10</td>
-            </tr>
+        <tbody id="bestelregelsBody">
         </tbody>
+        <tfoot>
+          <tr>
+            <td >Som</td>
+            <td id="totaalPrijs"></td>
+            <td id="totaalWaarborg"></td>
+            <td></td>
+          </tr>
+        </tfoot>
       </table>
+      <br>
       <a href="" id="reserveer" class="btn primary">Reserveer</a>
     </div>
   </div>
   <div id="footer"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script src="js/loadPage.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/modal.js"></script>
