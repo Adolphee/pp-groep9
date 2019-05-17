@@ -84,14 +84,18 @@ $(document).ready(function(){
 
 
     $('#thanks').click(function(){
-        $('.modal').style.display = "none";
+        console.log('test');
+        $('.modal').css('display', 'none');
     });
     $('span').click(function(){
-        $('.modal').style.display = "none";
+        console.log('test');
+
+        $('.modal').css('display', 'none');
     });
     $('window').click(function(){
-        $('.modal').style.display = "none";
+        console.log('test');
+        $('.modal').css('display', 'none');
     });
-    
+
 });
 

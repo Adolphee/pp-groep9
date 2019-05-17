@@ -73,3 +73,9 @@ input{
     border-radius: 5px;
     border: 1px #aaaaaa solid;
 }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
