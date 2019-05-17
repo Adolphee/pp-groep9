@@ -18,6 +18,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(express.static('public'));
 
 // The route to get all the different data and post data from and to database
 app.use('/api', api);
@@ -29,7 +30,7 @@ app.use('/user', user);
 app.use('/contact', submitForm);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/static/index.html');
+  res.sendFile('index.html');
 });
 
 app.listen(PORT, () => {
