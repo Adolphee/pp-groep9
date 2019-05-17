@@ -92,6 +92,7 @@ $(document).ready(function(){
 
         $('.modal').css('display', 'none');
     });
+    //werkt niet
     $('window').click(function(){
         console.log('test');
         $('.modal').css('display', 'none');
