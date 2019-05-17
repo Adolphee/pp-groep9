@@ -1,6 +1,17 @@
-$(document).ready(function(){
-   console.log('linked');
+$(document).ready(() => {
+    $('#loadModal').hide();
+    $('#m2').hide();
+    $('#m2b').hide();
+    $('#m3').hide();
+    $('#m4').hide();
+});
+
+$(document).on('click', '#reserveer',function(e){
+    e.preventDefault();
+    console.log('linked');
    //default
+    $('#loadModal').css('display', 'block');
+    $('#loadModal').show();
     $('#m1').show();
     $('#m2').hide();
     $('#m2b').hide();
@@ -81,22 +92,13 @@ $(document).ready(function(){
     });
 
     // close the modal
-
-
     $('#thanks').click(function(){
         console.log('test');
-        $('.modal').css('display', 'none');
+        $('#loadModal').css('display', 'none');
     });
     $('span').click(function(){
         console.log('test');
-
-        $('.modal').css('display', 'none');
+        $('#loadModal').css('display', 'none');
     });
-    //werkt niet
-    $('window').click(function(){
-        console.log('test');
-        $('.modal').css('display', 'none');
-    });
-
 });
 

@@ -4,8 +4,10 @@
 @import 'about.css';
 @import 'profile.css';
 @import 'cart.css';
+@import 'modal.css';
+@import 'footer.css';
 
-body {
+body{
   font-family: 'Titillium Web', sans-serif;
   margin: 0;
   background-color: rgb(243, 243, 243);
@@ -117,15 +119,27 @@ margin-top: 20px;
   padding: 0.5em;
   margin-right: 1em;
 }
+/* .btn {
 
 .btn {
   padding: 0.5em 1em;
   border: none;
   border-radius: 5px;
+  text-decoration: none;
+} */
+.btn {
+  border: none;
+  color: #fff;
+  padding: 1em 1em;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-left: 40%;
+  border-radius: 5px;
 }
 
 .btn:hover{
   cursor: pointer;
+  background-color: #5a9e0b;
 }
 
 .center-btn {
@@ -135,5 +149,5 @@ margin-top: 20px;
 }
 .primary {
   color: rgb(214, 214, 214);
-  background-color: #50ce26;
+  background-color: #7ed913;
 }

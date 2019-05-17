@@ -8,11 +8,88 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <div id="loadModal">
+      <div class="modal-layer">
+          <div class="modal">
+              <div class="tekst">
+      
+                  <div class="header">
+                      <span class="close">&times;</span>
+                      <h2>Ter info</h2>
+                  </div>
+                  <hr>
+                  <div id="modalb" class="body">
+                      <p id="m1">Bent u al klant?</p>
+      
+                      <form id="m2">
+                          <label for="kid">Uw klant id: </label>
+                          <input id="kid" type="text" placeholder="bvb. 1">
+                      </form>
+      
+                      <form id="m2b">
+                          <label for="naam">Naam: </label>
+                          <input id="naam" type="text"> <br>
+                          <label for="vnaam">Voornaam: </label>
+                          <input id="vnaam" type="text" ><br>
+                          <label for="date">Geboortedatum: </label>
+                          <input id="date" type="text" placeholder="dd/mm/yyyy"><br>
+                          <label for="land">Land: </label>
+                          <input id="land" type="text" placeholder="BE,NL,FR,..."><br>
+                          <label for="stad">Gemeente/stad: </label>
+                          <input id="stad" type="text" ><br>
+                          <label for="zip">Postcode: </label>
+                          <input id="zip" type="text" ><br>
+                          <label for="straat">Straat: </label>
+                          <input id="straat" type="text" ><br>
+                          <label for="huisnr">Huisnummer: </label>
+                          <input id="huisnr" type="text" ><br>
+                          <label for="busnr">Busnummer*: </label>
+                          <input id="busnr" type="text" ><br>
+                          <p>*Niet verplicht</p>
+                      </form>
+      
+                      <form id="m3">
+                          <label for="start">Uitleendatum</label>
+                          <input id="start" type="text" placeholder="dd/mm/yyyy" > <br>
+                          <label for="eind">Einddatum*</label>
+                          <input id="eind" type="text" placeholder="dd/mm/yyyy">
+                      </form>
+      
+                      <p id="m4">Bedankt voor uw bestelling. De spullen worden zo dadelijk voor u aan de kassa klaargelegd!</p>
+                  </div>
+                  <hr>
+                  <div id="modalf" class="footer">
+                      <div class="pos" id="b1">
+                          <button class="btn" id="yes">Ja</button>
+                          <button class="btn" id="no">Nee</button>
+                      </div>
+                      <div class="pos" id="b2">
+                          <button class="btn" id="confirm">Bevestigen</button>
+                      </div>
+                      <div class="pos" id="2B">
+                          <button class="btn" id="register">Registreren</button>
+                      </div>
+                      <div class="pos" id="b3">
+                          <button class="btn" id="save">Vastleggen</button>
+                      </div>
+                      <div class="pos" id="b4">
+                          <button class="btn" id="thanks">Bedankt</button>
+                      </div>
+      
+                  </div>
+      
+              </div>
+          </div>
+      
+      </div>
+  </div>
   <div id="nav"></div>
   <div id="bestelling">
     <div class="container">
+      <h2>Winkelmandje</h2>
       <table>
         <thead>
           <tr>
@@ -34,10 +111,14 @@
             </tr>
         </tbody>
       </table>
-      <a href="" id="reserveer">Reserveer</a>
+      <a href="" id="reserveer" class="btn primary">Reserveer</a>
     </div>
   </div>
+  <div id="footer"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/footer.js"></script>
 </body>
 </html>
