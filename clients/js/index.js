@@ -1,8 +1,11 @@
 $(document).ready(() => {
+    let product;
+    let bestelregels= []
+
+
     $(document).on("click", '.view-product', (e) => {
         $('#catContainer').html('');
         let id = e.target.id;
-        let product;
         let items = [];
         let done = false;
 
@@ -38,4 +41,32 @@ $(document).ready(() => {
             console.log(err);
         });
     });
+
+    // add item to cart
+    $(document).on("click", ".addCart", (e) => {
+        e.preventDefault();
+        console.log('klik');
+        let itemID = $("#selectItem option:selected").val();
+        product.item_id = itemID;
+        if(sessionStorage.getItem("cart")!=null)
+        {
+            let tempArray = JSON.parse(sessionStorage.getItem("cart"));
+           //console.log(tempArray[0]);
+            // bestelregels gelijk aan temp zetten
+            bestelregels = tempArray;
+           /*
+            bestelregels.push();*/
+        }
+
+        bestelregels.push(product);
+       // console.log(bestelregels);
+        sessionStorage.setItem('cart', JSON.stringify(bestelregels));
+        console.log(JSON.parse(sessionStorage.getItem("cart")));
+        //console.log(JSON.parse(localStorage.getItem("cart")));
+        //console.log(localStorage.getItem('cart'))
+
+
+    });
+
+
 });

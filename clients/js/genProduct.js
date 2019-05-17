@@ -59,7 +59,7 @@ function genProduct(id, naam, beschrijving) {
                     <select id="selectItem" class="select">
                         <option value="0">None</option>
                     </select>
-                    <button type="submit">add</button>
+                    <button type="submit" class="addCart">add</button>
                 </form>
             </div>
         </div>
