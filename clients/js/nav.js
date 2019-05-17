@@ -5,6 +5,26 @@ $(document).ready(function () {
         $("#nav").html(res)
     });
 
+    // Laad alle producten
+    $.ajax({
+        method:'GET',
+        url:`http://10.3.50.56:3009/api/getAllProducts/`,
+        dataType: 'json'
+    }).done((res) => {
+        $('#catContainer').empty();
+        for (let b of res)
+        {
+            $('#catContainer').append(`
+            <div>
+                <img src='../images/${b.product_id}.png'>
+                <h3>${b.productnaam}</h3>
+                <button id="${b.product_id}" class="btn primary center-btn view-product">View product</button>
+            </div>`);
+        }
+    }).fail((err) => {
+        console.log(err);
+    });
+
 $(document).on("change",'#navdrop',function (e) {
     $('#product').html('');
     console.log("change van select werkt");
@@ -33,6 +53,5 @@ $(document).on("change",'#navdrop',function (e) {
         console.log(er1);
         console.log(er2);
     });
-    
 });
 });
