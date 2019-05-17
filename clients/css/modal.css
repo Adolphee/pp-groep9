@@ -1,16 +1,13 @@
 .modal-layer{
-background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4);
     height: 100%;
+    z-index: 1;
     width: 100%;
     position: fixed;
 }
-body{
-    background-color: rgba(0,0,0,0.4);
-
-}
-
 hr{
-    color: #aaaaaa;
+    border-top: 1px;
+    color: #dddddd;
 }
 .modal{
     overflow: auto;
@@ -20,7 +17,16 @@ hr{
     background-color:white ;
     border-radius: 5px;
     position: fixed;
-
+    padding-left: 4em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input{
+    border-radius: 5px;
+    border: 1px #ddd solid;
+    padding: 0.5em;
+    margin-top: 0.5em;
 }
 
 .header{
@@ -28,11 +34,10 @@ hr{
 }
 
 .body{
-    height: 40%;
-    margin-top: 2em;
-    margin-bottom: 2em;
-
+    height: 50%;
+    overflow: auto;
 }
+
 
 .footer{
     height: 20%;
@@ -43,6 +48,7 @@ hr{
     width: 80%;
     background-color : white;
     padding: 20px;
+    margin-right: 5em;
 }
 
 .close{
@@ -51,21 +57,27 @@ hr{
     font-size: 2em;
     font-weight: bold;
 }
-#yes{
+#yes {
     background-color: #7ed913;
     border-radius: 5px;
     border: 1px #aaaaaa solid;
-    position: relative;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
 
+
+}
+.pos{
+    float: right;
 }
 #no{
     border-radius: 5px;
     border: 1px #aaaaaa solid;
-    position: relative;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#loadModal {
+    display: none;
 }
