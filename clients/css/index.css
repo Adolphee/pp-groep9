@@ -125,20 +125,12 @@ margin-top: 20px;
   padding: 0.5em;
   margin-right: 1em;
 }
-/* .btn {
 
-.btn {
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-} */
 .btn {
   border: none;
   padding: 1em 1em;
   text-transform: uppercase;
   font-weight: normal;
-  margin-left: 40%;
   border-radius: 5px;
 }
 

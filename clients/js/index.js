@@ -1,6 +1,6 @@
 $(document).ready(() => {
     let product;
-    let bestelregels= []
+    let bestelregels= [];
 
 
     $(document).on("click", '.view-product', (e) => {
@@ -25,7 +25,7 @@ $(document).ready(() => {
                 console.log(items);
                 done = true;
                 if (done) {
-                    let pp = genProduct(id, product.productnaam, product.beschrijving);
+                    let pp = genProduct(id, product.productnaam, product.beschrijving, product.prijs, product.waarborg);
                     let count = 0;
                     console.log(pp);
                     $('#product').html(pp);
