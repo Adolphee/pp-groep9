@@ -7,6 +7,10 @@
 @import 'modal.css';
 @import 'footer.css';
 
+html {
+  visibility: hidden;
+}
+
 body{
   font-family: 'Titillium Web', sans-serif;
   margin: 0;
@@ -17,6 +21,7 @@ body{
   width: 85%;
   margin: 0 auto;
 }
+
 #catContainer
 {
 margin-top: 20px;
@@ -69,7 +74,6 @@ margin-top: 20px;
 } */
 .btn {
   border: none;
-  color: #fff;
   padding: 1em 1em;
   text-transform: uppercase;
   font-weight: normal;
@@ -86,6 +90,6 @@ margin-top: 20px;
   margin-left: 15%;
 }
 .primary {
-  color: rgb(214, 214, 214);
+  color: rgb(255, 255, 255);
   background-color: #7ed913;
 }
