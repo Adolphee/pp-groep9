@@ -154,20 +154,6 @@ router.get('/search/prijs/gt/:term', (req, res) => {
   });
 });
 
-app.post('/api/bestellingen/bestelregels', (req, res) => {
-  let itemId = req.body.itemId, bestelId = req.body.bestelId;
-  res.send({itemId, bestelId});
-  console.log(itemId, bestelId);
-  const query = `insert into bestelregels (item_id,bestelling_id,Archief) values (${itemId},${bestelId},0);`;
-  db.query(query, (err, results) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    res.send(results);
-  });
-});
-
 router.get('/search/prijs/lt/:term', (req, res) => {
   const term = req.params.term;
   const zoekQuery = `select * from producten where prijs < ${term};`;
