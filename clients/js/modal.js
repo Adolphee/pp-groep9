@@ -158,7 +158,7 @@ $(document).on('click', '#reserveer',function(e) {
                         }
                     }).done((bestelregel) => {
                         console.log(bestelregel);
-                        sessionStorage.removeItem('cart');
+                        sessionStorage.removeItem('cart'); // Shoppingcart leegmaken
                     }).fail((err) => {
                         console.log(err);
                     });

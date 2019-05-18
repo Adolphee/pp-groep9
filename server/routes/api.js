@@ -129,7 +129,7 @@ router.get('/kookGerei', (req, res) => {
 
 router.get('/search/:term', (req, res) => {
   const term = req.params.term;
-  const zoekQuery = `select * from producten where productnaam like '%${term}%' or description like '%${term}%';`;
+  const zoekQuery = `select * from producten where productnaam like '%${term}%' or beschrijving like '%${term}%';`;
   db.query(zoekQuery, (err, results) => {
     if (err) {
       console.log(err);
