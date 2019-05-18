@@ -56,11 +56,11 @@ function productImgCheck(id) {
                 async: false
 
         }).done(function (e) {
-                console.log("er is een img");
+                //console.log("er is een img");
                 pathIMG = id;
 
         }).fail(function (error) {
-                console.log("geen img");
+                //console.log("geen img");
                 pathIMG=-1;
         });
 
@@ -70,7 +70,7 @@ function productImgCheck(id) {
 function genProduct(id, naam, beschrijving) {
         return `
         <div class="gridP">
-            <img src="../images/${id}.png" class="productIMG">
+            <img src="../images/${productImgCheck(id)}.png" class="productIMG">
             <div class="productOmschrijving">
                 <h2>${naam}</h2>
                 <p>${beschrijving}</p>
