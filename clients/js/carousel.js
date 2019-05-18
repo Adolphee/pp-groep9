@@ -5,9 +5,12 @@ $(document).ready(function(){
     function plusDivs(n) {
         showDivs(slideIndex += n);
     }
-
-    $("#leftbtn").click(plusDivs(-1));
-    $("#rightbtn").click(plusDivs(+1));
+    $(document).on('click',"#leftbtn",function(){
+       plusDivs(-1);
+    });
+    $(document).on('click',"#rightbtn",function(){
+       plusDivs(+1);
+    });
 
     function showDivs(n) {
         let i;
@@ -21,3 +24,16 @@ $(document).ready(function(){
     }
 });
 
+
+function carousel() {
+    let i;
+    let slideIndex = 0;
+    let x = $(".carousel");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex -1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
