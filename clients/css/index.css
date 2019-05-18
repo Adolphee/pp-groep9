@@ -138,7 +138,6 @@ body {
 
 .btn:hover {
   cursor: pointer;
-  background-color: #5a9e0b;
 }
 
 .center-btn {
@@ -150,6 +149,19 @@ body {
 .primary {
   color: rgb(255, 255, 255);
   background-color: #7ed913;
+}
+
+.primary:hover {
+  background-color: #5a9e0b;
+}
+
+.second {
+  color: rgb(255, 255, 255);
+  background-color: #555555;
+}
+
+.second:hover {
+  background-color: #3a3a3a;
 }
 
 
