@@ -70,6 +70,32 @@ $(document).on('click', '#reserveer',function(e) {
         $('#b4').hide();
     });
     $('#register').click(function () {
+        // Maak nieuwe klant
+        let newKlant = {
+            voornaam: document.getElementById('voornaam').value,
+            achternaam: document.getElementById('naam').value,
+            geboortedatum: document.getElementById('date').value,
+            land: document.getElementById('land').value,
+            gemeente: document.getElementById('stad').value,
+            postcode: document.getElementById('zip').value,
+            straat: document.getElementById('straat').value,
+            huisnummer: document.getElementById('huisnr').value,
+            busnummer: document.getElementById('busnr').value
+        }
+        console.log(newKlant);
+        
+        // Doe ajax post naar insert/newKlant
+        $.ajax({
+            method: 'POST',
+            url: 'http://10.3.50.56:3009/api/insert/newKlant',
+            data: newKlant
+        }).done((res) => {
+            console.log(res);
+            sessionStorage.setItem('klant', JSON.stringify(res));
+        }).fail((err) => {
+            console.log(err);
+        })
+        
         $('#m1').hide();
         $('#m2').hide();
         $('#m2b').hide();
@@ -84,7 +110,8 @@ $(document).on('click', '#reserveer',function(e) {
     });
     $('#save').click(function (e) {
         let klantId = document.getElementById("kid").value;
-
+        console.log(klantId);
+        
         if (klantId === undefined || klantId === "") {
             //e.preventDefault();
             let form = document.getElementById("kid");
@@ -154,15 +181,15 @@ $(document).on('click', '#reserveer',function(e) {
             $('#b4').show();
         });
 
-        // close the modal
-        $('#thanks').click(function () {
-            console.log('test');
-            $('#loadModal').css('display', 'none');
-            location.reload(); // om te tonen dat shipping car leeg is nu
-        });
-        $('span').click(function () {
-            console.log('test');
-            $('#loadModal').css('display', 'none');
-        });
+    });
+    // close the modal
+    $('#thanks').click(function () {
+        console.log('test');
+        $('#loadModal').css('display', 'none');
+        location.reload(); // om te tonen dat shipping car leeg is nu
+    });
+    $('span').click(function () {
+        console.log('test');
+        $('#loadModal').css('display', 'none');
     });
 });

@@ -254,7 +254,8 @@ router.post('/insert/newKlant', (req, res) => {
           console.log('changed adres_id to = ' + adresId);
           res.send({
             msg: "klant bestaat al",
-            klantId: klantId
+            klantId: klantId,
+            adresId: adresId
           })
         })
       }
@@ -268,7 +269,8 @@ router.post('/insert/newKlant', (req, res) => {
           klantId = result.insertId;
           res.send({
             msg: "klant is aangemaakt",
-            klantId: klantId
+            klantId: klantId,
+            adresId: adresId
           })
         });
       }
