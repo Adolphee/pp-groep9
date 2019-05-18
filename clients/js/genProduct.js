@@ -47,6 +47,25 @@
 //     }
     
 // }
+function productImgCheck(id) {
+        let urlimg = `../images/${id}.png`;
+        let pathIMG
+        $.ajax({
+                url:urlimg,
+                method: 'GET',
+                async: false
+
+        }).done(function (e) {
+                console.log("er is een img");
+                pathIMG = id;
+
+        }).fail(function (error) {
+                console.log("geen img");
+                pathIMG=-1;
+        });
+
+        return pathIMG;
+}
 
 function genProduct(id, naam, beschrijving) {
         return `
