@@ -3,6 +3,10 @@ $(document).ready(function () {
         url: "./general parts/nav.html"
     }).done(function (res) {
         $("#nav").html(res)
+        if (!window.location.pathname.includes('index')) {
+            console.log('remove dropdown');
+            $('#catDrop').hide();
+        }
     });
 
     // Laad alle producten

@@ -1,10 +1,11 @@
 $(document).ready(() => {
     let product;
-    let bestelregels= []
+    let bestelregels= [];
 
 
     $(document).on("click", '.view-product', (e) => {
-        $('#catContainer').html('');
+        $('#catContainer').hide();
+        $('#carousel').hide();
         let id = e.target.id;
         let items = [];
         let done = false;
@@ -25,15 +26,27 @@ $(document).ready(() => {
                 console.log(items);
                 done = true;
                 if (done) {
-                    let pp = genProduct(id, product.productnaam, product.beschrijving);
+                    let pp = genProduct(id, product.productnaam, product.beschrijving, product.prijs, product.waarborg);
                     let count = 0;
                     console.log(pp);
+                    $('#product').show();
                     $('#product').html(pp);
+
+                    // Tel ze allemaal
                     for (const item of items) {
-                        $('#selectItem').append(`
-                            <option value="${item.item_id}">Item ${item.item_id}</option>
-                        `);
                         count++;
+                        console.log(count);
+                        
+                    }
+                    if (count != 0) {
+                        for (const item of items) {
+                            $('#selectItem').append(`
+                                <option value="${item.item_id}">Item ${item.item_id}</option>
+                            `);
+                        }
+                    } else {
+                        $('#selectItem').hide();
+                        $('#cartBtn').hide();
                     }
                     $('#count').html(count);
                 }
@@ -44,6 +57,12 @@ $(document).ready(() => {
             console.log(err);
         });
     });
+
+    $(document).on('click', '#back', () => {
+        $('#product').hide();
+        $('#catContainer').show();
+        $('#carousel').show();
+    })
 
     // add item to cart
     $(document).on("click", ".addCart", (e) => {
