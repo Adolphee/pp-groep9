@@ -131,8 +131,7 @@ $(document).on('click', '#reserveer',function(e) {
                         }
                     }).done((bestelregel) => {
                         console.log(bestelregel);
-                        // TODO: post-aankoop formaliteiten
-                        // Get all free items off that specific produc
+                        sessionStorage.removeItem('cart');
                     }).fail((err) => {
                         console.log(err);
                     });
@@ -159,6 +158,7 @@ $(document).on('click', '#reserveer',function(e) {
         $('#thanks').click(function () {
             console.log('test');
             $('#loadModal').css('display', 'none');
+            location.reload(); // om te tonen dat shipping car leeg is nu
         });
         $('span').click(function () {
             console.log('test');
