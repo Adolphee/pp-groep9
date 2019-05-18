@@ -128,7 +128,7 @@ $(document).on('click', '#reserveer',function(e) {
         //TODO: use this IP --> 10.3.50.56
         $.ajax({
             method: 'GET',
-            url: `http://10.3.50.56:3009/api/klanten/${klantId}`
+            url: `http://localhost:3009/api/klanten/${klantId}`
         }).done((klant) => {
             console.log(klant);
             console.log({
@@ -139,7 +139,7 @@ $(document).on('click', '#reserveer',function(e) {
             });
             $.ajax({
                 method: 'POST',
-                url: `http://10.3.50.56:3009/api/bestellingen`,
+                url: `http://localhost:3009/api/bestellingen`,
                 data: {
                     uitleendatum: startDatum,
                     einddatum: eindDatum,
@@ -151,14 +151,14 @@ $(document).on('click', '#reserveer',function(e) {
                 items.forEach((item) => {
                     $.ajax({
                         method: 'POST',
-                        url: `http://10.3.50.56:3009/api/bestellingen/bestelregels`,
+                        url: `http://localhost:3009/api/bestellingen/bestelregels`,
                         data: {
                             itemId: item.item_id,
                             bestelId: bestelling.bestelling_id
                         }
                     }).done((bestelregel) => {
                         console.log(bestelregel);
-                        sessionStorage.removeItem('cart');
+                        sessionStorage.removeItem('cart'); // Shoppingcart leegmaken
                     }).fail((err) => {
                         console.log(err);
                     });
@@ -166,6 +166,7 @@ $(document).on('click', '#reserveer',function(e) {
             }).fail((err) => {
                 console.log(err);
             });
+
 
             $('#m1').hide();
             $('#m2').hide();
@@ -179,6 +180,7 @@ $(document).on('click', '#reserveer',function(e) {
             $('#b3').hide();
             $('#b4').show();
         });
+
     });
     // close the modal
     $('#thanks').click(function () {

@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const bodyParser     =        require("body-parser");
-//Here we are configuring express to use body-parser as middle-ware.
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-//const axios = require('axios');
+const axios = require('axios');
+const bodyParser = require('body-parser');
 const db = require('../config/db');
 
 app.use(bodyParser.json());
@@ -133,42 +130,6 @@ router.get('/kookGerei', (req, res) => {
 router.get('/search/:term', (req, res) => {
   const term = req.params.term;
   const zoekQuery = `select * from producten where productnaam like '%${term}%' or beschrijving like '%${term}%';`;
-  db.query(zoekQuery, (err, results) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    res.send(results);
-  });
-});
-
-router.get('/search/prijs/gt/:term', (req, res) => {
-  const term = req.params.term;
-  const zoekQuery = `select * from producten where prijs > ${term};`;
-  db.query(zoekQuery, (err, results) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    res.send(results);
-  });
-});
-
-router.get('/search/prijs/lt/:term', (req, res) => {
-  const term = req.params.term;
-  const zoekQuery = `select * from producten where prijs < ${term};`;
-  db.query(zoekQuery, (err, results) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    res.send(results);
-  });
-});
-
-router.get('/search/prijs/eq/:term', (req, res) => {
-  const term = req.params.term;
-  const zoekQuery = `select * from producten where prijs = ${term};`;
   db.query(zoekQuery, (err, results) => {
     if (err) {
       console.log(err);
