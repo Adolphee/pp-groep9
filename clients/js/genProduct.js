@@ -50,6 +50,8 @@
 
 function genProduct(id, naam, beschrijving, prijs, waarborg) {
         return `
+        <br>
+        <button id="back" class="btn second">Back</button>
         <div class="gridP">
             <img src="../images/${id}.png" class="productIMG">
             <div class="productOmschrijving">
@@ -62,7 +64,7 @@ function genProduct(id, naam, beschrijving, prijs, waarborg) {
                     <select id="selectItem" class="select">
                         <option value="0">None</option>
                     </select>
-                    <button type="submit" class="addCart">add</button>
+                    <button id="cartBtn" type="submit" class="addCart btn primary">Voeg toe aan winkelmandje</button>
                 </form>
             </div>
         </div>
