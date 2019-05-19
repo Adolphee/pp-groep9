@@ -27,51 +27,48 @@
 <div id="nav"></div>
 
 <!-- Form -->
-<div class="container">
-    <div class="container">
 
-        <!-- Titel  -->
-        <h1 class="titel">Contact</h1>
+<div class="formcontainer">
 
-        <!-- Contactformulier -->
-        <form method="post" id="contact">
+    <!-- Titel  -->
+    <h1 class="titel">Contact</h1>
 
-            <!-- Naam -->
-            <label for="input1" title="Naam"><b>Naam: *</b></label>
-            <input type="text" name="Naam" size="35" maxlength="70" minlength="3" required="required"
-                   id="input1"/>
-            <br>
+    <!-- Contactformulier -->
+    <form method="post" id="contact">
 
-            <!-- E-mailadres -->
-            <label for="input2" title="E-mailadres"><b>E-mailadres: *</b></label>
-            <input type="email" name="e-mailadres" size="35" maxlength="70" required="required" id="input2"
-                   onblur="Email_Validatie()"
-            />
-            <div id=email_validation></div>
-            <br>
+        <!-- Naam -->
+        <label for="inputNaam"><b>Naam: *</b></label>
+        <input title="Naam" type="text" size="37" maxlength="50" minlength="3" required="required"
+               id="inputNaam"/>
+        <br>
 
-            <!-- Vraag/Klacht -->
+        <!-- E-mailadres -->
+        <label for="inputEmail"><b>E-mailadres: *</b></label>
+        <input title="E-mailadres" type="email" size="37" maxlength="50" minlength="5" required="required"
+               id="inputEmail"/>
+        <br>
 
-            <label for="input3" title="Vraag/klacht?"><b>Vraag/Klacht? *</b></label>
-            <textarea name="vraag" cols="37" rows="4" required="required" id="input3"></textarea>
+        <!-- Vraag/Klacht -->
+        <label for="inputVraag"><b>Vraag/Klacht? *</b></label>
+        <textarea title="Vraag/klacht?" cols="40" rows="4" minlength="1" required="required" id="inputVraag"></textarea>
 
-            <!-- Verplicht -->
-            <p id="verplicht">Velden met een * zijn verplicht in te vullen!</p>
-            <br>
-        </form>
+        <!-- Verplicht -->
+        <p id="verplicht">Velden met een * zijn verplicht in te vullen!</p>
+        <br>
+    </form>
 
-        <!-- Verzendknop -->
-        <button type="submit" class="button" title="Send" id="submitform"><b>Verzenden</b></button>
+    <!-- Verzendknop -->
+    <button type="submit" class="button" title="Send" id="submitform"><b>Verzenden</b></button>
 
-    </div>
 </div>
+
 
 <!-- Map -->
 <div id="map">
     <h1 id="titel2">Waar kan je ons vinden?</h1>
     <br>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4018545532645!2d4.320619315281099!3d50.8422423669382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c40f19faf0f9%3A0x4ef5b683135ecb1e!2sErasmushogeschool+Brussel!5e0!3m2!1snl!2sbe!4v1558085101846!5m2!1snl!2sbe"
-            width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+           frameborder="0" style="border:0" allowfullscreen id="iFrame"></iframe>
 </div>
 
 <!-- Footer -->
