@@ -39,16 +39,15 @@
             <!-- Naam -->
             <label for="input1" title="Naam"><b>Naam: *</b></label>
             <input type="text" name="Naam" size="35" maxlength="70" minlength="3" required="required"
-                   id="input1"
-            />
-
+                   id="input1"/>
             <br>
 
             <!-- E-mailadres -->
             <label for="input2" title="E-mailadres"><b>E-mailadres: *</b></label>
             <input type="email" name="e-mailadres" size="35" maxlength="70" required="required" id="input2"
+                   onblur="Email_Validatie()"
             />
-
+            <div id=email_validation></div>
             <br>
 
             <!-- Vraag/Klacht -->
