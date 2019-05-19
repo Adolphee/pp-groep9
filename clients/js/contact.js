@@ -12,7 +12,7 @@ $(document).ready(() => {
         let data = $('form').serializeArray();
         console.log(data);
         $.ajax({
-            url: "http://10.3.50.56:3009/api/contact/submitForm",
+            url: "http://10.3.50.56:3009/contact/submitForm",
             data: data,
             method: 'post'
         }).done((res) => {
