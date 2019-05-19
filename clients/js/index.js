@@ -88,6 +88,9 @@ $(document).ready(() => {
             //console.log(JSON.parse(localStorage.getItem("cart")));
             //console.log(localStorage.getItem('cart'))
 
+
+
+
         }
     });
 
