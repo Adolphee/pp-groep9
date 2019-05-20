@@ -1,12 +1,12 @@
-<!-- Navigatiebalk -->
 $(document).ready(() => {
+    // Navigatiebalk 
     $.ajax({
         url: './general parts/nav.html'
     }).done((res) => {
         $("#nav").html(res)
     });
 
-    <!-- Submit -->
+    // Submit
     $('#submitform').click(function (e) {
         e.preventDefault();
         let data = $('form').serializeArray();
