@@ -55,8 +55,8 @@ $(document).ready(() => {
             });
         }).fail((err) => {
             console.log(err);
-        });.
-        
+        });
+
     });
 
     $(document).on('click', '#back', () => {
