@@ -7,7 +7,7 @@ $(document).ready(() => {
 });
 
 function datumOmkeer(datum){
-    let temp = datum.split('/');
+    let temp = datum.split('-');
     return `${temp[2]}/${temp[1]}/${temp[0]}`;
 }
 
@@ -57,17 +57,43 @@ $(document).on('click', '#reserveer',function(e) {
         $('#b4').hide();
     });
     $('#confirm').click(function () {
-        $('#m1').hide();
-        $('#m2').hide();
-        $('#m2b').hide();
-        $('#m3').show();
-        $('#m4').hide();
-
-        $('#b1').hide();
-        $('#b2').hide();
-        $('#2B').hide();
-        $('#b3').show();
-        $('#b4').hide();
+        // Is klant id ingevuld of niet
+        let kid = $('#kid').val();
+        console.log('kid: ', kid);
+        if (kid == undefined || kid == '') {
+            console.log('geen geldig kid');
+            $('.msg').css('visibility', 'visible');
+            $('.msg').html('Klant id mag niet leeg zijn');
+        } else {
+            // Kijken of klant al bestaat
+            $.ajax({
+                method: 'GET',
+                url: `http://10.3.50.56:3009/api/klanten/${kid}`
+            }).done((res) => {
+                console.log(res);
+                if (res == '') {
+                    console.log(res);
+                    
+                    console.log('id bestaat niet');
+                    $('.msg').css('visibility', 'visible');
+                    $('.msg').html('Klant id bestaat niet');
+                }
+                else {
+                    $('.msg').css('visibility', 'hidden');
+                    $('#m1').hide();
+                    $('#m2').hide();
+                    $('#m2b').hide();
+                    $('#m3').show();
+                    $('#m4').hide();
+            
+                    $('#b1').hide();
+                    $('#b2').hide();
+                    $('#2B').hide();
+                    $('#b3').show();
+                    $('#b4').hide();
+                }
+            })
+        }
     });
     $('#register').click(function () {
         // Maak nieuwe klant
@@ -113,12 +139,21 @@ $(document).on('click', '#reserveer',function(e) {
         console.log(klantId);
         
         if (klantId === undefined || klantId === "") {
-            //e.preventDefault();
-            let form = document.getElementById("kid");
-            let label = document.createElement("label");
-            label.appendChild(document.createTextNode("Ongeldige klantId. Probeer opnieuw!"));
-            form.appendChild(label);
+            let klant = JSON.parse(sessionStorage.getItem('klant'));
+            if (klant == null) {
+                //e.preventDefault();
+                let form = document.getElementById("kid");
+                let label = document.createElement("label");
+                label.appendChild(document.createTextNode("Ongeldige klantId. Probeer opnieuw!"));
+                console.log('well null');
+                form.appendChild(label);
+            } else {
+                klantId = klant.klantId;
+                console.log('niet null');
+                
+            }
         }
+
 
         let startDatum = datumOmkeer(document.getElementById("start").value);
         let eindDatum = datumOmkeer(document.getElementById("eind").value);
@@ -128,7 +163,7 @@ $(document).on('click', '#reserveer',function(e) {
         //TODO: use this IP --> 10.3.50.56
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3009/api/klanten/${klantId}`
+            url: `http://10.3.50.56:3009/api/klanten/${klantId}`
         }).done((klant) => {
             console.log(klant);
             console.log({
@@ -139,7 +174,7 @@ $(document).on('click', '#reserveer',function(e) {
             });
             $.ajax({
                 method: 'POST',
-                url: `http://localhost:3009/api/bestellingen`,
+                url: `http://10.3.50.56:3009/api/bestellingen`,
                 data: {
                     uitleendatum: startDatum,
                     einddatum: eindDatum,
@@ -151,7 +186,7 @@ $(document).on('click', '#reserveer',function(e) {
                 items.forEach((item) => {
                     $.ajax({
                         method: 'POST',
-                        url: `http://localhost:3009/api/bestellingen/bestelregels`,
+                        url: `http://10.3.50.56:3009/api/bestellingen/bestelregels`,
                         data: {
                             itemId: item.item_id,
                             bestelId: bestelling.bestelling_id
@@ -159,6 +194,8 @@ $(document).on('click', '#reserveer',function(e) {
                     }).done((bestelregel) => {
                         console.log(bestelregel);
                         sessionStorage.removeItem('cart'); // Shoppingcart leegmaken
+                        sessionStorage.removeItem('klant');
+                        klantId = undefined;
                     }).fail((err) => {
                         console.log(err);
                     });
