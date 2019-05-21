@@ -1,60 +1,84 @@
-#formulier {
-    margin-left: 10%;
-    float: left;
+.formcontainer {
+    margin-left: 13%;
+    margin-top: 3%;
+    width: 50%;
+    height: 70%;
+    box-sizing: content-box;
 }
 
 .titel {
     margin-left: 14%;
 }
 
-#input1 {
+/*Naam*/
+#inputNaam {
     border-color: #e2e2e2;
     border-style: solid;
     border-radius: 5px;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-left: 7%;
     border-width: 1px;
+
+    padding: 0.5%;
+
+    margin-left: 9.3%;
+
     background-color: rgb(243, 243, 243);
+    width: 50%;
 }
 
-#input1:focus {
+#inputNaam:focus {
     outline: none;
 }
 
-#input2 {
+#inputNaam:valid {
+    background-color: #7ed913;
+}
+
+/*E-mail*/
+#inputEmail {
     border-color: #e2e2e2;
     border-style: solid;
     border-radius: 5px;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-left: 2.9%;
+    border-width: 1px;
+
+    padding: 0.5%;
+
+    margin-left: 3.5%;
     margin-top: 1%;
-    border-width: 1px;
+
     background-color: rgb(243, 243, 243);
+    width: 50%;
 }
 
-#input2:focus {
+#inputEmail:focus {
     outline: none;
 }
 
-#input3 {
+#inputEmail:valid {
+    background-color: #7ed913;
+}
+
+/*Vraag/Klacht*/
+#inputVraag {
     border-color: #e2e2e2;
     border-style: solid;
     border-radius: 5px;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-left: 1.8%;
-    margin-top: 1%;
     border-width: 1px;
+
+    padding: 0.5%;
+
+    margin-left: 2.5%;
+    margin-top: 1%;
+
     background-color: rgb(243, 243, 243);
+    width: 50%;
 }
 
-#input3:focus {
+#inputVraag:focus {
     outline: none;
+}
+
+#inputVraag:valid {
+    background-color: #7ed913;
 }
 
 #verplicht {
@@ -71,12 +95,9 @@
     white-space: nowrap;
     vertical-align: middle;
     touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
     border: 1px solid transparent;
     padding: 8px 15px;
     font-size: 15px;
-    line-height: 1.42857143;
     border-radius: 5px;
     user-select: none;
 
@@ -85,10 +106,17 @@
 
 #map {
     margin-top: -28%;
-    margin-right: 15%;
+    margin-right: 13%;
     float: right;
+    width: 30%;
+    height: 70%;
 }
 
 #titel2 {
     margin-left: 10%;
+}
+
+#iFrame {
+    width: 28em;
+    height: 17em;
 }
