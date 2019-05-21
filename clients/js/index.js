@@ -64,6 +64,7 @@ $(document).ready(() => {
         }).fail((err) => {
             console.log(err);
         });
+
     });
 
     $(document).on('click', '#back', () => {
@@ -100,7 +101,7 @@ $(document).ready(() => {
             //console.log(JSON.parse(localStorage.getItem("cart")));
             //console.log(localStorage.getItem('cart'))
 
-
+            
 
 
         }
