@@ -4,10 +4,19 @@ $(document).ready(() => {
 
 
     $(document).on("click", '.view-product', (e) => {
-        $('#catContainer').html('');
+        $('#catContainer').hide();
+        $('#carousel').hide();
+        $('.about').hide();
+        $('#bestelling').hide();
+        $('#contactPage').hide();
+        $('#map').hide();
         let id = e.target.id;
         let items = [];
         let done = false;
+
+        if (e.target.classList.contains('bar')) {
+            $('#prList').css('visibility', 'hidden');      
+        }
 
         // Get product
         $.ajax({
@@ -28,12 +37,24 @@ $(document).ready(() => {
                     let pp = genProduct(id, product.productnaam, product.beschrijving, product.prijs, product.waarborg);
                     let count = 0;
                     console.log(pp);
+                    $('#product').show();
                     $('#product').html(pp);
+
+                    // Tel ze allemaal
                     for (const item of items) {
-                        $('#selectItem').append(`
-                            <option value="${item.item_id}">Item ${item.item_id}</option>
-                        `);
                         count++;
+                        console.log(count);
+                        
+                    }
+                    if (count != 0) {
+                        for (const item of items) {
+                            $('#selectItem').append(`
+                                <option value="${item.item_id}">Item ${item.item_id}</option>
+                            `);
+                        }
+                    } else {
+                        $('#selectItem').hide();
+                        $('#cartBtn').hide();
                     }
                     $('#count').html(count);
                 }
@@ -44,6 +65,16 @@ $(document).ready(() => {
             console.log(err);
         });
     });
+
+    $(document).on('click', '#back', () => {
+        $('#product').hide();
+        $('#catContainer').show();
+        $('#carousel').show();
+        $('.about').show();
+        $('#bestelling').show();
+        $('#contactPage').show();
+        $('#map').show();
+    })
 
     // add item to cart
     $(document).on("click", ".addCart", (e) => {
@@ -68,6 +99,9 @@ $(document).ready(() => {
             console.log(JSON.parse(sessionStorage.getItem("cart")));
             //console.log(JSON.parse(localStorage.getItem("cart")));
             //console.log(localStorage.getItem('cart'))
+
+
+
 
         }
     });
