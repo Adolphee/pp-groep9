@@ -107,7 +107,8 @@ $(document).on('click', '#reserveer',function(e) {
             straat: document.getElementById('straat').value,
             huisnummer: document.getElementById('huisnr').value,
             busnummer: document.getElementById('busnr').value
-        }
+        };
+
         console.log(newKlant);
         
         // Doe ajax post naar insert/newKlant

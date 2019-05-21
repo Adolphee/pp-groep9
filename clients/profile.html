@@ -11,18 +11,55 @@
 </head>
 <body>
 <div id="nav"></div>
-<div class="sidenav">
-    <i class="far fa-user"></i><a href="#profiel">Mijn Profiel</a>
-   <br> <i class="fas fa-barcode"></i><a href="#bestellingen"> Mijn Bestellingen</a>
-    <br> <i class="far fa-grin"></i><a href="#reviews"> Mijn Reviews</a>
-    <br> <i class="fas fa-shopping-cart"></i><a href="#winkelmandje">Mijn Winkelmandje</a>
-</div>
+<div id="sidestep2">
+    <div id="left">
+        <div class="login-page">
+            <div class="form">
+                <form class="login-form">
+                    <input type="text" placeholder="username"/>
+                    <input type="password" placeholder="password"/>
+                    <button>login</button>
+                </form>
 
+            </div>
+        </div>
+        <div id="sidenav">
+            <i class="far fa-user"></i><a href="#profiel">Mijn Profiel</a>
+            <br> <i class="fas fa-barcode"></i><a href="#bestellingen"> Mijn Bestellingen</a>
+            <br> <i class="far fa-grin"></i><a href="#reviews"> Mijn Reviews</a>
+            <br> <i class="fas fa-shopping-cart"></i><a href="#winkelmandje">Mijn Winkelmandje</a>
+        </div>
+    </div>
+    <div id="right">
+        <div class="login-page">
+            <div class="form formright">
+                <form class="login-form">
+                    <input name="voornaam" id="voornaam" type="text" placeholder="Voornaam">
+                    <input name="achternaam" id="naam" type="text" placeholder="Achternaam">
+                    <input name="geboortedatum" id="date" type="date" placeholder="dd/mm/yyyy" placeholder="Geboortedatum">
+                    <input name="land" id="land" type="text" placeholder="BE,NL,FR,..." placeholder="Land">
+                    <input name="gemeente" id="stad" type="text" placeholder="Stad">
+                    <input name="postcode" id="zip" type="text" placeholder="Postcode">
+                    <input name="straat" id="straat" type="text" placeholder="Straat">
+                    <input name="huisnummer" id="huisnr" type="text" placeholder="Huisnummer">
+                    <input name="busnummer" id="busnr" type="text" placeholder="Busnummer">
+                    <input type="text" placeholder="username"/>
+                    <input type="password" placeholder="password"/>
+                    <button id="register">Registreer</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 <div id="footer"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="js/modal.js"></script>
 <script src="js/loadPage.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/genProduct.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/footer.js"></script>
 </body>
