@@ -32,7 +32,7 @@ $(document).ready(function () {
         }
         $.ajax({
             method: 'GET',
-            url: `http://localhost:3009/api/search/${term}`
+            url: `http://10.3.50.56:3009/api/search/${term}`
         }).done((producten) => {
             $('#prList').empty();
             $('#prList').css('visibility', 'visible');
