@@ -6,9 +6,17 @@ $(document).ready(() => {
     $(document).on("click", '.view-product', (e) => {
         $('#catContainer').hide();
         $('#carousel').hide();
+        $('.about').hide();
+        $('#bestelling').hide();
+        $('#contactPage').hide();
+        $('#map').hide();
         let id = e.target.id;
         let items = [];
         let done = false;
+
+        if (e.target.classList.contains('bar')) {
+            $('#prList').css('visibility', 'hidden');      
+        }
 
         // Get product
         $.ajax({
@@ -63,6 +71,10 @@ $(document).ready(() => {
         $('#product').hide();
         $('#catContainer').show();
         $('#carousel').show();
+        $('.about').show();
+        $('#bestelling').show();
+        $('#contactPage').show();
+        $('#map').show();
     })
 
     // add item to cart

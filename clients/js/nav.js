@@ -10,12 +10,17 @@ $(document).ready(function () {
     });
 
     $(function(){
-        $("#search").keyup(function () {
-            console.log("The value is:",this.value);
-            zoekNieuweWaarde(this.value);
+        $(document).on('input', '#search', (e) => {
+            console.log("The value is: ",e.target.value);
+            zoekNieuweWaarde(e.target.value);
         });
-        $("#search").blur(function () {
-            document.getElementById('json-datalist').innerHTML = "";
+        $(document).on('click', 'body', (e) => {
+            if (!e.target.classList.contains('view-product') && !(e.target.id == 'search')) {
+                $('#prList').hide();
+            }
+        });
+        $(document).on('focus', '#search', () => {
+            $('#prList').show();
         });
     });
 
@@ -29,14 +34,15 @@ $(document).ready(function () {
             method: 'GET',
             url: `http://localhost:3009/api/search/${term}`
         }).done((producten) => {
-            let dataList = document.getElementById('json-datalist');
-            dataList.innerHTML = "";
-            producten.forEach((product) => {
-                let option = document.createElement('option');
-                option.value = product.productnaam;
-                option.id = product.product_id;
-                dataList.appendChild(option);
+            $('#prList').empty();
+            $('#prList').css('visibility', 'visible');
+            producten.forEach(product => {
+                console.log(product);
+                $('#prList').append(`
+                    <p id="${product.product_id}" class="view-product bar">${product.productnaam}</p>
+                `);
             });
+
         }).fail((err) => {
             console.log(err);
         });
@@ -63,8 +69,8 @@ $(document).ready(function () {
     });
 
 $(document).on("change",'#navdrop',function (e) {
-
     $('#product').html('');
+    $('#catContainer').show();
     console.log("change van select werkt");
     let value = e.target.value;
     let ajaxPath = "http://10.3.50.56:3009/api/"+value;

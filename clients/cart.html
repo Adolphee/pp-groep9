@@ -16,6 +16,7 @@
 <body>
   <div id="loadModal">
     <div class="modal-layer">
+        <div class="msg"></div>
       <div class="modal">
         <div class="tekst">
 
@@ -65,9 +66,10 @@
 
             <form id="m3">
               <label for="start">Uitleendatum</label>
-              <input id="start" type="text" placeholder="dd/mm/yyyy"> <br>
+
+              <input id="start" type="date"> <br>
               <label for="eind">Einddatum*</label>
-              <input id="eind" type="text" placeholder="dd/mm/yyyy">
+              <input id="eind" type="date">
             </form>
 
             <p id="m4">Bedankt voor uw bestelling. De spullen worden zo dadelijk voor u aan de kassa klaargelegd!</p>
@@ -99,6 +101,9 @@
     </div>
   </div>
   <div id="nav"></div>
+  <div class="container">
+    <div id="product"></div>
+  </div>
   <div id="bestelling">
     <div class="container">
       <h2>Winkelmandje</h2>
@@ -128,6 +133,8 @@
   </div>
   <div id="footer"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script src="js/genProduct.js"></script>
+  <script src="js/index.js"></script>
   <script src="js/loadPage.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
