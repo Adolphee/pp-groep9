@@ -62,13 +62,18 @@ form{
     padding: 0em 1em;
 }
 
-#prList p {
+#prList li {
+    list-style: none;
     padding: 0.5em 0;
     margin: 0.5em 0;
     border-bottom: 1px solid rgb(223, 223, 223);
 }
 
-#prList p:hover {
+#prList li:hover {
     cursor: pointer;
+}
+
+#prList li:last-child {
+    border-bottom: none;
 }
 
