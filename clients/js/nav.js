@@ -39,7 +39,7 @@ $(document).ready(function () {
             producten.forEach(product => {
                 console.log(product);
                 $('#prList').append(`
-                    <p id="${product.product_id}" class="view-product bar">${product.productnaam}</p>
+                    <li id="${product.product_id}" class="view-product bar">${product.productnaam}</li>
                 `);
             });
 
