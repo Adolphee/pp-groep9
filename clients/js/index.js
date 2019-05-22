@@ -82,23 +82,6 @@ $(document).ready(() => {
         }).fail((err) => {
             console.log(err);
         });
-        // let footerHeight, bottomPosFooter, topPosFooter;
-        
-        //     footerHeight = $('#footer').height();
-        //     topPosFooter = $('#footer').offset().top;
-        //     bottomPosFooter = footerHeight + topPosFooter;
-    
-        //     if (bottomPosFooter < $(window).height()) {
-        //         console.log('drop footer');
-        //         $('#footer').css('position', 'absolute');
-        //         $('#footer').css('bottom', '0');
-        //         $('#footer').css('width', '100%');
-        //     }
-    
-        $(document).on('click','#scroll',(e) => {
-            e.preventDefault();
-            $('html, body').animate({scrollTop : 0},500);
-        });
     });
 
     $(document).on('click', '#back', () => {
