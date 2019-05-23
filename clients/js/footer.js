@@ -4,9 +4,7 @@ $(document).ready(function () {
     }).done(function (res) {
         $("#footer").html(res);
     });
-});
 
-$(document).ready(function () {
     let footerHeight, bottomPosFooter, topPosFooter;
     $.ajax({
         url: "./general parts/footer.html"

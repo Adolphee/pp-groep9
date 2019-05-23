@@ -38,21 +38,21 @@
         <!-- Naam -->
         <div id="divnaam">
             <label for="inputNaam"><b>Naam: *</b></label>
-            <input title="Naam" type="text" size="37" maxlength="50" minlength="3" required="required"
+            <input name="naam" title="Naam" type="text" size="37" required="required"
                    id="inputNaam"/>
         </div>
 
         <!-- E-mailadres -->
         <div id="divemail">
             <label for="inputEmail"><b>E-mailadres: *</b></label>
-            <input title="E-mailadres" type="email" size="37" maxlength="50" minlength="5" required="required"
+            <input name="email" title="E-mailadres" type="email" size="37" maxlength="50" minlength="5" required="required"
                    id="inputEmail"/>
         </div>
 
         <!-- Vraag/Klacht -->
         <div id="divvraag">
             <label for="inputVraag"><b>Vraag/Klacht? *</b></label>
-            <textarea title="Vraag/klacht?" cols="40" rows="4" minlength="1" required="required"
+            <textarea name="msg" title="Vraag/klacht?" cols="40" rows="4" minlength="1" required="required"
                       id="inputVraag"></textarea>
         </div>
 
@@ -62,7 +62,7 @@
     </form>
 
     <!-- Verzendknop -->
-    <button type="submit" class="button" title="Send" id="submitform"><b>Verzenden</b></button>
+    <button type="submit" class="btn primary" title="Send" id="submitform"><b>Verzenden</b></button>
 
 </div>
 
