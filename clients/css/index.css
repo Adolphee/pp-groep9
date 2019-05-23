@@ -171,7 +171,7 @@ a {
 .msg {
   top: 0;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   visibility: hidden;
   color: #fff;
   background-color: red;
@@ -206,6 +206,9 @@ a {
 
 
 @media screen and (max-width: 700px) {
+  .msg {
+    width: 80%;
+  }
   #catContainer div {
     display: inline-block;
     border-radius: 5px;
