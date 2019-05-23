@@ -1,66 +1,37 @@
-// function genProduct(id) {
-//     let done = false;
-//     let product;
-//     let items = [];
-//     // Get product
-//     $.ajax({
-//         method:'GET',
-//         url:`http://10.3.50.56:3009/api/getProduct/${id}`
-//     }).done((res) => {
-//         product = res[0];
+function productImgCheck(id) {
+        let urlimg = `../images/${id}.png`;
+        let pathIMG
+        $.ajax({
+                url:urlimg,
+                method: 'GET',
+                async: false
 
-//          // Get all free items off that specific product
-//         $.ajax({
-//             method:'GET',
-//             url:`http://10.3.50.56:3009/api/getFreeItems/${id}`
-//         }).done((res) => {
-//             items = res;
-//             console.log(product.productnaam);
-//             console.log(items);
-//             done = true;
-//         }).fail((err) => {
-//             console.log(err);
-//         });
+        }).done(function (e) {
+                //console.log("er is een img");
+                pathIMG = id;
 
-//     }).fail((err) => {
-//         console.log(err);
-//     });
-//     if (done) {
-//         return `
-//         <div class="gridP">
-//             <img src="" class="productIMG">
-//             <div class="productOmschrijving">
-//                 <h2>${product.productnaam}</h2>
-//                 <p>${product.beschrijving}</p>
-//                 <form>
-//                     <select class="select">
-//                         <option value="1">Item 1</option>
-//                         <option value="2">Item 2</option>
-//                         <option value="1">Item 3</option>
-//                         <option value="1">Item 4</option>
-//                     </select>
-//                     <button type="submit">add</button>
-//                 </form>
-//             </div>
-//         </div>
-//         `;
-//     }
-    
-// }
+        }).fail(function (error) {
+                //console.log("geen img");
+                pathIMG=-1;
+        });
 
-function genProduct(id, naam, beschrijving) {
+        return pathIMG;
+}
+
+function genProduct(id, naam, beschrijving, prijs, waarborg) {
         return `
+        <br>
+        <button id="back" class="btn second">Back</button>
         <div class="gridP">
-            <img src="../images/${id}.png" class="productIMG">
+            <img src="../images/${productImgCheck(id)}.png" class="productIMG">
             <div class="productOmschrijving">
                 <h2>${naam}</h2>
                 <p>${beschrijving}</p>
+                <p>Prijs / Dag: ${prijs}</p>
+                <p>Waarborg: ${waarborg}</p>
                 <p><span id="count"></span> beschikbaar</p>
                 <form>
-                    <select id="selectItem" class="select">
-                        <option value="0">None</option>
-                    </select>
-                    <button type="submit" class="addCart">add</button>
+                    <button id="cartBtn" type="submit" class="addCart btn primary">Voeg toe aan winkelmandje</button>
                 </form>
             </div>
         </div>

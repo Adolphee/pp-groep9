@@ -9,6 +9,10 @@ footer {
     text-align: center;
 }
 
+#footer {
+    z-index: -1;
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;
