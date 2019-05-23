@@ -9,6 +9,9 @@ $(document).ready(() => {
         $('#bestelling').hide();
         $('#contactPage').hide();
         $('#map').hide();
+        $('.sidenav').hide();
+        $('#form').hide();
+        $('#mapcontainer').hide();
         let id = e.target.id;
         let items = [];
         let done = false;
@@ -92,6 +95,9 @@ $(document).ready(() => {
         $('#bestelling').show();
         $('#contactPage').show();
         $('#map').show();
+        $('.sidenav').show();
+        $('#form').show();
+        $('#mapcontainer').show();
     })
 
     // add item to cart
