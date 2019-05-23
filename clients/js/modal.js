@@ -96,19 +96,33 @@ $(document).on('click', '#reserveer',function(e) {
         }
     });
     $('#register').click(function () {
-        // Maak nieuwe klant
-        let newKlant = {
-            voornaam: $('#voornaam').val(),
-            achternaam: $('#naam').val(),
-            geboortedatum: $('#date').val(),
-            land: $('#land').val(),
-            gemeente: $('#stad').val(),
-            postcode: $('#zip').val(),
-            straat: $('#straat').val(),
-            huisnummer: $('#huisnr').val(),
-            busnummer: $('#busnr').val()
-        }
-        console.log(newKlant);
+        let voornaam = $('#voornaam').val();
+        let naam = $('#naam').val();
+        let date = $('#date').val();
+        let land = $('#land').val();
+        let stad = $('#stad').val();
+        let zip = $('#zip').val();
+        let straat = $('#straat').val();
+        let huisnr = $('#huisnr').val();
+        if ((voornaam == undefined || voornaam == '') || (naam == undefined || naam == '')||(date == undefined || date == '')||(land == undefined || land == '')||(stad == undefined || stad == '')||(zip == undefined || zip == '')||(straat == undefined || straat == '')||(huisnr == undefined || huisnr == '')) {
+            console.log('Niet alle vielden zijn ingevuld');
+            $('.msg').css('visibility', 'visible');
+            $('.msg').html('Alle velden moeten ingevuld zijn');
+        }else
+            // Maak nieuwe klant
+            {
+                 let newKlant = {
+                    voornaam: $('#voornaam').val(),
+                    achternaam: $('#naam').val(),
+                    geboortedatum: $('#date').val(),
+                    land: $('#land').val(),
+                    gemeente: $('#stad').val(),
+                    postcode: $('#zip').val(),
+                    straat: $('#straat').val(),
+                    huisnummer: $('#huisnr').val(),
+                    busnummer: $('#busnr').val()
+                  }
+                console.log(newKlant);
         
         // Doe ajax post naar insert/newKlant
         $.ajax({
@@ -128,11 +142,30 @@ $(document).on('click', '#reserveer',function(e) {
         $('#m3').show();
         $('#m4').hide();
 
-        $('#b1').hide();
-        $('#b2').hide();
-        $('#2B').hide();
-        $('#b3').show();
-        $('#b4').hide();
+                // Doe ajax post naar insert/newKlant
+                $.ajax({
+                    method: 'POST',
+                    url: 'http://10.3.50.56:3009/api/insert/newKlant',
+                    data: newKlant
+                }).done((res) => {
+                    console.log(res);
+                    sessionStorage.setItem('klant', JSON.stringify(res));
+                }).fail((err) => {
+                    console.log(err);
+                })
+
+                $('#m1').hide();
+                $('#m2').hide();
+                $('#m2b').hide();
+                $('#m3').show();
+                $('#m4').hide();
+
+                $('#b1').hide();
+                $('#b2').hide();
+                $('#2B').hide();
+                $('#b3').show();
+                $('#b4').hide();
+            }
     });
     $('#save').click(function (e) {
         let klantId = document.getElementById("kid").value;
@@ -154,73 +187,84 @@ $(document).on('click', '#reserveer',function(e) {
             }
         }
 
+        let startDatum = $('#start').val();
+        let eindDatum = $('#eind').val();
+        if ((startDatum == undefined || startDatum == '') || (eindDatum == undefined || eindDatum == '')|| (eindDatum < startDatum)){
 
-        let startDatum = datumOmkeer(document.getElementById("start").value);
-        let eindDatum = datumOmkeer(document.getElementById("eind").value);
-        let items = JSON.parse(sessionStorage.getItem('cart'));
-        console.log("cart items: ", items);
+            console.log('Vul beide data');
+            $('.msg').css('visibility', 'visible');
+            $('.msg').html('Beide data moeten ingevuld zijn en einddatum moet groter zijn dan startdatum');
+        } else {
 
-        //TODO: use this IP --> 10.3.50.56
-        $.ajax({
-            method: 'GET',
-            url: `http://10.3.50.56:3009/api/klanten/${klantId}`
-        }).done((klant) => {
-            console.log(klant);
-            console.log({
-                uitleendatum: startDatum,
-                einddatum: eindDatum,
-                klant_id: klant.klant_id,
-                lev_adres_id: klant.klant_adres_id
-            });
+
+             startDatum = datumOmkeer(document.getElementById("start").value);
+             eindDatum = datumOmkeer(document.getElementById("eind").value);
+            let items = JSON.parse(sessionStorage.getItem('cart'));
+            console.log("cart items: ", items);
+
+            //TODO: use this IP --> 10.3.50.56
             $.ajax({
-                method: 'POST',
-                url: `http://10.3.50.56:3009/api/bestellingen`,
-                data: {
+                method: 'GET',
+                url: `http://10.3.50.56:3009/api/klanten/${klantId}`
+            }).done((klant) => {
+                console.log(klant);
+                console.log({
                     uitleendatum: startDatum,
                     einddatum: eindDatum,
                     klant_id: klant.klant_id,
                     lev_adres_id: klant.klant_adres_id
-                }
-            }).done((bestelling) => {
-                console.log(bestelling);
-                items.forEach((item) => {
-                    $.ajax({
-                        method: 'POST',
-                        url: `http://10.3.50.56:3009/api/bestellingen/bestelregels`,
-                        data: {
-                            itemId: item.item_id,
-                            bestelId: bestelling.bestelling_id
-                        }
-                    }).done((bestelregel) => {
-                        console.log(bestelregel);
-                        sessionStorage.removeItem('cart'); // Shoppingcart leegmaken
-                        sessionStorage.removeItem('klant');
-                        klantId = undefined;
-                    }).fail((err) => {
-                        console.log(err);
-                    });
                 });
-            }).fail((err) => {
-                console.log(err);
+                $.ajax({
+                    method: 'POST',
+                    url: `http://10.3.50.56:3009/api/bestellingen`,
+                    data: {
+                        uitleendatum: startDatum,
+                        einddatum: eindDatum,
+                        klant_id: klant.klant_id,
+                        lev_adres_id: klant.klant_adres_id
+                    }
+                }).done((bestelling) => {
+                    console.log(bestelling);
+                    items.forEach((item) => {
+                        $.ajax({
+                            method: 'POST',
+                            url: `http://10.3.50.56:3009/api/bestellingen/bestelregels`,
+                            data: {
+                                itemId: item.item_id,
+                                bestelId: bestelling.bestelling_id
+                            }
+                        }).done((bestelregel) => {
+                            console.log(bestelregel);
+                            sessionStorage.removeItem('cart'); // Shoppingcart leegmaken
+                            sessionStorage.removeItem('klant');
+                            klantId = undefined;
+                        }).fail((err) => {
+                            console.log(err);
+                        });
+                    });
+                }).fail((err) => {
+                    console.log(err);
+                });
+
+
+                $('#m1').hide();
+                $('#m2').hide();
+                $('#m2b').hide();
+                $('#m3').hide();
+                $('#m4').show();
+
+                $('#b1').hide();
+                $('#b2').hide();
+                $('#2B').hide();
+                $('#b3').hide();
+                $('#b4').show();
             });
-
-
-            $('#m1').hide();
-            $('#m2').hide();
-            $('#m2b').hide();
-            $('#m3').hide();
-            $('#m4').show();
-
-            $('#b1').hide();
-            $('#b2').hide();
-            $('#2B').hide();
-            $('#b3').hide();
-            $('#b4').show();
-        });
-
+        }
     });
     // close the modal
     $('#thanks').click(function () {
+     $("input").val("");
+     $("date").val("");
         console.log('test');
         $('#loadModal').css('display', 'none');
         location.reload(); // om te tonen dat shipping car leeg is nu

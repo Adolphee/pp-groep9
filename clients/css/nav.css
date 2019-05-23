@@ -77,3 +77,15 @@ form{
     border-bottom: none;
 }
 
+@media screen and (max-width: 1005px){
+    #search{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 852px){
+    #search{
+        width: 50%;
+    }
+}
+
+
