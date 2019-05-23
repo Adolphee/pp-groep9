@@ -96,7 +96,6 @@ $(document).on('click', '#reserveer',function(e) {
         }
     });
     $('#register').click(function () {
-        // Maak nieuwe klant
         let voornaam = $('#voornaam').val();
         let naam = $('#naam').val();
         let date = $('#date').val();
@@ -110,19 +109,38 @@ $(document).on('click', '#reserveer',function(e) {
             $('.msg').css('visibility', 'visible');
             $('.msg').html('Alle velden moeten ingevuld zijn');
         }else
+            // Maak nieuwe klant
             {
-                let newKlant = {
-                    voornaam: document.getElementById('voornaam').value,
-                    achternaam: document.getElementById('naam').value,
-                    geboortedatum: document.getElementById('date').value,
-                    land: document.getElementById('land').value,
-                    gemeente: document.getElementById('stad').value,
-                    postcode: document.getElementById('zip').value,
-                    straat: document.getElementById('straat').value,
-                    huisnummer: document.getElementById('huisnr').value,
-                    busnummer: document.getElementById('busnr').value
-                };
+                 let newKlant = {
+                    voornaam: $('#voornaam').val(),
+                    achternaam: $('#naam').val(),
+                    geboortedatum: $('#date').val(),
+                    land: $('#land').val(),
+                    gemeente: $('#stad').val(),
+                    postcode: $('#zip').val(),
+                    straat: $('#straat').val(),
+                    huisnummer: $('#huisnr').val(),
+                    busnummer: $('#busnr').val()
+                  }
                 console.log(newKlant);
+        
+        // Doe ajax post naar insert/newKlant
+        $.ajax({
+            method: 'POST',
+            url: 'http://10.3.50.56:3009/api/insert/newKlant',
+            data: newKlant
+        }).done((res) => {
+            console.log(res);
+            sessionStorage.setItem('klant', JSON.stringify(res));
+        }).fail((err) => {
+            console.log(err);
+        })
+        
+        $('#m1').hide();
+        $('#m2').hide();
+        $('#m2b').hide();
+        $('#m3').show();
+        $('#m4').hide();
 
                 // Doe ajax post naar insert/newKlant
                 $.ajax({
