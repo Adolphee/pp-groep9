@@ -81,3 +81,9 @@ input{
 #loadModal {
     display: none;
 }
+
+@media screen and (max-width: 750px) {
+    .modal {
+        width: 100%;
+    }
+}

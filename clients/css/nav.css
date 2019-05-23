@@ -77,6 +77,39 @@ form{
     border-bottom: none;
 }
 
+.full-nav {
+    display: inline;
+}
+
+
+.mobile-nav {
+    z-index: 2;
+    background-color: #212121;
+    color: #fff;
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.mobile-nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    padding: 1em;
+}
+
+.mobile-nav a,
+.mobile-nav i {
+    color: #fff;
+}
+
+#mobile-btn {
+    margin-top: 0.2em;
+    display: none;
+}
+
 @media screen and (max-width: 1005px){
     #search{
         width: 60%;
@@ -85,6 +118,52 @@ form{
 @media screen and (max-width: 852px){
     #search{
         width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .full-nav {
+        display: none;
+    }
+    .full-nav a,
+    .full-nav i {
+        display: block;
+        color: red;
+    }
+    .mobile-nav {
+        z-index: 2;
+        background-color: #212121;
+    }
+    .mobile-nav ul li {
+       list-style: none;
+       text-align: right;
+    }
+    #mobile-btn {
+        display: inline;
+        float: right;
+    }
+    #mobile-btn i {
+        font-size: 18pt;
+    }
+    #close {
+        display: none;
+    }
+    #home {
+        top: 0; 
+        transform: translateY(0);
+        position: relative;
+        float: left;
+    }
+    #search {
+        float: left;
+        margin-left: 0;
+    }
+    nav {
+        display: inline-block;
+    }
+    #prList {
+        margin-left: 0;
+        width: 80%;
     }
 }
 

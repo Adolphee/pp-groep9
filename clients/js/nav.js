@@ -9,9 +9,9 @@ $(document).ready(function () {
         }
     });
 
-    $(function(){
+    $(function () {
         $(document).on('input', '#search', (e) => {
-            console.log("The value is: ",e.target.value);
+            console.log("The value is: ", e.target.value);
             zoekNieuweWaarde(e.target.value);
         });
         $(document).on('click', 'body', (e) => {
@@ -25,9 +25,9 @@ $(document).ready(function () {
     });
 
     function zoekNieuweWaarde(term) {
-        if (term.length==0) {
+        if (term.length == 0) {
             let search = $("#livesearch");
-            search.innerHTML="";
+            search.innerHTML = "";
             return;
         }
         $.ajax({
@@ -50,13 +50,12 @@ $(document).ready(function () {
 
     // Laad alle producten
     $.ajax({
-        method:'GET',
-        url:`http://10.3.50.56:3009/api/getAllProducts/`,
+        method: 'GET',
+        url: `http://10.3.50.56:3009/api/getAllProducts/`,
         dataType: 'json'
     }).done((res) => {
         $('#catContainer').empty();
-        for (let b of res)
-        {
+        for (let b of res) {
             $('#catContainer').append(`
             <div>
                 <img src='../images/${productImgCheck(b.product_id)}.png'>
@@ -68,36 +67,48 @@ $(document).ready(function () {
         console.log(err);
     });
 
-$(document).on("change",'#navdrop',function (e) {
-    $('#product').html('');
-    $('#catContainer').show();
-    console.log("change van select werkt");
-    let value = e.target.value;
-    let ajaxPath = "http://10.3.50.56:3009/api/"+value;
-    $.ajax({
-        url: ajaxPath,
-        method: 'GET',
-        dataType: 'json'
-    }).done(function(data){
-        console.log('DONE');
-        console.log(data);
-        // deleten van vorige items
-        $('#catContainer').empty();
+    $(document).on("change", '#navdrop', function (e) {
+        $('#product').html('');
+        $('#catContainer').show();
+        console.log("change van select werkt");
+        let value = e.target.value;
+        let ajaxPath = "http://10.3.50.56:3009/api/" + value;
+        $.ajax({
+            url: ajaxPath,
+            method: 'GET',
+            dataType: 'json'
+        }).done(function (data) {
+            console.log('DONE');
+            console.log(data);
+            // deleten van vorige items
+            $('#catContainer').empty();
 
-        for (let b of data)
-        {
+            for (let b of data) {
 
-            $('#catContainer').append(`
+                $('#catContainer').append(`
             <div>
                 <img src='../images/${productImgCheck(b.product_id)}.png'>
                 <h3>${b.productnaam}</h3>
                 <button id="${b.product_id}" class="btn primary center-btn view-product">View product</button>
             </div>`);
-        }
+            }
 
-    }).fail(function(er1, er2){
-        console.log(er1);
-        console.log(er2);
+        }).fail(function (er1, er2) {
+            console.log(er1);
+            console.log(er2);
+        });
     });
-});
+    let i = 0;
+
+    // Navbar mobile knop
+    $(document).on('click', '.fa-bars', () => {
+        $('#toggle-btn').removeClass('fa-bars');
+        $('#toggle-btn').addClass('fa-times');
+        $('.mobile-nav').slideDown(200);
+    })
+    $(document).on('click', '.fa-times', () => {
+        $('#toggle-btn').addClass('fa-bars');
+        $('#toggle-btn').removeClass('fa-times');
+        $('.mobile-nav').slideUp(200);
+    })
 });

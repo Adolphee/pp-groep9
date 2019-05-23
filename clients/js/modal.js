@@ -272,5 +272,6 @@ $(document).on('click', '#reserveer',function(e) {
     $('span').click(function () {
         console.log('test');
         $('#loadModal').css('display', 'none');
+        $('.msg').css('visibility', 'hidden');
     });
 });
