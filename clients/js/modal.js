@@ -98,15 +98,15 @@ $(document).on('click', '#reserveer',function(e) {
     $('#register').click(function () {
         // Maak nieuwe klant
         let newKlant = {
-            voornaam: document.getElementById('voornaam').value,
-            achternaam: document.getElementById('naam').value,
-            geboortedatum: document.getElementById('date').value,
-            land: document.getElementById('land').value,
-            gemeente: document.getElementById('stad').value,
-            postcode: document.getElementById('zip').value,
-            straat: document.getElementById('straat').value,
-            huisnummer: document.getElementById('huisnr').value,
-            busnummer: document.getElementById('busnr').value
+            voornaam: $('#voornaam').val(),
+            achternaam: $('#naam').val(),
+            geboortedatum: $('#date').val(),
+            land: $('#land').val(),
+            gemeente: $('#stad').val(),
+            postcode: $('#zip').val(),
+            straat: $('#straat').val(),
+            huisnummer: $('#huisnr').val(),
+            busnummer: $('#busnr').val()
         }
         console.log(newKlant);
         
