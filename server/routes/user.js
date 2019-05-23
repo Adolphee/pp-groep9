@@ -3,15 +3,18 @@ const router = express.Router();
 const db = require('../config/db');
 
 router.post('/register', (req, res) => {
-    let { username, password } = req.body;
-    console.log(username, password);
+    let { username, pwd } = req.body;
+    console.log(username, pwd);
+    if (username == 'jarno' && pwd == '1234') {
+        req.session.sid = username;
+        res.send('logged in');
+        console.log(req.session);
+        
+    } else {
+        res.send('not logged in');
+    }
+
     
-    res.json(
-        {
-            "msg-type": "success",
-            "msg": "successfully registered"
-        }
-    );
 });
 
 module.exports = router;
