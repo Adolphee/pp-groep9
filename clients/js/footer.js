@@ -14,8 +14,8 @@ $(document).ready(function () {
         topPosFooter = $('#footer').offset().top;
         bottomPosFooter = footerHeight + topPosFooter;
 
-        if (bottomPosFooter < $(window).height()) {
-            console.log('drop footer');
+        if (bottomPosFooter <= $(window).height()) {
+            console.log('fix footer');
             $('#footer').css('position', 'absolute');
             $('#footer').css('bottom', '0');
             $('#footer').css('width', '100%');
