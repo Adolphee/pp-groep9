@@ -98,7 +98,6 @@ $(document).ready(function () {
             console.log(er2);
         });
     });
-    let i = 0;
 
     // Navbar mobile knop
     $(document).on('click', '.fa-bars', () => {
