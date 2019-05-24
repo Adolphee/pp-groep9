@@ -26,7 +26,8 @@ $(document).ready(function() {
         }
     });
 
-    $('#register').click(function () {
+    $('#register').click(function (e) {
+        e.preventDefault();
         // Maak nieuwe klant
         let newKlant = {
             voornaam: document.getElementById('voornaam').value,
@@ -41,6 +42,7 @@ $(document).ready(function() {
             username: document.getElementById('username').value,
             password: document.getElementById('password').value
         };
+        
         $.ajax({
             type: 'POST',
             url: 'http://10.3.50.56:3009/api/insert/newKlantWithLogin',
