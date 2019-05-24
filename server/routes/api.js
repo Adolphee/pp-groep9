@@ -256,7 +256,7 @@ router.post('/insert/newKlant', (req, res) => {
             msg: "klant bestaat al",
             klantId: klantId,
             adresId: adresId
-          })
+          });
         })
       }
       // Wanneer de klant nog niet bestaat -> nieuwe klant aanmaken
@@ -271,7 +271,7 @@ router.post('/insert/newKlant', (req, res) => {
             msg: "klant is aangemaakt",
             klantId: klantId,
             adresId: adresId
-          })
+          });
         });
       }
     })
