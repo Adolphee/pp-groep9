@@ -122,6 +122,7 @@ $(document).ready(function() {
         $("#bestellingenLijst").hide();
         let klant = JSON.parse(sessionStorage.getItem('klant'));
 
+        $('#knr').html(klant.klant_id);
         $("#vnaam").html(klant.voornaam);
         $("#fnaam").html(klant.achternaam);
         $("#gdatum").html(klant.geboortedatum);
