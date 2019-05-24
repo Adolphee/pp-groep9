@@ -5,58 +5,103 @@
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div id="nav"></div>
 <div id="sidestep2">
-    <div id="left">
-        <div class="login-page">
-            <div class="form">
-                <form class="login-form">
-                    <input type="text" placeholder="username"/>
-                    <input type="password" placeholder="password"/>
-                    <button>login</button>
-                </form>
-
-            </div>
-        </div>
-        <div id="sidenav">
-            <i class="far fa-user"></i><a href="#profiel">Mijn Profiel</a>
-            <br> <i class="fas fa-barcode"></i><a href="#bestellingen"> Mijn Bestellingen</a>
-            <br> <i class="far fa-grin"></i><a href="#reviews"> Mijn Reviews</a>
-            <br> <i class="fas fa-shopping-cart"></i><a href="#winkelmandje">Mijn Winkelmandje</a>
-        </div>
+    <div id="sidenav">
+        <i class="far fa-user"></i><a id="mijnprofiel" href="#profiel">Mijn Profiel</a>
+        <br> <i class="fas fa-barcode"></i><a id="bestellingen" href="#bestellingen"> Mijn Bestellingen</a>
+        <br> <i class="far fa-grin"></i><a href="#reviews"> Mijn Reviews</a>
+        <br> <i class="fas fa-shopping-cart"></i><a href="cart.html">Mijn Winkelmandje</a>
+        <br> <button id="logout">Log uit</button>
     </div>
-    <div id="right">
-        <div class="login-page">
-            <div class="form formright">
-                <form class="login-form">
-                    <input name="voornaam" id="voornaam" type="text" placeholder="Voornaam">
-                    <input name="achternaam" id="naam" type="text" placeholder="Achternaam">
-                    <input name="geboortedatum" id="date" type="date" placeholder="dd/mm/yyyy" placeholder="Geboortedatum">
-                    <input name="land" id="land" type="text" placeholder="BE,NL,FR,..." placeholder="Land">
-                    <input name="gemeente" id="stad" type="text" placeholder="Stad">
-                    <input name="postcode" id="zip" type="text" placeholder="Postcode">
-                    <input name="straat" id="straat" type="text" placeholder="Straat">
-                    <input name="huisnummer" id="huisnr" type="text" placeholder="Huisnummer">
-                    <input name="busnummer" id="busnr" type="text" placeholder="Busnummer">
-                    <input type="text" placeholder="username"/>
-                    <input type="password" placeholder="password"/>
-                    <button id="register">Registreer</button>
-                </form>
+    <div id="loginContainer">
+        <div id="left">
+            <div class="login-page">
+                <div class="form">
+                    <form class="login-form">
+                        <input id="inlogveld" type="text" placeholder="username"/>
+                        <input id="wwveld" type="password" placeholder="password"/>
+                        <button type="button" id="inlogknop">login</button>
+                    </form>
 
-                <div class="container">
-                    <div id="product"></div>
                 </div>
-
-
             </div>
         </div>
-    </div>
+        <div id="right">
+            <div class="login-page">
+                <div class="form formright">
+                    <form class="login-form">
+                        <input id="voornaam" type="text" placeholder="Voornaam">
+                        <input id="naam" type="text" placeholder="Achternaam">
+                        <input id="date" type="date" placeholder="Geboortedatum">
+                        <input id="land" type="text" placeholder="Land">
+                        <input id="stad" type="text" placeholder="Stad">
+                        <input id="zip" type="text" placeholder="Postcode">
+                        <input id="straat" type="text" placeholder="Straat">
+                        <input id="huisnr" type="text" placeholder="Huisnummer">
+                        <input id="busnr" type="text" placeholder="Busnummer">
+                        <input id="username" type="text" placeholder="username"/>
+                        <input id="password" type="password" placeholder="password"/>
+                        <button id="register">Registreer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="mijnprofieldiv">
 
+            <table style="width:20%" align="center">
+                <tr>
+                    <th >Voornaam</th>
+                    <td id="vnaam" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Achternaam</th>
+                    <td id="fnaam" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Geboortedatum</th>
+                    <td id="gdatum" align="right"></td>
+                </tr>
+            </table>
+            <br><br><br>
+            <table style="width:20%" align="center">
+                <tr>
+                    <th>Straat</th>
+                    <td id="pstraat" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Huisnummer</th>
+                    <td id="phuisnr" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Busnummer</th>
+                    <td id="pbusnr" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Postcode</th>
+                    <td id="pcode" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Stad</th>
+                    <td id="pstad" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Land</th>
+                    <td id="pland" align="right"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="bestellingenLijst">
+            <ul id="bList" type="none" draggable="true">
+                <div class="column">
+                </div>
+            </ul>
+        </div>
+    </div>
 </div>
 <div id="footer"></div>
 
