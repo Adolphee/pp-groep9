@@ -168,8 +168,47 @@ a {
   background-color: #3a3a3a;
 }
 
+.msg {
+  top: 0;
+  position: absolute;
+  z-index: 5;
+  visibility: hidden;
+  color: #fff;
+  background-color: red;
+  padding: 1em;
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  margin-top: 2em;
+}
+
+.success {
+  background-color: rgb(55, 202, 55);
+}
+
+.error {
+  background-color: red;
+}
+
+.msg-cross {
+  position: absolute;
+  float: right;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  padding: 1em;
+}
+.msg-cross:hover {
+  cursor: pointer;
+}
+
+
 
 @media screen and (max-width: 700px) {
+  .msg {
+    width: 80%;
+  }
   #catContainer div {
     display: inline-block;
     border-radius: 5px;

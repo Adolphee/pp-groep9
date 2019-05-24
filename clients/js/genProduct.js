@@ -27,13 +27,10 @@ function genProduct(id, naam, beschrijving, prijs, waarborg) {
             <div class="productOmschrijving">
                 <h2>${naam}</h2>
                 <p>${beschrijving}</p>
-                <p>Prijs: ${prijs}</p>
+                <p>Prijs / Dag: ${prijs}</p>
                 <p>Waarborg: ${waarborg}</p>
                 <p><span id="count"></span> beschikbaar</p>
                 <form>
-                    <select id="selectItem" class="select">
-                        <option value="0">None</option>
-                    </select>
                     <button id="cartBtn" type="submit" class="addCart btn primary">Voeg toe aan winkelmandje</button>
                 </form>
             </div>

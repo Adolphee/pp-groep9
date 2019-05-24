@@ -4,9 +4,7 @@ $(document).ready(function () {
     }).done(function (res) {
         $("#footer").html(res);
     });
-});
 
-$(document).ready(function () {
     let footerHeight, bottomPosFooter, topPosFooter;
     $.ajax({
         url: "./general parts/footer.html"
@@ -16,11 +14,13 @@ $(document).ready(function () {
         topPosFooter = $('#footer').offset().top;
         bottomPosFooter = footerHeight + topPosFooter;
 
-        if (bottomPosFooter < $(window).height()) {
-            console.log('drop footer');
-            $('#footer').css('position', 'absolute');
-            $('#footer').css('bottom', '0');
-            $('#footer').css('width', '100%');
+        if (bottomPosFooter <= $(window).height()) {
+            if (!window.location.pathname.includes('index')) {
+                console.log('fix footer');
+                $('#footer').css('position', 'absolute');
+                $('#footer').css('bottom', '0');
+                $('#footer').css('width', '100%');
+            }
         }
     });
 
