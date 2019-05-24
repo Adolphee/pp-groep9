@@ -9,6 +9,7 @@ $(document).ready(function() {
     $("#logout").click(() => {
         sessionStorage.removeItem('klant');
         hideProfilePage();
+        $('#login-page').show();
     });
 
     if (sessionStorage.getItem('klant') !== null) { //todo:check of de klantgegevens kloppen
@@ -108,10 +109,12 @@ $(document).ready(function() {
         $("#pcode").html(klant.postcode);
         $("#pstad").html(klant.gemeente);
         $("#pland").html(klant.land);
+        $('#loginContainer').hide();
     });
 
     $("#bestellingen").click(function () {
         displayProfilePage();
+        $('#loginContainer').show();
         $("#mijnprofieldiv").hide();
         // Dit kan enkel aangeroepen worden wanneer de user is ingelogd en de session dus gevuld vor 'klant'
         // Een check om te zien of essionStorage.getItem('klant') == null -is niet nodig
@@ -146,7 +149,7 @@ $(document).ready(function() {
                         <p class="dat">Uitleendatum: ${bestelling.uitleendatum}</p>
                         <p class="dat">Einddatum: <input id="${bestelling.bestelling_id}" type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
                         ${!isVoorbij ? editknop : ""}
-                        <div class="line"></div>
+                        <div class="line mt-1"></div>
                     </div>`;
                 let listElementAsNode = $.parseHTML(listElement);
                 $("#bList").append(listElementAsNode);
