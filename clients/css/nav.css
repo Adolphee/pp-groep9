@@ -1,12 +1,14 @@
-.verticalLine {
+c.verticalLine {
     border-left: thin solid black;
     margin-right: 0.5em;
     margin-left: 0.5em;
 }
-.nav{
+
+.nav {
     text-decoration: none;
 }
-#search{
+
+#search {
     width: 70%;
     border: 1px #ddd solid;
     border-radius: 10px;
@@ -15,16 +17,18 @@
     margin-right: 1em;
     margin-top: 0;
 }
-nav{
-    width:100%;
-    position:relative;
+
+nav {
+    width: 100%;
+    position: relative;
 }
 
-.icon{
+.icon {
     margin: 0.5em;
     color: #212121;
 }
-#home{
+
+#home {
     width: 2em;
     length: 2em;
     top: 50%;
@@ -33,7 +37,8 @@ nav{
     margin-right: 1em;
 
 }
-a{
+
+a {
     color: #212121;
 }
 
@@ -43,7 +48,7 @@ header {
     background-color: #fff;
 }
 
-form{
+form {
     padding-top: 1em;
 }
 
@@ -70,5 +75,53 @@ form{
 
 #prList p:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+
+    .verticalLine {
+        margin-right: 0.2em;
+        margin-left: 0.2em;
+    }
+
+    #search {
+        margin-left: 3em;
+        margin-right: 1em;
+
+
+        padding: 0.5em;
+
+        width: 29%;
+    }
+
+    .icon {
+        color: #212121;
+
+    }
+
+    #home {
+        width: 2em;
+        length: 2em;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        margin-right: 1em;
+
+    }
+
+
+    form {
+        padding-top: 1em;
+    }
+
+
+    .right{
+        padding: auto;
+    }
+
+    .(fas fa-shopping-cart icon){
+     color: brown;
+    }
+    ."fas fa-user icon"
 }
 
