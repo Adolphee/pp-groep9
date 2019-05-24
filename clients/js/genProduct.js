@@ -30,6 +30,7 @@ function genProduct(id, naam, beschrijving, prijs, waarborg) {
                 <p>Prijs / Dag: ${prijs}</p>
                 <p>Waarborg: ${waarborg}</p>
                 <p><span id="count"></span> beschikbaar</p>
+                <div id="hoeveel"></div>
                 <form>
                     <button id="cartBtn" type="submit" class="addCart btn primary">Voeg toe aan winkelmandje</button>
                 </form>
@@ -37,4 +38,4 @@ function genProduct(id, naam, beschrijving, prijs, waarborg) {
         </div>
         `;
 }
-    
+
