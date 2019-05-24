@@ -1,12 +1,12 @@
 /* Form */
 .formcontainer {
     display: block;
-
+    float: left;
     margin-left: 10%;
-    margin-top: 3%;
-
-    width: 50%;
-    height: 80%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    width: 45%;
+    height: 70%;
 }
 
 /* Form -> Titel */
@@ -34,8 +34,6 @@
     margin-left: 9.5%;
 
     background-color: rgb(243, 243, 243);
-
-    width: 45%;
 }
 
 #inputNaam:focus {
@@ -63,8 +61,6 @@
     margin-top: 5%;
 
     background-color: rgb(243, 243, 243);
-
-    width: 45%;
 }
 
 #inputEmail:focus {
@@ -93,7 +89,6 @@
     margin-top: 5%;
 
     background-color: rgb(243, 243, 243);
-    width: 45%;
 }
 
 #inputVraag:focus {
@@ -127,12 +122,14 @@
 
 /* Map */
 #mapcontainer {
+
     display: block;
-
     float: right;
-
     margin-right: 10%;
-    margin-top: -10%;
+    margin-top: -16%;
+    margin-bottom: 50%;
+    width: 45%;
+    height: 80%;
 }
 
 /* Map -> titel */
@@ -140,77 +137,24 @@
     display: block;
     font-size: 1.5em;
     font-weight: bold;
-    margin-left: 25%;
+    margin-left: 60%;
 }
 
 /* Map -> iFrame */
 #iFrame {
-    width: 28em;
-    height: 17em;
+    width: 40%;
+    margin-bottom: 15%;
 }
 
 
 /* Responsive */
-
-@media screen and (max-width: 1700px) {
-    .formcontainer {
-        width: 45%
-    }
-
-    .mapcontainer {
-        width: 45%;
-        margin-top: -70%;
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .formcontainer {
-        width: 45%
-    }
-
-    .mapcontainer {
-        width: 45%;
-        float: right;
-        margin-top: -34em;
-    }
-    #titel2 {
-        margin-left: 15%;
-    }
-    #iFrame {
-        width: 25em;
-        height: 17em;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .formcontainer {
-        width: 40%
-    }
-
-    .mapcontainer {
-        width: 45%;
-        float: right;
-        margin-top: -52.5em;
-    }
-
-    #titel2 {
-        margin-left: 7%;
-    }
-
-    #iFrame {
-        width: 18em;
-        height: 15em;
-    }
-}
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     .formcontainer {
         width: 90%;
-        margin-bottom: 5%;
+        margin-bottom: 10%;
     }
 
     .mapcontainer {
-        margin-top: auto;
         width: 90%;
         margin-bottom: 10%;
     }
@@ -220,102 +164,9 @@
     }
 
     #iFrame {
-        width: 25em;
-        height: 20em;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .formcontainer {
-        clear: both;
+        margin-left: 5%;
         width: 90%;
-    }
-
-    .mapcontainer {
-        margin-top: -65%;
-        clear: both;
-        width: 90%;
-        margin-bottom: 10%;
-    }
-
-    #titel2 {
-        margin-left: 8%;
-    }
-
-    #iFrame {
-        width: 21em;
-        height: 15em;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .formcontainer {
-        clear: both;
-        width: 90%;
-        margin-bottom: 5%;
-    }
-
-    .mapcontainer {
-        margin-top: -15em;
-        clear: both;
-        width: 90%;
-        margin-bottom: 10%;
-    }
-
-    #titel2 {
-        margin-left: 7%;
-    }
-
-    #iFrame {
-        width: 19em;
-        height: 15em;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .formcontainer {
-        clear: both;
-        width: 90%;
-    }
-
-    .mapcontainer {
-        margin-top: -50%;
-        clear: both;
-        width: 90%;
-        margin-bottom: 10%;
-    }
-
-    #titel2 {
-        margin-left: 8%;
-    }
-
-    #iFrame {
-        width: 18em;
-        height: 15em;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .formcontainer {
-        clear: both;
-        width: 90%;
-        margin-bottom: 5%;
-    }
-
-    .mapcontainer {
-        margin-top: -25%;
-        clear: both;
-        width: 90%;
-        margin-bottom: 10%;
-    }
-
-    #titel2 {
-        margin-left: 2.5%;
-    }
-
-    #iFrame {
-        width: 16em;
-        height: 15em;
+        height: 60%;
     }
 }
 
