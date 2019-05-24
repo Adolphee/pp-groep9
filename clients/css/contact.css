@@ -72,7 +72,8 @@
 }
 
 #inputEmail:valid {
-    border-color: #7ed913;    
+    border-color: #7ed913;
+
 }
 
 /* Form -> Vraag/Klacht */
@@ -100,7 +101,7 @@
 }
 
 #inputVraag:valid {
-    border-color: #7ed913;    
+    border-color: #7ed913;
 }
 
 /* Form -> verplicht */
@@ -111,7 +112,7 @@
 
 /* Form -> button */
 #submitform {
-    
+
     display: block;
     text-align: center;
     vertical-align: middle;
@@ -149,42 +150,181 @@
 }
 
 
-@media screen and (max-width: 700px) {
-    .titel {
-        margin-left: 50%;
+/* Responsive */
+@media screen and (max-width: 2500px) {
+    .formcontainer {
+        width: 45%
     }
 
-    #inputNaam {
-        margin-left: 10%;
-        width: 10em;
+    .mapcontainer {
+        width: 45%;
+        float: right;
+        margin-top: -36%;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .formcontainer {
+        width: 45%
     }
 
-    #inputEmail {
-        margin-left: 10%;
-        width: 10em;
+    .mapcontainer {
+        width: 45%;
+        float: right;
+        margin-top: -34%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .formcontainer {
+        width: 45%
     }
 
-    #inputVraag {
-        margin-left: 10%;
-        width: 10em;
+    .mapcontainer {
+        width: 45%;
+        float: right;
+        margin-top: -29%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .formcontainer {
+        width: 40%
     }
 
-    .button {
-        margin-left: 10%;
+    .mapcontainer {
+        width: 45%;
+        float: right;
+        margin-top: -45%;
     }
 
-    #mapcontainer {
-        margin-left: 10%;
-        margin-top: 20%;
+    #titel2 {
+        margin-left: 7%;
+    }
+
+    #iFrame {
+        width: 18em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formcontainer {
+        clear: both;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .mapcontainer {
+        margin-top: auto;
+        clear: both;
+        width: 90%;
         margin-bottom: 10%;
     }
 
     #titel2 {
-        margin-left: 5%;
+        margin-left: 20%;
     }
 
     #iFrame {
-        width: 90%;
-        height: 40%;
+        width: 25em;
+        height: 20em;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .formcontainer {
+        clear: both;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .mapcontainer {
+        margin-top: auto;
+        clear: both;
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    #titel2 {
+        margin-left: 8%;
+    }
+
+    #iFrame {
+        width: 21em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .formcontainer {
+        clear: both;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .mapcontainer {
+        margin-top: auto;
+        clear: both;
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    #titel2 {
+        margin-left: 7%;
+    }
+
+    #iFrame {
+        width: 19em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .formcontainer {
+        clear: both;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .mapcontainer {
+        margin-top: auto;
+        clear: both;
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    #titel2 {
+        margin-left: 8%;
+    }
+
+    #iFrame {
+        width: 18em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .formcontainer {
+        clear: both;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .mapcontainer {
+        margin-top: auto;
+        clear: both;
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    #titel2 {
+        margin-left: 2.5%;
+    }
+
+    #iFrame {
+        width: 16em;
+        height: 15em;
+    }
+}
+
