@@ -1,4 +1,5 @@
 <header id="top">
+
     <div class="container">
     <nav>
 
@@ -7,17 +8,23 @@
         <input type="text" id="search" class="ajax" list="json-datalist" placeholder="Search ...">
         <datalist id="json-datalist">
         </datalist>
-        <a href="cart.html"><i  class="fas fa-shopping-cart icon"></i></a>
-        <a href="profile.html"><i  class="fas fa-user icon"></i></a>
-        <div class="right">
-            <a class ="nav" href = "about.html">About</a>
-            <span class = "verticalLine"></span>
-            <a class ="nav" href = "contact.html">Contact</a>
+        <div class="full-nav">
+            <a href="cart.html"><i  class="fas fa-shopping-cart icon"></i></a>
+            <a href="profile.html"><i  class="fas fa-user icon"></i></a>
+            <div class="right">
+                <a class ="nav" href = "about.html">About</a>
+                <span class = "verticalLine"></span>
+                <a class ="nav" href = "contact.html">Contact</a>
+            </div>
         </div>
+        <a id="mobile-btn">
+            <i id="toggle-btn" class="fas fa-bars"></i>
+            <!-- <i id="close" class="fas fa-times"></i> -->
+        </a>
 
 
     </nav>
-    <div id="prList"></div>
+    <ul id="prList"></ul>
     <form id="catDrop">
         <select class = "select" id="navdrop">
             <optgroup label="Categorieën">
@@ -30,3 +37,12 @@
     </form>
     </div>
 </header>
+<div class="mobile-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html"><i  class="fas fa-shopping-cart icon"></i></a></li>
+        <li><a href="profile.html"><i  class="fas fa-user icon"></i></a></li>
+        <li><a class ="nav" href = "about.html">About</a></li>
+        <li><a class ="nav" href = "contact.html">Contact</a></li>
+    </ul>
+</div>

@@ -5,6 +5,7 @@ const app = express();
 const api = require('./routes/api');
 const user = require('./routes/user');
 const submitForm = require('./routes/submitForm');
+const session = require('express-session');
 
 const PORT = process.env.PORT || 3009;
 
@@ -14,6 +15,13 @@ app.use((req,res,next) => {
   res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+// Was voor test en laat dit staan voor eventueel verder gebruik
+// app.use(session({
+//   secret: 'random',
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: { secure: true }
+// }));
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());

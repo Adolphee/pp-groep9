@@ -1,94 +1,190 @@
-#formulier {
+/* Form */
+.formcontainer {
+    display: block;
+
     margin-left: 10%;
-    float: left;
+    margin-top: 3%;
+
+    width: 50%;
+    height: 80%;
 }
 
+/* Form -> Titel */
 .titel {
-    margin-left: 14%;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+
+    margin-left: 30%;
 }
 
-#input1 {
+/* Form -> Naam */
+#divnaam {
+    display: block;
+}
+
+#inputNaam {
     border-color: #e2e2e2;
     border-style: solid;
     border-radius: 5px;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-left: 7%;
     border-width: 1px;
+
+    padding: 0.5%;
+
+    margin-left: 9.5%;
+
     background-color: rgb(243, 243, 243);
+
+    width: 45%;
 }
 
-#input1:focus {
+#inputNaam:focus {
     outline: none;
 }
 
-#input2 {
+#inputNaam:valid {
+    border-color: #7ed913;
+}
+
+/* Form -> E-mail */
+#divemail {
+    display: block;
+}
+
+#inputEmail {
     border-color: #e2e2e2;
     border-style: solid;
     border-radius: 5px;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-left: 2.9%;
-    margin-top: 1%;
     border-width: 1px;
+
+    padding: 0.5%;
+
+    margin-left: 3.5%;
+    margin-top: 5%;
+
     background-color: rgb(243, 243, 243);
+
+    width: 45%;
 }
 
-#input2:focus {
+#inputEmail:focus {
     outline: none;
 }
 
-#input3 {
+#inputEmail:valid {
+    border-color: #7ed913;    
+}
+
+/* Form -> Vraag/Klacht */
+#divvraag {
+    display: block;
+}
+
+#inputVraag {
     border-color: #e2e2e2;
     border-style: solid;
     border-radius: 5px;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-left: 1.8%;
-    margin-top: 1%;
     border-width: 1px;
+
+    padding: 0.5%;
+
+    margin-left: 2.5%;
+    margin-top: 5%;
+
     background-color: rgb(243, 243, 243);
+    width: 45%;
 }
 
-#input3:focus {
+#inputVraag:focus {
     outline: none;
 }
 
+#inputVraag:valid {
+    border-color: #7ed913;    
+}
+
+/* Form -> verplicht */
 #verplicht {
+    display: block;
     font-size: small;
 }
 
-.button {
-    color: #003703;
-    background-color: #7ed913;
-
-    display: inline-block;
-    font-weight: 400;
+/* Form -> button */
+#submitform {
+    
+    display: block;
     text-align: center;
-    white-space: nowrap;
     vertical-align: middle;
     touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
     border: 1px solid transparent;
     padding: 8px 15px;
     font-size: 15px;
-    line-height: 1.42857143;
     border-radius: 5px;
     user-select: none;
-
-    margin-left: 31%;
+    margin-left: 49%;
 }
 
-#map {
-    margin-top: -28%;
-    margin-right: 15%;
+/* Map */
+#mapcontainer {
+    display: block;
+
     float: right;
+
+    margin-right: 10%;
+    margin-top: -29%;
 }
 
+/* Map -> titel */
 #titel2 {
-    margin-left: 10%;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 25%;
+}
+
+/* Map -> iFrame */
+#iFrame {
+    width: 28em;
+    height: 17em;
+}
+
+
+@media screen and (max-width: 700px) {
+    .titel {
+        margin-left: 50%;
+    }
+
+    #inputNaam {
+        margin-left: 10%;
+        width: 10em;
+    }
+
+    #inputEmail {
+        margin-left: 10%;
+        width: 10em;
+    }
+
+    #inputVraag {
+        margin-left: 10%;
+        width: 10em;
+    }
+
+    .button {
+        margin-left: 10%;
+    }
+
+    #mapcontainer {
+        margin-left: 10%;
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+
+    #titel2 {
+        margin-left: 5%;
+    }
+
+    #iFrame {
+        width: 90%;
+        height: 40%;
+    }
 }
