@@ -213,12 +213,10 @@ transition: all .2s ease-in-out;
   cursor: pointer;
 }
 
-
-
 @media screen and (max-width: 700px) {
-  .msg {
-    width: 80%;
-  }
+    .msg {
+        width: 80%;
+    }
   #catContainer div {
     display: inline-block;
     border-radius: 5px;
@@ -234,3 +232,4 @@ transition: all .2s ease-in-out;
     position: relative;
   }
 }
+
