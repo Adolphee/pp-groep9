@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -12,10 +13,73 @@
 <div id="nav"></div>
 <div id="sidestep2">
     <div id="sidenav">
-        <i class="far fa-user"></i><a id="mijnprofiel" href="#profiel">Mijn Profiel</a>
-        <br> <i class="fas fa-barcode"></i><a id="bestellingen" href="#"> Mijn Bestellingen</a>
-        <br> <i class="fas fa-shopping-cart"></i><a href="cart.html">Mijn Winkelmandje</a>
+        <a id="mijnprofiel" href="#profiel"> <i class="far fa-user" ></i> <span class="sideHide"> Mijn Profiel </span> </a>
+        <br> <a id="bestellingen" href="#"> <i class="fas fa-barcode"></i> <span class="sideHide"> Mijn Bestellingen</span> </a>
+        <br> <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="sideHide"> Mijn Winkelmandje</span> </a>
         <br> <button id="logout">Log uit</button>
+        <div class="login-page">
+
+            <div class="form formright">
+                <form class="login-form">
+                    <input id="voornaam" type="text" placeholder="Voornaam">
+                    <input id="naam" type="text" placeholder="Achternaam">
+                    <input id="date" type="date" placeholder="Geboortedatum">
+                    <input id="land" type="text" placeholder="Land">
+                    <input id="stad" type="text" placeholder="Stad">
+                    <input id="zip" type="text" placeholder="Postcode">
+                    <input id="straat" type="text" placeholder="Straat">
+                    <input id="huisnr" type="text" placeholder="Huisnummer">
+                    <input id="busnr" type="text" placeholder="Busnummer">
+                    <input id="username" type="text" placeholder="username"/>
+                    <input id="password" type="password" placeholder="password"/>
+                    <button id="register">Registreer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="mijnprofieldiv">
+
+        <table style="width:60%" align="center">
+            <tr>
+                <th >Voornaam</th>
+                <td id="vnaam" align="center"></td>
+            </tr>
+            <tr>
+                <th>Achternaam</th>
+                <td id="fnaam" align="center"></td>
+            </tr>
+            <tr>
+                <th>Geboortedatum</th>
+                <td id="gdatum" align="center"></td>
+            </tr>
+        </table>
+        <br><br><br>
+        <table style="width:60%" align="center">
+            <tr>
+                <th>Straat</th>
+                <td id="pstraat" align="center"></td>
+            </tr>
+            <tr>
+                <th>Huisnummer</th>
+                <td id="phuisnr" align="center"></td>
+            </tr>
+            <tr>
+                <th>Busnummer</th>
+                <td id="pbusnr" align="center"></td>
+            </tr>
+            <tr>
+                <th>Postcode</th>
+                <td id="pcode" align="center"></td>
+            </tr>
+            <tr>
+                <th>Stad</th>
+                <td id="pstad" align="center"></td>
+            </tr>
+            <tr>
+                <th>Land</th>
+                <td id="pland" align="center"></td>
+            </tr>
+        </table>
     </div>
     <div id="loginContainer">
         <div id="left">
@@ -24,7 +88,9 @@
                     <form class="login-form">
                         <input id="inlogveld" type="text" placeholder="username"/>
                         <input id="wwveld" type="password" placeholder="password"/>
-                        <button type="button" id="inlogknop">login</button>
+                        <button type="button" class="btn primary widebtn" id="inlogknop">login</button>
+                        <br> <br><button type="button" class="btn second widebtn" id="nieuweKlant">Nieuwe klant?</button>
+
                     </form>
 
                 </div>
@@ -45,14 +111,15 @@
                         <input id="busnr" type="text" placeholder="Busnummer">
                         <input id="username" type="text" placeholder="username"/>
                         <input id="password" type="password" placeholder="password"/>
-                        <button id="register">Registreer</button>
+                        <button class="btn primary widebtn" id="register">Registreer</button>
+                        <br> <br> <button id="back" class="btn second widebtn">Back</button>
                     </form>
                 </div>
             </div>
         </div>
         <div id="mijnprofieldiv">
 
-            <table style="width:20%" align="center">
+            <table style="width:30%" align="center">
                 <tr>
                     <th >Voornaam</th>
                     <td id="vnaam" align="right"></td>
@@ -67,7 +134,7 @@
                 </tr>
             </table>
             <br><br><br>
-            <table style="width:20%" align="center">
+            <table style="width:30%" align="center">
                 <tr>
                     <th>Straat</th>
                     <td id="pstraat" align="right"></td>
@@ -112,7 +179,7 @@
 <script src="js/profile.js"></script>
 <script src="js/genProduct.js"></script>
 <script src="js/nav.js"></script>
-<script src="js/footer.js"></script>
+<!--<script src="js/footer.js"></script>-->
 </body>
 </html>
 
