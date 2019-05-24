@@ -15,23 +15,31 @@ $(document).ready(() => {
         for (item of data) {
             if (item.name == "naam" && item.value == "") {
                 $('#inputNaam').css('border-color', 'red');
-                error = true;
             } else if (item.name == "naam" && item.value != "") {
                 $('#inputNaam').css('border-color', '#7ed913');
             }
             if (item.name == "email" && item.value == "") {
                 $('#inputEmail').css('border-color', 'red');
-                error = true;
             } else if (item.name == "email" && item.value != "" && validateEmail(item.value)) {
                 $('#inputEmail').css('border-color', '#7ed913');
             }
             if (item.name == "msg" && item.value == "") {
                 $('#inputVraag').css('border-color', 'red');
-                error = true;
             } else if (item.name == "msg" && item.value != "") {
                 $('#inputVraag').css('border-color', '#7ed913');
             }
         }
+
+
+        for (const item of data) {
+            if (item.value == "") {
+                error = true;
+            }
+            if (item.name == "email" && !validateEmail(item.value)) {
+                error = true;
+            }
+        }
+
         if (error) {
             $('body').append(`
             <div class="msg error">

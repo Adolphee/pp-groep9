@@ -112,6 +112,7 @@ $(document).ready(function() {
 
     $("#bestellingen").click(function () {
         displayProfilePage();
+        $("#bList").html('');
         $("#mijnprofieldiv").hide();
         // Dit kan enkel aangeroepen worden wanneer de user is ingelogd en de session dus gevuld vor 'klant'
         // Een check om te zien of essionStorage.getItem('klant') == null -is niet nodig
@@ -172,6 +173,16 @@ $(document).ready(function() {
                 data: {einddatum: einddatum}
             }).done(function (resp) {
                 console.log("Datum update done");
+                $('body').append(`
+                    <div class="msg success">
+                        <p>Einddatum is geüpdate
+                        <i class="fas fa-times msg-cross"></i>
+                        </p>
+                    </div>
+                `);
+                $('.msg').css('visibility', 'visible');
+                $('.msg').css('margin-top', '5em');
+                $('.msg').delay(2000).slideUp();
             });
         });
     });
