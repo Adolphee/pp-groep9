@@ -71,6 +71,8 @@ router.route('/bestellingen/bestelregels').post(function (req, res) {
             res.status(201).json(nieuw); // created
         });
     });
+    let zetInGebruik = "UPDATE items SET status = ? WHERE item_id = ?;";
+    db.query(zetInGebruik, [itemId, ])
 });
 
 router.get('/klant/:id/bestellingen', (req, res) => {
