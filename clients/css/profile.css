@@ -239,8 +239,11 @@ body {
     float: right;
 }
 
-table, th, td {
+table {
+    border-collapse: collapse; 
+}
+tr {
     border: 0px solid black;
-    border-bottom: 3px solid;
+    border-bottom: 1px solid;
     border-color: #b3b3b3;
 }
