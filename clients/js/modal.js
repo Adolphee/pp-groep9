@@ -263,8 +263,8 @@ $(document).on('click', '#reserveer',function(e) {
     });
     // close the modal
     $('#thanks').click(function () {
-     $("input").val("");
-     $("date").val("");
+        $("input").val("");
+        $("date").val("");
         console.log('test');
         $('#loadModal').css('display', 'none');
         location.reload(); // om te tonen dat shipping car leeg is nu

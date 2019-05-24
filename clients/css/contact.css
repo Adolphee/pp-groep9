@@ -132,7 +132,7 @@
     float: right;
 
     margin-right: 10%;
-    margin-top: -29%;
+    margin-top: -10%;
 }
 
 /* Map -> titel */
@@ -151,19 +151,19 @@
 
 
 /* Responsive */
-@media screen and (max-width: 2500px) {
+
+@media screen and (max-width: 1700px) {
     .formcontainer {
         width: 45%
     }
 
     .mapcontainer {
         width: 45%;
-        float: right;
-        margin-top: -36%;
+        margin-top: -70%;
     }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 1400px) {
     .formcontainer {
         width: 45%
     }
@@ -171,19 +171,14 @@
     .mapcontainer {
         width: 45%;
         float: right;
-        margin-top: -34%;
+        margin-top: -34em;
     }
-}
-
-@media screen and (max-width: 1500px) {
-    .formcontainer {
-        width: 45%
+    #titel2 {
+        margin-left: 15%;
     }
-
-    .mapcontainer {
-        width: 45%;
-        float: right;
-        margin-top: -29%;
+    #iFrame {
+        width: 25em;
+        height: 17em;
     }
 }
 
@@ -195,7 +190,7 @@
     .mapcontainer {
         width: 45%;
         float: right;
-        margin-top: -45%;
+        margin-top: -52.5em;
     }
 
     #titel2 {
@@ -210,14 +205,12 @@
 
 @media screen and (max-width: 500px) {
     .formcontainer {
-        clear: both;
         width: 90%;
         margin-bottom: 5%;
     }
 
     .mapcontainer {
         margin-top: auto;
-        clear: both;
         width: 90%;
         margin-bottom: 10%;
     }
@@ -236,11 +229,10 @@
     .formcontainer {
         clear: both;
         width: 90%;
-        margin-bottom: 5%;
     }
 
     .mapcontainer {
-        margin-top: auto;
+        margin-top: -65%;
         clear: both;
         width: 90%;
         margin-bottom: 10%;
@@ -264,7 +256,7 @@
     }
 
     .mapcontainer {
-        margin-top: auto;
+        margin-top: -15em;
         clear: both;
         width: 90%;
         margin-bottom: 10%;
@@ -284,11 +276,10 @@
     .formcontainer {
         clear: both;
         width: 90%;
-        margin-bottom: 5%;
     }
 
     .mapcontainer {
-        margin-top: auto;
+        margin-top: -50%;
         clear: both;
         width: 90%;
         margin-bottom: 10%;
@@ -312,7 +303,7 @@
     }
 
     .mapcontainer {
-        margin-top: auto;
+        margin-top: -25%;
         clear: both;
         width: 90%;
         margin-bottom: 10%;
