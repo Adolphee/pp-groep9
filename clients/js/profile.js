@@ -43,7 +43,7 @@ $(document).ready(function() {
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3009/api/insert/newKlantWithLogin',
+            url: 'http://10.3.50.56:3009/api/insert/newKlantWithLogin',
             data: newKlant
         }).done((res) => {
             let klant = res.data.klant;
@@ -73,7 +73,7 @@ $(document).ready(function() {
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3009/api/auth',
+            url: 'http://10.3.50.56:3009/api/auth',
             data: inlogKlant
         }).done((res) => {//TODO: geraakt ni in
             sessionStorage.setItem('klant', JSON.stringify(res));
@@ -116,7 +116,7 @@ $(document).ready(function() {
         let klant_id = JSON.parse(sessionStorage.getItem('klant')).klant_id;
         $.ajax({
             method: "GET",
-            url: `http://localhost:3009/api/klant/${klant_id}/bestellingen`
+            url: `http://10.3.50.56:3009/api/klant/${klant_id}/bestellingen`
         }).done(function (bestellingen) {
             bestellingen.forEach((bestelling) => {
                 let date1 = bestelling.einddatum.split("/");
@@ -141,12 +141,12 @@ $(document).ready(function() {
         let bestelling_id = parseInt(this.id);
         $.ajax({
             method: "GET",
-            url: `http://localhost:3009/api/bestellingen/${bestelling_id}`
+            url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`
         }).done(function (bestelling) {
             console.log("Ajax 1 klaar... moving on");
             $.ajax({
                 method: "PUT",
-                url: `http://localhost:3009/api/bestellingen/${bestelling_id}`,
+                url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`,
                 data: bestelling
             }).done(function (resp) {
                 console.log("Datum update done");
