@@ -25,6 +25,7 @@ $(document).ready(function() {
     $("#logout").click(() => {
         sessionStorage.removeItem('klant');
         hideProfilePage();
+        $('#login-page').show();
     });
 
     if (sessionStorage.getItem('klant') !== null) { //todo:check of de klantgegevens kloppen
@@ -42,7 +43,8 @@ $(document).ready(function() {
         }
     });
 
-    $('#register').click(function () {
+    $('#register').click(function (e) {
+        e.preventDefault();
         // Maak nieuwe klant
         let newKlant = {
             voornaam: document.getElementById('voornaam').value,
@@ -57,6 +59,7 @@ $(document).ready(function() {
             username: document.getElementById('username').value,
             password: document.getElementById('password').value
         };
+        
         $.ajax({
             type: 'POST',
             url: 'http://10.3.50.56:3009/api/insert/newKlantWithLogin',
@@ -124,10 +127,16 @@ $(document).ready(function() {
         $("#pcode").html(klant.postcode);
         $("#pstad").html(klant.gemeente);
         $("#pland").html(klant.land);
+        $('#loginContainer').hide();
     });
 
     $("#bestellingen").click(function () {
         displayProfilePage();
+
+        $('#loginContainer').show();
+
+        $("#bList").html('');
+
         $("#mijnprofieldiv").hide();
         // Dit kan enkel aangeroepen worden wanneer de user is ingelogd en de session dus gevuld vor 'klant'
         // Een check om te zien of essionStorage.getItem('klant') == null -is niet nodig
@@ -137,6 +146,8 @@ $(document).ready(function() {
             url: `http://10.3.50.56:3009/api/klant/${klant_id}/bestellingen`
         }).done(function (bestellingen) {
             console.log(bestellingen);
+            // Zet bestellingen in session
+            sessionStorage.setItem('bestellingen', JSON.stringify(bestellingen));
             if (bestellingen.length == 0) {
                 $('body').append(`
                     <div class="msg error">
@@ -156,12 +167,13 @@ $(document).ready(function() {
                 einde.setFullYear(parseInt(date1[2]), parseInt(date1[1]), parseInt(date1[0]));
                 let isVoorbij = einde.getTime() < new Date().getTime();
                 let readOnlyAttribute = 'readonly="readonly"';
-                let editknop = `<button id="${bestelling.bestelling_id}" class="editknop2">Save</button>`;
+                let editknop = `<button id="${bestelling.bestelling_id}" class="btn primary">Save</button>`;
                 let listElement = `<div class="card">
                         <h3>Bestelling ID: ${bestelling.bestelling_id}</h3>
-                        <p>Uitleendatum: ${bestelling.uitleendatum}</p>
-                        <p>Einddatum: <input id="${bestelling.bestelling_id}" type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
+                        <p class="dat">Uitleendatum: ${bestelling.uitleendatum}</p>
+                        <p class="dat">Einddatum: <input id="${bestelling.bestelling_id}" type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
                         ${!isVoorbij ? editknop : ""}
+                        <div class="line mt-1"></div>
                     </div>`;
                 let listElementAsNode = $.parseHTML(listElement);
                 $("#bList").append(listElementAsNode);
@@ -170,26 +182,67 @@ $(document).ready(function() {
         });
     });
     $(document).on('click','button.editknop2',(e) => {
-        console.log('kakakkak');
-        
+        let alleBestellingen = JSON.parse(sessionStorage.getItem('bestellingen'));
         let bestelling_id = parseInt(e.target.id);
         let einddatum = $(`input#${bestelling_id}`).val();
-        console.log(einddatum);
+        let oldDate;
+        // console.log(einddatum);
+        for (const item of alleBestellingen) {
+            if (item.bestelling_id == bestelling_id) {
+                oldDate = item.einddatum;
+            }
+        }
+
+        // Datum is goed
+        if (oldDate < einddatum) {
+            console.log('oldate < eind');
+        }
+        // Datum kan niet worden aangepast
+        if (oldDate > einddatum) {
+            console.log('oldate > eind');
+            $('body').append(`
+            <div class="msg error">
+                <p>De gegeven datum moet groter zijn als je huidige einddatum. 
+                <i class="fas fa-times msg-cross"></i>
+                </p>
+            </div>
+            `);
+            $('.msg').css('visibility', 'visible');
+            $('.msg').css('margin-top', '5em');
+            $('.msg').delay(2000).slideUp();
+        }
         
-        
-        $.ajax({
-            method: "GET",
-            url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`
-        }).done(function (bestelling) {
-            console.log("Ajax 1 klaar... moving on");
+        else {
+            for (const item of alleBestellingen) {
+                if (item.bestelling_id == bestelling_id) {
+                    item.einddatum = einddatum;
+                }
+            }
+            sessionStorage.setItem('bestellingen', JSON.stringify(alleBestellingen));
             $.ajax({
-                method: "PUT",
-                url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`,
-                data: {einddatum: einddatum}
-            }).done(function (resp) {
-                console.log("Datum update done");
+                method: "GET",
+                url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`
+            }).done(function (bestelling) {
+                console.log("Ajax 1 klaar... moving on");
+                $.ajax({
+                    method: "PUT",
+                    url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`,
+                    data: {einddatum: einddatum}
+                }).done(function (resp) {
+                    console.log("Datum update done");
+                    $('body').append(`
+                        <div class="msg success">
+                            <p>Einddatum is geüpdate
+                            <i class="fas fa-times msg-cross"></i>
+                            </p>
+                        </div>
+                    `);
+                    $('.msg').css('visibility', 'visible');
+                    $('.msg').css('margin-top', '5em');
+                    $('.msg').delay(2000).slideUp();
+                });
             });
-        });
+        }
     });
 });
 
