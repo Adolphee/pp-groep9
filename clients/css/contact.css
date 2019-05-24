@@ -171,10 +171,14 @@
     .mapcontainer {
         width: 45%;
         float: right;
-        margin-top: -34em;
+        margin-top: -70em;
     }
     #titel2 {
         margin-left: 15%;
+    }
+    #iFrame {
+        width: 25em;
+        height: 17em;
     }
 }
 
