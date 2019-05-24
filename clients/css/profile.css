@@ -1,6 +1,7 @@
-.sidenav {
-    width: 250px;
-    height: 100%;
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+#sidenav {
+    width: 20%;
+    height: 128%;
     position: relative;
     z-index: 1;
     top: 0px;
@@ -8,9 +9,13 @@
     background: #eee;
     overflow-x: hidden;
     padding: 8px 0;
+    z-index: 0;
+    margin: 0px;
+    display: inline-block;
+    float: left;
 }
 
-.sidenav a {
+#sidenav a {
     padding: 8px 8px 8px 16px;
     text-decoration: none;
     font-size: 15px;
@@ -18,9 +23,224 @@
     display: inline-block;
 }
 
-.sidenav a:hover {
+#sidenav a:hover {
     color: #649b23;
 }
-.sidenav i {
+#sidenav i {
     padding-left: 16px;
+}
+html, body, #sidestep2{
+    height: 80%;
+}
+
+footer{
+    margin-top: 0px;
+}
+
+#left, #right{
+    width: 50%;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    position: relative;
+    float: left;
+
+}
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #7ed913;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+    background: #43A047;
+}
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+.form .register-form {
+    display: none;
+}
+/* .container {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+.container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #EF3B3A;
+} */
+nav{
+    width: 100%;
+}
+.formright input{
+    width: 40%;
+    position: relative;
+    float: left;
+    height: 10px;
+    margin-left: 15px;
+}
+.formright{
+    padding: 15px;
+}
+
+#mijnprofieldiv{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#logout{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #7ed913;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40%;
+}
+#logout:hover{
+    background-color: #5a9e0b;
+    user-select: none;
+}
+#logout:focus{
+outline:0;
+}
+
+.card {
+    width: 30%;
+    position: relative;
+    float: left;
+    display: inline-block;
+}
+
+#bestellingenLijst {
+    overflow: scroll;
+}
+
+/* TODO: verwijder onderstaande code als het voor isues zorgt
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.column {
+    float: left;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+*/
+
+#bestellingenLijst {
+    width: 100%;
+    height: 100%;
+}
+
+#loginContainer {
+    width: 80%;
+    height: 128%;
+    margin: 0px;
+    position: relative;
+    float: right;
+}
+
+table, th, td {
+    border: 0px solid black;
+    border-bottom: 3px solid;
+    border-color: #b3b3b3;
 }

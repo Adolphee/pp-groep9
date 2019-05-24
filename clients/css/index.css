@@ -17,6 +17,12 @@ body {
   background-color: rgb(243, 243, 243);
 }
 
+html, body {
+  height: 100%;
+  resize: both;
+  overflow: auto;
+}
+
 a {
   text-decoration: none;
 }
@@ -50,7 +56,11 @@ a {
 #catContainer img {
   display: inline-block;
   width: 200px;
+transition: all .2s ease-in-out;
+}
 
+#catContainer img:hover {
+  transform: scale(1.15);
 }
 
 #catContainer h3 {
