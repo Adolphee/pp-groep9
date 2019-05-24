@@ -1,10 +1,26 @@
 $(document).ready(function() {
+
     $.ajax({
         url: "./general parts/nav.html"
     }).done(function (res) {
         $("#nav").html(res)
     });
 
+    //default
+    $("#left").show();
+    $("#right").hide();
+
+
+    $("#nieuweKlant").click(function(){
+        $("#left").hide();
+        $("#right").show();
+    });
+
+    $("#back").click(function(e){;
+        e.preventDefault()
+        $("#left").show();
+        $("#right").hide();
+    });
     $("#bestellingenLijst").hide();
     $("#logout").click(() => {
         sessionStorage.removeItem('klant');
@@ -241,8 +257,8 @@ function displayProfilePage() {
 }
 
 function hideProfilePage() {
-    $("#left").show();
-    $("#right").show();
+   // $("#left").show();
+    //$("#right").show();
     $("#bestellingenLijst").hide();
     $("#mijnprofieldiv").hide();
     $(".login-form").css("display", "block");

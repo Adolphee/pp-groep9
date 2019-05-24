@@ -88,14 +88,78 @@
                     <form class="login-form">
                         <input id="inlogveld" type="text" placeholder="username"/>
                         <input id="wwveld" type="password" placeholder="password"/>
-                        <button type="button" id="inlogknop">login</button>
+                        <button type="button" class="btn primary widebtn" id="inlogknop">login</button>
+                        <br> <br><button type="button" class="btn second widebtn" id="nieuweKlant">Nieuwe klant?</button>
+
                     </form>
 
                 </div>
             </div>
         </div>
         <div id="right">
+            <div class="login-page">
+                <div class="form formright">
+                    <form class="login-form">
+                        <input id="voornaam" type="text" placeholder="Voornaam">
+                        <input id="naam" type="text" placeholder="Achternaam">
+                        <input id="date" type="date" placeholder="Geboortedatum">
+                        <input id="land" type="text" placeholder="Land">
+                        <input id="stad" type="text" placeholder="Stad">
+                        <input id="zip" type="text" placeholder="Postcode">
+                        <input id="straat" type="text" placeholder="Straat">
+                        <input id="huisnr" type="text" placeholder="Huisnummer">
+                        <input id="busnr" type="text" placeholder="Busnummer">
+                        <input id="username" type="text" placeholder="username"/>
+                        <input id="password" type="password" placeholder="password"/>
+                        <button class="btn primary widebtn" id="register">Registreer</button>
+                        <br> <br> <button id="back" class="btn second widebtn">Back</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="mijnprofieldiv">
 
+            <table style="width:30%" align="center">
+                <tr>
+                    <th >Voornaam</th>
+                    <td id="vnaam" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Achternaam</th>
+                    <td id="fnaam" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Geboortedatum</th>
+                    <td id="gdatum" align="right"></td>
+                </tr>
+            </table>
+            <br><br><br>
+            <table style="width:30%" align="center">
+                <tr>
+                    <th>Straat</th>
+                    <td id="pstraat" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Huisnummer</th>
+                    <td id="phuisnr" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Busnummer</th>
+                    <td id="pbusnr" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Postcode</th>
+                    <td id="pcode" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Stad</th>
+                    <td id="pstad" align="right"></td>
+                </tr>
+                <tr>
+                    <th>Land</th>
+                    <td id="pland" align="right"></td>
+                </tr>
+            </table>
         </div>
         <div id="bestellingenLijst">
             <ul id="bList" type="none" draggable="true">

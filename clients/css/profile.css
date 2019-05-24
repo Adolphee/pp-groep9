@@ -9,14 +9,16 @@
     background: #eee;
     overflow-x: hidden;
     padding: 8px 0;
-    z-index: 0;
+    /*z-index: 0;*/
     margin: 0px;
     display: inline-block;
     float: left;
 }
-
+.centreer{
+    text-align: center;
+}
 #sidenav a {
-    padding: 8px 8px 8px 16px;
+    padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 15px;
     color: #212121;
@@ -27,10 +29,12 @@
     color: #649b23;
 }
 #sidenav i {
-    padding-left: 16px;
+    padding-left: 0.5em;
 }
 html, body, #sidestep2{
     height: 80%;
+
+
 }
 
 footer{
@@ -39,11 +43,11 @@ footer{
 
 #left, #right{
     width: 50%;
-    margin: 0px;
+    margin: 0 auto;
     padding: 0px;
     height: 100%;
     position: relative;
-    float: left;
+    /*float: left;*/
 
 }
 .login-page {
@@ -55,9 +59,9 @@ footer{
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 360px;
+    max-width: 400px;
     margin: 0 auto 100px;
-    padding: 45px;
+    padding: 3em;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -72,7 +76,18 @@ footer{
     box-sizing: border-box;
     font-size: 14px;
 }
-.form button {
+.widebtn{
+    text-transform: uppercase;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+/*.form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -88,7 +103,7 @@ footer{
 }
 .form button:hover,.form button:active,.form button:focus {
     background: #43A047;
-}
+}*/
 .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
@@ -150,7 +165,7 @@ nav{
     margin-left: 15px;
 }
 .formright{
-    padding: 15px;
+    /*padding: 3em;*/
 }
 
 #mijnprofieldiv{
