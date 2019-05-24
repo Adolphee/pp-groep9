@@ -136,6 +136,12 @@ footer{
 nav{
     width: 100%;
 }
+
+#bList {
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+}
 .formright input{
     width: 40%;
     position: relative;
@@ -149,6 +155,9 @@ nav{
 
 #mijnprofieldiv{
     font-family: 'Titillium Web', sans-serif;
+    width: 80%;
+    float: left;
+    margin-top: 2em;
 }
 
 #logout{
@@ -243,4 +252,22 @@ tr {
     border: 0px solid black;
     border-bottom: 1px solid;
     border-color: #b3b3b3;
+}
+
+.dat{
+    display: inline;
+    margin-right: 1em;
+}
+
+@media screen and (max-width: 700px) {
+    .sideHide {
+        display: none;
+    }
+    #bList {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #loginContainer {
+        height: 100%;
+    }
 }

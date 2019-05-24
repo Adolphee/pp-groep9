@@ -9,6 +9,7 @@ $(document).ready(function() {
     $("#logout").click(() => {
         sessionStorage.removeItem('klant');
         hideProfilePage();
+        $('#login-page').show();
     });
 
     if (sessionStorage.getItem('klant') !== null) { //todo:check of de klantgegevens kloppen
@@ -110,11 +111,16 @@ $(document).ready(function() {
         $("#pcode").html(klant.postcode);
         $("#pstad").html(klant.gemeente);
         $("#pland").html(klant.land);
+        $('#loginContainer').hide();
     });
 
     $("#bestellingen").click(function () {
         displayProfilePage();
+
+        $('#loginContainer').show();
+
         $("#bList").html('');
+
         $("#mijnprofieldiv").hide();
         // Dit kan enkel aangeroepen worden wanneer de user is ingelogd en de session dus gevuld vor 'klant'
         // Een check om te zien of essionStorage.getItem('klant') == null -is niet nodig
@@ -145,12 +151,13 @@ $(document).ready(function() {
                 einde.setFullYear(parseInt(date1[2]), parseInt(date1[1]), parseInt(date1[0]));
                 let isVoorbij = einde.getTime() < new Date().getTime();
                 let readOnlyAttribute = 'readonly="readonly"';
-                let editknop = `<button id="${bestelling.bestelling_id}" class="editknop2">Save</button>`;
+                let editknop = `<button id="${bestelling.bestelling_id}" class="btn primary">Save</button>`;
                 let listElement = `<div class="card">
                         <h3>Bestelling ID: ${bestelling.bestelling_id}</h3>
-                        <p>Uitleendatum: ${bestelling.uitleendatum}</p>
-                        <p>Einddatum: <input id="${bestelling.bestelling_id}" type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
+                        <p class="dat">Uitleendatum: ${bestelling.uitleendatum}</p>
+                        <p class="dat">Einddatum: <input id="${bestelling.bestelling_id}" type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
                         ${!isVoorbij ? editknop : ""}
+                        <div class="line mt-1"></div>
                     </div>`;
                 let listElementAsNode = $.parseHTML(listElement);
                 $("#bList").append(listElementAsNode);
