@@ -269,7 +269,7 @@ $(document).on('click', '#reserveer',function(e) {
         $('#loadModal').css('display', 'none');
         location.reload(); // om te tonen dat shipping car leeg is nu
     });
-    $('span').click(function () {
+    $('span').click(function (){
         console.log('test');
         $('#loadModal').css('display', 'none');
         $('.msg').css('visibility', 'hidden');
