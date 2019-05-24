@@ -43,7 +43,7 @@
 }
 
 #inputNaam:valid {
-    background-color: #7ed913;
+    border-color: #7ed913;
 }
 
 /* Form -> E-mail */
@@ -72,7 +72,7 @@
 }
 
 #inputEmail:valid {
-    background-color: #7ed913;
+    border-color: #7ed913;    
 }
 
 /* Form -> Vraag/Klacht */
@@ -100,7 +100,7 @@
 }
 
 #inputVraag:valid {
-    background-color: #7ed913;
+    border-color: #7ed913;    
 }
 
 /* Form -> verplicht */
@@ -110,12 +110,9 @@
 }
 
 /* Form -> button */
-.button {
-    color: #003703;
-    background-color: #7ed913;
-
+#submitform {
+    
     display: block;
-    font-weight: 400;
     text-align: center;
     vertical-align: middle;
     touch-action: manipulation;
@@ -124,7 +121,6 @@
     font-size: 15px;
     border-radius: 5px;
     user-select: none;
-
     margin-left: 49%;
 }
 

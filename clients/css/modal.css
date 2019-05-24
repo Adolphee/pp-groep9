@@ -57,20 +57,11 @@ input{
     font-size: 2em;
     font-weight: bold;
 }
-#yes {
-    background-color: #7ed913;
-    border-radius: 5px;
-    border: 1px #aaaaaa solid;
 
-
-}
 .pos{
     float: right;
 }
-#no{
-    border-radius: 5px;
-    border: 1px #aaaaaa solid;
-}
+
 .close:hover,
 .close:focus {
     color: black;
@@ -82,17 +73,8 @@ input{
     display: none;
 }
 
-.msg {
-    top: 0;
-    position: absolute;
-    z-index: 1;
-    visibility: hidden;
-    color: #fff;
-    background-color: red;
-    padding: 1em;
-    width: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-    margin-top: 2em;
+@media screen and (max-width: 750px) {
+    .modal {
+        width: 100%;
+    }
 }
