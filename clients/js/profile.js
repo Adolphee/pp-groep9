@@ -78,11 +78,13 @@ $(document).ready(function() {
         }).done((res) => {//TODO: geraakt ni in
             sessionStorage.setItem('klant', JSON.stringify(res));
             console.log(JSON.stringify(res));
-            location.reload();
+            // location.reload();
             // todo: show profile page
             if (sessionStorage.getItem('klant') !== null) { //todo:check of de klantgegevens kloppen
                 displayProfilePage();
                 $("#logout").show();
+                $('#inlogveld').val('');
+                $('#wwveld').val('');
             } else {
                 alert("User not stored in session ...");
             }
@@ -118,6 +120,20 @@ $(document).ready(function() {
             method: "GET",
             url: `http://10.3.50.56:3009/api/klant/${klant_id}/bestellingen`
         }).done(function (bestellingen) {
+            console.log(bestellingen);
+            if (bestellingen.length == 0) {
+                $('body').append(`
+                    <div class="msg error">
+                        <p>Er zijn geen bestellingen
+                        <i class="fas fa-times msg-cross"></i>
+                        </p>
+                    </div>
+                `);
+                $('.msg').css('visibility', 'visible');
+                $('.msg').css('margin-top', '5em');
+                $('.msg').delay(2000).slideUp();
+            }
+            
             bestellingen.forEach((bestelling) => {
                 let date1 = bestelling.einddatum.split("/");
                 let einde = new Date();
@@ -128,7 +144,7 @@ $(document).ready(function() {
                 let listElement = `<div class="card">
                         <h3>Bestelling ID: ${bestelling.bestelling_id}</h3>
                         <p>Uitleendatum: ${bestelling.uitleendatum}</p>
-                        <p>Einddatum: <input type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
+                        <p>Einddatum: <input id="${bestelling.bestelling_id}" type="text" ${isVoorbij ? readOnlyAttribute : ""} value="${bestelling.einddatum}"></p>
                         ${!isVoorbij ? editknop : ""}
                     </div>`;
                 let listElementAsNode = $.parseHTML(listElement);
@@ -137,8 +153,14 @@ $(document).ready(function() {
             });
         });
     });
-    $("button.editknop2").click(() => {
-        let bestelling_id = parseInt(this.id);
+    $(document).on('click','button.editknop2',(e) => {
+        console.log('kakakkak');
+        
+        let bestelling_id = parseInt(e.target.id);
+        let einddatum = $(`input#${bestelling_id}`).val();
+        console.log(einddatum);
+        
+        
         $.ajax({
             method: "GET",
             url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`
@@ -147,7 +169,7 @@ $(document).ready(function() {
             $.ajax({
                 method: "PUT",
                 url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`,
-                data: bestelling
+                data: {einddatum: einddatum}
             }).done(function (resp) {
                 console.log("Datum update done");
             });
