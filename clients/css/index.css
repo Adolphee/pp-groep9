@@ -17,6 +17,12 @@ body {
   background-color: rgb(243, 243, 243);
 }
 
+html, body {
+  height: 100%;
+  resize: both;
+  overflow: auto;
+}
+
 a {
   text-decoration: none;
 }
