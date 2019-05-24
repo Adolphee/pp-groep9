@@ -263,7 +263,7 @@ router.post('/insert/newKlantWithLogin', (req, res) => {
     };
     axios({
         method: 'POST',
-        url: `http://localhost:3009/api/insert/newklant`,
+        url: `http://10.3.50.56:3009/api/insert/newklant`,
         data: {
             voornaam: voornaam,
             achternaam: achternaam,
