@@ -122,6 +122,8 @@ $(document).ready(function() {
             url: `http://10.3.50.56:3009/api/klant/${klant_id}/bestellingen`
         }).done(function (bestellingen) {
             console.log(bestellingen);
+            // Zet bestellingen in session
+            sessionStorage.setItem('bestellingen', JSON.stringify(bestellingen));
             if (bestellingen.length == 0) {
                 $('body').append(`
                     <div class="msg error">
@@ -155,36 +157,67 @@ $(document).ready(function() {
         });
     });
     $(document).on('click','button.editknop2',(e) => {
-        console.log('kakakkak');
-        
+        let alleBestellingen = JSON.parse(sessionStorage.getItem('bestellingen'));
         let bestelling_id = parseInt(e.target.id);
         let einddatum = $(`input#${bestelling_id}`).val();
-        console.log(einddatum);
+        let oldDate;
+        // console.log(einddatum);
+        for (const item of alleBestellingen) {
+            if (item.bestelling_id == bestelling_id) {
+                oldDate = item.einddatum;
+            }
+        }
+
+        // Datum is goed
+        if (oldDate < einddatum) {
+            console.log('oldate < eind');
+        }
+        // Datum kan niet worden aangepast
+        if (oldDate > einddatum) {
+            console.log('oldate > eind');
+            $('body').append(`
+            <div class="msg error">
+                <p>De gegeven datum moet groter zijn als je huidige einddatum. 
+                <i class="fas fa-times msg-cross"></i>
+                </p>
+            </div>
+            `);
+            $('.msg').css('visibility', 'visible');
+            $('.msg').css('margin-top', '5em');
+            $('.msg').delay(2000).slideUp();
+        }
         
-        
-        $.ajax({
-            method: "GET",
-            url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`
-        }).done(function (bestelling) {
-            console.log("Ajax 1 klaar... moving on");
+        else {
+            for (const item of alleBestellingen) {
+                if (item.bestelling_id == bestelling_id) {
+                    item.einddatum = einddatum;
+                }
+            }
+            sessionStorage.setItem('bestellingen', JSON.stringify(alleBestellingen));
             $.ajax({
-                method: "PUT",
-                url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`,
-                data: {einddatum: einddatum}
-            }).done(function (resp) {
-                console.log("Datum update done");
-                $('body').append(`
-                    <div class="msg success">
-                        <p>Einddatum is geüpdate
-                        <i class="fas fa-times msg-cross"></i>
-                        </p>
-                    </div>
-                `);
-                $('.msg').css('visibility', 'visible');
-                $('.msg').css('margin-top', '5em');
-                $('.msg').delay(2000).slideUp();
+                method: "GET",
+                url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`
+            }).done(function (bestelling) {
+                console.log("Ajax 1 klaar... moving on");
+                $.ajax({
+                    method: "PUT",
+                    url: `http://10.3.50.56:3009/api/bestellingen/${bestelling_id}`,
+                    data: {einddatum: einddatum}
+                }).done(function (resp) {
+                    console.log("Datum update done");
+                    $('body').append(`
+                        <div class="msg success">
+                            <p>Einddatum is geüpdate
+                            <i class="fas fa-times msg-cross"></i>
+                            </p>
+                        </div>
+                    `);
+                    $('.msg').css('visibility', 'visible');
+                    $('.msg').css('margin-top', '5em');
+                    $('.msg').delay(2000).slideUp();
+                });
             });
-        });
+        }
     });
 });
 
