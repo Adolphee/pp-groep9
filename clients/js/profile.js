@@ -204,8 +204,8 @@ function displayProfilePage() {
 }
 
 function hideProfilePage() {
-    $("#left").show();
-    $("#right").show();
+   // $("#left").show();
+    //$("#right").show();
     $("#bestellingenLijst").hide();
     $("#mijnprofieldiv").hide();
     $(".login-form").css("display", "block");
