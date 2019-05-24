@@ -297,15 +297,21 @@ router.post('/insert/newKlantWithLogin', (req, res) => {
 
 router.put('/bestellingen/:id', (req, res) => {
     let bestelling_id = req.params.id;
-    let {uitleendatum, einddatum, werknemer_id, klant_id, lev_adres_id, Archief } = req.body;
-    let query = `update bestellingen set uitleendatum = ?, einddatum = ?, werknemer_id = ?, klant_id = ?, lev_adres_id = ?, Archief = ? where bestelling_id = ?;`;
-    db.query(query, [uitleendatum, einddatum, werknemer_id, klant_id, lev_adres_id, Archief, bestelling_id], (sqlErr, result) => {
+    console.log(bestelling_id);
+    
+    let { einddatum } = req.body;
+    console.log(einddatum);
+    
+    let query = `update bestellingen set einddatum = ? where bestelling_id = ?;`;
+    db.query(query, [einddatum, bestelling_id], (sqlErr, result) => {
         if(sqlErr) res.status(500).json(sqlErr);
-        console.log(bestelling_id);
-        res.status(204).json({
-            message: "Login successfully updated.",
-            bestelling: req.body
-        });// created
+        else {
+            console.log(bestelling_id);
+            res.status(204).json({
+                message: "Date successfully updated.",
+                bestelling: req.body
+            });// created
+        }
     });
 });
 
