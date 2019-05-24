@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $.ajax({
         url: "./general parts/nav.html"
     }).done(function (res) {
@@ -25,11 +24,14 @@ $(document).ready(function() {
     $("#logout").click(() => {
         sessionStorage.removeItem('klant');
         hideProfilePage();
-        $('#login-page').show();
+        $('.pos-center#left').show();
+        $('#left').show();
+        $('#loginContainer').show();
     });
 
     if (sessionStorage.getItem('klant') !== null) { //todo:check of de klantgegevens kloppen
         displayProfilePage();
+        $('#mijnprofiel').trigger('click');
         $("#logout").show();
     } else {
         hideProfilePage();
@@ -97,6 +99,7 @@ $(document).ready(function() {
         }).done((res) => {//TODO: geraakt ni in
             sessionStorage.setItem('klant', JSON.stringify(res));
             console.log(JSON.stringify(res));
+            $('#loginContainer').hide();
             // location.reload();
             // todo: show profile page
             if (sessionStorage.getItem('klant') !== null) { //todo:check of de klantgegevens kloppen
@@ -104,6 +107,7 @@ $(document).ready(function() {
                 $("#logout").show();
                 $('#inlogveld').val('');
                 $('#wwveld').val('');
+                $('#mijnprofiel').trigger('click');
             } else {
                 alert("User not stored in session ...");
             }
@@ -127,14 +131,14 @@ $(document).ready(function() {
         $("#pcode").html(klant.postcode);
         $("#pstad").html(klant.gemeente);
         $("#pland").html(klant.land);
+
         $('#loginContainer').hide();
     });
 
     $("#bestellingen").click(function () {
         displayProfilePage();
-
         $('#loginContainer').show();
-
+        $('#mijnprofieldiv').hide();
         $("#bList").html('');
 
         $("#mijnprofieldiv").hide();
@@ -167,7 +171,7 @@ $(document).ready(function() {
                 einde.setFullYear(parseInt(date1[2]), parseInt(date1[1]), parseInt(date1[0]));
                 let isVoorbij = einde.getTime() < new Date().getTime();
                 let readOnlyAttribute = 'readonly="readonly"';
-                let editknop = `<button id="${bestelling.bestelling_id}" class="btn primary">Save</button>`;
+                let editknop = `<button id="${bestelling.bestelling_id}" class="btn primary save-date">Save</button>`;
                 let listElement = `<div class="card">
                         <h3>Bestelling ID: ${bestelling.bestelling_id}</h3>
                         <p class="dat">Uitleendatum: ${bestelling.uitleendatum}</p>
@@ -181,7 +185,7 @@ $(document).ready(function() {
             });
         });
     });
-    $(document).on('click','button.editknop2',(e) => {
+    $(document).on('click','.save-date',(e) => {
         let alleBestellingen = JSON.parse(sessionStorage.getItem('bestellingen'));
         let bestelling_id = parseInt(e.target.id);
         let einddatum = $(`input#${bestelling_id}`).val();
