@@ -27,7 +27,7 @@
 <div id="nav"></div>
 
 <!-- Form -->
-<div class="formcontainer">
+<div id="form" class="formcontainer">
 
     <!-- Titel  -->
     <h2 class="titel">Contact</h2>
@@ -38,21 +38,21 @@
         <!-- Naam -->
         <div id="divnaam">
             <label for="inputNaam"><b>Naam: *</b></label>
-            <input title="Naam" type="text" size="37" maxlength="50" minlength="3" required="required"
+            <input name="naam" title="Naam" type="text" size="37" required="required"
                    id="inputNaam"/>
         </div>
 
         <!-- E-mailadres -->
         <div id="divemail">
             <label for="inputEmail"><b>E-mailadres: *</b></label>
-            <input title="E-mailadres" type="email" size="37" maxlength="50" minlength="5" required="required"
+            <input name="email" title="E-mailadres" type="email" size="37" maxlength="50" minlength="5" required="required"
                    id="inputEmail"/>
         </div>
 
         <!-- Vraag/Klacht -->
         <div id="divvraag">
             <label for="inputVraag"><b>Vraag/Klacht? *</b></label>
-            <textarea title="Vraag/klacht?" cols="40" rows="4" minlength="1" required="required"
+            <textarea name="msg" title="Vraag/klacht?" cols="40" rows="4" minlength="1" required="required"
                       id="inputVraag"></textarea>
         </div>
 
@@ -62,7 +62,7 @@
     </form>
 
     <!-- Verzendknop -->
-    <button type="submit" class="button" title="Send" id="submitform"><b>Verzenden</b></button>
+    <button type="submit" class="btn primary" title="Send" id="submitform"><b>Verzenden</b></button>
 
 </div>
 
@@ -73,6 +73,10 @@
     <br>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4018545532645!2d4.320619315281099!3d50.8422423669382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c40f19faf0f9%3A0x4ef5b683135ecb1e!2sErasmushogeschool+Brussel!5e0!3m2!1snl!2sbe!4v1558085101846!5m2!1snl!2sbe"
             frameborder="0" style="border:0" allowfullscreen id="iFrame"></iframe>
+</div>
+
+<div class="container">
+    <div id="product"></div>
 </div>
 
 <!-- Footer -->

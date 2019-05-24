@@ -5,7 +5,6 @@
     width: 350px;
     height: auto;
     grid-area: productPic;
-
 }
 .productOmschrijving
 {
@@ -14,11 +13,8 @@
 
 .gridP
 {
-    margin-top: 50px;
-
     justify-content: center;
     display: grid;
-
     grid-template-areas:
     "productPic productO";
 }
@@ -26,9 +22,13 @@
 .productOmschrijving form{
     justify-items: right;
 }
-.productOmschrijving button
-{
-    margin-left: 30px;
 
+@media screen and (max-width: 700px) {
+    .gridP{
+        grid-template-areas:
+    "productPic"
+        "productO"
+    ;
+    }
 
 }
